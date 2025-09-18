@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="space-y-6 z-20">
           {/* <div className="min-h-[230px] w-[400px] flex relative"> */}
           <div className="w-full max-w-[400px] min-w-[300px] min-h-[230px] sm:min-h-[230px] md:min-h-[240px] flex relative">
-          <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl text-white font-extrabold tracking-wider sm:tracking-normal leading-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl text-white font-extrabold leading-tight">
             <Typewriter
               words={["Ready to see what's next in Tech?"]}
               cursor

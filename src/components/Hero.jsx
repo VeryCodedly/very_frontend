@@ -11,8 +11,8 @@ export default function Hero() {
         {/* <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-16 px-14 md:px-14"> */}
           <div className="space-y-6 z-20">
           {/* <div className="min-h-[230px] w-[400px] flex relative"> */}
-          <div className="w-full max-w-[400px] min-w-[300px] min-h-[230px] sm:min-h-[230px] md:min-h-[240px] flex relative">
-          <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl text-white font-extrabold leading-tight">
+          <div className="w-full max-w-[400px] min-w-[300px] min-h-[200px] sm:min-h-[220px] md:min-h-[230px] flex relative">
+          <h1 className="text-5xl sm:text-6xl md:text-6xl lg:text-6xl text-white font-extrabold tracking-wider sm:tracking-normal leading-tight">
             <Typewriter
               words={["Ready to see what's next in Tech?"]}
               cursor

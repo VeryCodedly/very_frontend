@@ -88,7 +88,7 @@ export default function MorphingPanel({ className = "" }) {
       <div className="absolute border-10 top-1/2 left-1/2 w-28 h-28 rounded-full bg-cyan-400/50 blur-3xl -translate-x-1/2 -translate-y-1/2 z-[-1] animate-pulse shadow-[0_0_10px_#00ffe0]" />
 
 {/* Center logo */}
-      <div className="absolute group top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex items-center justify-center transition duration-500 z-10 opacity-10 animate-float hover:opacity-70 drop-shadow-[0_0_10px_#9AE600] rounded-full">
+      <div className="absolute group top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex items-center justify-center transition duration-500 z-10 opacity-10 animate-float hover:opacity-70 drop-shadow-[0_0_10px_#9AE600] rounded-full active:scale-90 active:opacity-100 active:drop-shadow-[0_0_5px_#9AE600]">
       <button className="cursor-pointer"
         onClick={() => setShowModal(true)}
         style={{
@@ -112,11 +112,12 @@ export default function MorphingPanel({ className = "" }) {
 
       <div 
           ref={cubeRef}
-          className={`relative w-full h-full transition-transform duration-[5000ms] group hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
+          className={`relative w-full h-full transition-transform duration-[5000ms] group active:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] 
+            hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
           ${autoSpin ? "animate-spin-twice" : ""}
           ${isTouchSpinning && allowTouchSpin ? "animate-spin-slow" : ""}`}
-          onTouchStart={() => allowTouchSpin && setIsTouchSpinning(true)}
-          onTouchEnd={() => setIsTouchSpinning(false)}
+          // onTouchStart={() => allowTouchSpin && setIsTouchSpinning(true)}
+          // onTouchEnd={() => setIsTouchSpinning(false)}
           >
         {groupedLogos.map((group, faceIndex) => (
           <div

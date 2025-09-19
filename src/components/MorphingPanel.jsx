@@ -151,13 +151,12 @@ export default function MorphingPanel({ className = "" }) {
                 key={i}
                 src={logo.src}
                 alt={logo.alt}
-                className="object-contain absolute transition duration-300 hover:drop-shadow-[0_0_4px_#fff] hover:scale-110 hover:opacity-100 opacity-80"
+                className="object-contain absolute transition duration-300 hover:drop-shadow-[0_0_4px_#fff] hover:scale-110 hover:opacity-100 opacity-80 active:drop-shadow-[0_0_6px_#fff] active:scale-110 active:opacity-100"
                 style={{
                   left: `calc(50% + ${x}px)`,
                   top: `calc(50% + ${y}px)`,
                   transform: "translate(-50%, -50%)",
                   }}
-                  onTouchStart={`drop-shadow-[0_0_6px_#fff] scale-110 opacity-100`}
                 width={40}
                 height={40}
                 sizes="(max-width: < 240px) 10px,

@@ -108,7 +108,7 @@ export default function Community() {
           </p>
           
           {/* Feature tags */}
-          <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-8">
+          <div className="flex flex-wrap gap-3 justify-center md:justify-start mb-10">
             <span className="bg-pink-400/10 text-pink-300 px-4 py-2 rounded-full text-xs font-medium backdrop-blur-md border border-pink-400/20">
               Daily inspiration
             </span>
@@ -126,7 +126,7 @@ export default function Community() {
               href="https://discord.gg/d659pybS" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block font-bold border-3 border-gray-500 px-8 py-1 rounded-full text-white text-md hover:bg-white hover:text-black hover:translate-y-0.5 shadow-[0_4px_0_0_#39ff14] hover:shadow-[0_2px_0_0_#0f0] active:translate-y-1 transition-all duration-200"
+              className="inline-block font-bold border-3 border-gray-500 px-9 py-1 rounded-full text-white text-md hover:bg-white hover:text-black hover:translate-y-0.5 shadow-[0_4px_0_0_#39ff14] hover:shadow-[0_2px_0_0_#0f0] active:translate-y-1 transition-all duration-200"
             >
               Join Now
             </a>

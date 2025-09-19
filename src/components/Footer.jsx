@@ -17,7 +17,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lime-400 text-xl font-bold mb-3">Very Codedly</h3>
           <div className="w-4/5">
-            <p className="text-sm text-gray-400 mb-4">
+            <p className="text-sm text-gray-500 mb-4">
               {/* Built for creators, thinkers, and everyday magic-makers. Join us as we push the boundaries of what’s possible. */}
               For the curious minds shaping the future, one small step at a time. You're in good company here. {/* shorten this */}
             </p>
@@ -58,7 +58,7 @@ export default function Footer() {
             <a href="https://reddit.com/r/VeryCodedly" className="h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" alt="Reddit" target="_blank">
               <FontAwesomeIcon icon={['fab', 'reddit']} size="lg" />
             </a>
-            <a href="https://discord.com/UVWNezaj" className="h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" target="_blank">
+            <a href="https://discord.com/invite/UVWNezaj" className="h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" target="_blank">
               <FontAwesomeIcon icon={['fab', 'discord']} size="lg" />
             </a>
             <a href="https://medium.com/@verycodedly" className="h-6 w-6 hover:text-white hover:scale-110 transition-transform duration-300" alt="medium" target="_blank">

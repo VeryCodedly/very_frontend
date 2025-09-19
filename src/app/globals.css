@@ -40,16 +40,7 @@
 }
 
 .animate-spin-twice {
-  animation: spin-twice 6s linear forwards; /* run once */
-}
-
-@keyframes spin-slow {
-  from { transform: rotateX(0deg) rotateY(0deg) }
-  to { transform: rotateX(-95deg) rotateY(-270deg) rotateZ(58deg) }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 6s linear infinite;
+  animation: spin-twice 5s linear forwards; /* run once */
 }
 
 @layer base {

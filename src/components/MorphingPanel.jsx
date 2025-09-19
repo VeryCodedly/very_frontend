@@ -31,8 +31,8 @@ export default function MorphingPanel({ className = "" }) {
   // const [isRotating, setIsRotating] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [autoSpin, setAutoSpin] = useState(false);
-  const [allowTouchSpin, setAllowTouchSpin] = useState(false);
-  const [isTouchSpinning, setIsTouchSpinning] = useState(false);
+  // const [allowTouchSpin, setAllowTouchSpin] = useState(false);
+  // const [isTouchSpinning, setIsTouchSpinning] = useState(false);
   const [introPlayed, setIntroPlayed] = useState(false);
   const cubeRef = useRef(null);
 
@@ -45,13 +45,10 @@ export default function MorphingPanel({ className = "" }) {
           // start auto-spin
           setAutoSpin(true);
 
-          // stop after 20s (2 cycles)
+          // stop after 10s (1 cycle)
           setTimeout(() => {
             setAutoSpin(false);
-
-            // wait 5s, then allow touch spin
-            setTimeout(() => setAllowTouchSpin(true), 3000);
-          }, 10000);
+          }, 8000);
         }
       },
       { threshold: 0.5 }
@@ -88,7 +85,8 @@ export default function MorphingPanel({ className = "" }) {
       <div className="absolute border-10 top-1/2 left-1/2 w-28 h-28 rounded-full bg-cyan-400/50 blur-3xl -translate-x-1/2 -translate-y-1/2 z-[-1] animate-pulse shadow-[0_0_10px_#00ffe0]" />
 
 {/* Center logo */}
-      <div className="absolute group top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex items-center justify-center transition duration-500 z-10 opacity-10 animate-float hover:opacity-70 drop-shadow-[0_0_10px_#9AE600] rounded-full active:scale-90 active:opacity-100 active:drop-shadow-[0_0_5px_#9AE600]">
+      <div className="absolute group top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex items-center justify-center transition duration-500 z-10 opacity-10 
+      animate-float hover:opacity-70 drop-shadow-[0_0_10px_#9AE600] rounded-full active:scale-90 active:opacity-100 active:drop-shadow-[0_0_5px_#9AE600]">
       <button className="cursor-pointer"
         onClick={() => setShowModal(true)}
         style={{
@@ -114,10 +112,7 @@ export default function MorphingPanel({ className = "" }) {
           ref={cubeRef}
           className={`relative w-full h-full transition-transform duration-[5000ms] group active:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] 
             hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
-          ${autoSpin ? "animate-spin-twice" : ""}
-          ${isTouchSpinning && allowTouchSpin ? "animate-spin-slow" : ""}`}
-          // onTouchStart={() => allowTouchSpin && setIsTouchSpinning(true)}
-          // onTouchEnd={() => setIsTouchSpinning(false)}
+          ${autoSpin ? "animate-spin-twice" : ""}`}
           >
         {groupedLogos.map((group, faceIndex) => (
           <div

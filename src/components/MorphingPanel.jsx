@@ -49,9 +49,9 @@ export default function MorphingPanel({ className = "" }) {
           setTimeout(() => {
             setAutoSpin(false);
 
-            // wait 10s, then allow touch spin
-            setTimeout(() => setAllowTouchSpin(true), 10000);
-          }, 20000);
+            // wait 5s, then allow touch spin
+            setTimeout(() => setAllowTouchSpin(true), 3000);
+          }, 10000);
         }
       },
       { threshold: 0.5 }

@@ -36,25 +36,20 @@
 
 @keyframes spin-twice {
   0%   { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) } /* start */
-  50%  { transform: rotateX(-45deg) rotateY(135deg) rotateZ(29deg) } /* 1 full spin */
   100% { transform: rotateX(-95deg) rotateY(-270deg) rotateZ(58deg) } /* 2 full spins */
 }
 
 .animate-spin-twice {
-  animation: spin-twice 20s linear forwards; /* run once */
+  animation: spin-twice 6s linear forwards; /* run once */
 }
 
 @keyframes spin-slow {
-  from {
-    transform: rotateX(0deg) rotateY(0deg);
-  }
-  to {
-    transform: rotateX(-95deg) rotateY(-270deg) rotateZ(58deg);
-  }
+  from { transform: rotateX(0deg) rotateY(0deg) }
+  to { transform: rotateX(-95deg) rotateY(-270deg) rotateZ(58deg) }
 }
 
 .animate-spin-slow {
-  animation: spin-slow 10s linear infinite;
+  animation: spin-slow 6s linear infinite;
 }
 
 @layer base {

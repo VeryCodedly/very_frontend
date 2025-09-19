@@ -17,7 +17,7 @@ export default function Footer() {
         <div>
           <h3 className="text-lime-400 text-xl font-bold mb-3">Very Codedly</h3>
           <div className="w-4/5">
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-gray-400 mb-4">
               {/* Built for creators, thinkers, and everyday magic-makers. Join us as we push the boundaries of what’s possible. */}
               For the curious minds shaping the future, one small step at a time. You're in good company here. {/* shorten this */}
             </p>

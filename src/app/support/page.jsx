@@ -81,7 +81,7 @@ export default function SupportPage() {
 
             <div className="flex gap-3">
               <a
-                href="https://twitter.com/intent/tweet?text=Check%20out%20Very%20Codedly%20-%20https://verycodedly.com"
+                href="https://twitter.com/intent/tweet?text=Into%20coding%20+%20tech%20trends?%20Check%20out%20Very%20Codedly%20-%20https://verycodedly.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 text-center px-3 py-2 rounded-3xl border border-gray-500 text-white hover:bg-white/5 transition"

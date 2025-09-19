@@ -115,7 +115,7 @@ export default function MorphingPanel({ className = "" }) {
           ${isTouchSpinning && allowTouchSpin ? "animate-spin-slow" : ""}`}
           onTouchStart={() => allowTouchSpin && setIsTouchSpinning(true)}
           onTouchEnd={() => setIsTouchSpinning(false)}
-
+          ref={cubeRef}
           >
         {groupedLogos.map((group, faceIndex) => (
           <div

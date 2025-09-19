@@ -110,12 +110,13 @@ export default function MorphingPanel({ className = "" }) {
       </button>
       </div>
 
-      <div className={`relative w-full h-full transition-transform duration-[5000ms] group hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
-          ${autoSpin ? "animate-spin-slow" : ""}
+      <div 
+          ref={cubeRef}
+          className={`relative w-full h-full transition-transform duration-[5000ms] group hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
+          ${autoSpin ? "animate-spin-twice" : ""}
           ${isTouchSpinning && allowTouchSpin ? "animate-spin-slow" : ""}`}
           onTouchStart={() => allowTouchSpin && setIsTouchSpinning(true)}
           onTouchEnd={() => setIsTouchSpinning(false)}
-          ref={cubeRef}
           >
         {groupedLogos.map((group, faceIndex) => (
           <div

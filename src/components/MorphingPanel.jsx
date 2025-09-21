@@ -6,33 +6,32 @@ import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const logos = [
   { src: "/logos/react.svg", alt: "React"},
-  { src: "/logos/javascript.svg", alt: "JavaScript"},
   { src: "/logos/python.svg", alt: "Python"},
+  { src: "/logos/javascript.svg", alt: "JavaScript"},
   { src: "/logos/django-plain.svg", alt: "Django"},
   { src: "/logos/github.svg", alt: "GitHub"},
   { src: "/logos/vscode.svg", alt: "VSCode"},
   { src: "/logos/git.svg", alt: "Git"},
   { src: "/logos/npm.svg", alt: "NPM"},
-  { src: "/logos/java.svg", alt: "Java"},
-  { src: "/logos/android.svg", alt: "Android"},
-  { src: "/logos/postcss.svg", alt: "PostCSS"},
-  { src: "/logos/opensourcehardware.svg", alt: "OpenSource"},
-  { src: "/logos/vitejs.svg", alt: "Vite"},
-  { src: "/logos/tailwindcss.svg", alt: "Tailwind"},
-  { src: "/logos/nodejs.svg", alt: "Nodejs"},
-  { src: "/logos/html5.svg", alt: "HTML"},
-  { src: "/logos/powershell.svg", alt: "PowerShell"},
   { src: "/logos/google.svg", alt: "Google"},
+  { src: "/logos/android.svg", alt: "Android"},
+  { src: "/logos/java.svg", alt: "Java"},
+  { src: "/logos/opensourcehardware.svg", alt: "OpenSource"},
+  // { src: "/logos/vitejs.svg", alt: "Vite"},
+  { src: "/logos/nextjs.svg", alt: "Next.js"},
+  { src: "/logos/tailwindcss.svg", alt: "Tailwind"},
+  { src: "/logos/typescript.svg", alt: "TypeScript"},
+  { src: "/logos/nodejs-plain.svg", alt: "Nodejs"},
+  // { src: "/logos/html5.svg", alt: "HTML"},
+  { src: "/logos/powershell.svg", alt: "PowerShell"},
+  { src: "/logos/postcss.svg", alt: "PostCSS"},
   { src: "/logos/linux.svg", alt: "Linux"},
   { src: "/logos/cloudflare.svg", alt: "Cloudflare"},
   ];
 
 export default function MorphingPanel({ className = "" }) {
-  // const [isRotating, setIsRotating] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [autoSpin, setAutoSpin] = useState(false);
-  // const [allowTouchSpin, setAllowTouchSpin] = useState(false);
-  // const [isTouchSpinning, setIsTouchSpinning] = useState(false);
   const [introPlayed, setIntroPlayed] = useState(false);
   const cubeRef = useRef(null);
 
@@ -51,7 +50,7 @@ export default function MorphingPanel({ className = "" }) {
           }, 8000);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
 
     if (cubeRef.current) observer.observe(cubeRef.current);
@@ -79,10 +78,10 @@ export default function MorphingPanel({ className = "" }) {
   );
 
   return (
-    <div className="relative flex items-center justify-center w-[200px] h-[200px] md:w-[210px] md:h-[210px]  
-        sm:w-[200px] sm:h-[200px] lg:w-[220px] lg:h-[220px] perspective-[900px] mx-auto">
+    <div className="relative flex items-center justify-center w-[205px] h-[205px] md:w-[205px] md:h-[205px]  
+        sm:w-[205px] sm:h-[205px] lg:w-[205px] lg:h-[205px] perspective-[900px] mx-auto">
 
-      <div className="absolute border-10 top-1/2 left-1/2 w-28 h-28 rounded-full bg-cyan-400/50 blur-3xl -translate-x-1/2 -translate-y-1/2 z-[-1] animate-pulse shadow-[0_0_10px_#00ffe0]" />
+      <div className="absolute border-10 top-1/2 left-1/2 w-28 h-28 rounded-full bg-cyan-400/60 blur-3xl -translate-x-1/2 -translate-y-1/2 z-[-1] animate-pulse shadow-[0_0_10px_#00ffe0]" />
 
 {/* Center logo */}
       <div className="absolute group top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 flex items-center justify-center transition duration-500 z-10 opacity-10 
@@ -111,22 +110,17 @@ export default function MorphingPanel({ className = "" }) {
       <div 
           ref={cubeRef}
           className={`relative w-full h-full transition-transform duration-[5000ms] group active:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] 
-            hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d]
+            hover:[transform:rotateX(-95deg)_rotateY(-270deg)_rotateZ(58deg)] [transform-style:preserve-3d] will-change-transform
           ${autoSpin ? "animate-spin-twice" : ""}`}
           >
         {groupedLogos.map((group, faceIndex) => (
           <div
             key={faceIndex}
-            className="absolute w-full h-full bg-white/5 border-1 border-black/40 rounded-2xl flex flex-col items-center justify-center gap-2 backdrop-blur-sm ring-3 ring-lime-400/30 hover:ring-lime-400/60 inset-0 z-[-1]
+            className="absolute w-full h-full bg-white/5 border-1 border-black/40 rounded-2xl flex flex-col items-center justify-center gap-2 backdrop-blur-sm ring-3 ring-lime-400/30 hover:ring-lime-400/60 active::ring-lime-400/60 inset-0 z-[-1]
                         shadow-[0_15px_20px_rgba(0,0,0,0.6),0_15px_20px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_20px_rgba(0,0,0,0.7),0_25px_30px_rgba(0,0,0,0.6)]"
             style={{ transform: getFaceTransform(faceIndex) }}
             >
-            {/* Inside the face div */}
-            {/* <div className="absolute top-1 left-1 w-2 h-2 bg-lime-400 rounded-full blur-sm opacity-80" />
-            <div className="absolute top-1 right-1 w-2 h-2 bg-lime-400 rounded-full blur-sm opacity-80" />
-            <div className="absolute bottom-1 left-1 w-2 h-2 bg-lime-400 rounded-full blur-sm opacity-80" />
-            <div className="absolute bottom-1 right-1 w-2 h-2 bg-lime-400 rounded-full blur-sm opacity-80" /> */}
-
+            
             {/* Glow corners */}
             {["top-1 left-1", "top-1 right-1", "bottom-1 left-1", "bottom-1 right-1"].map((pos, i) => (
               <div
@@ -138,7 +132,7 @@ export default function MorphingPanel({ className = "" }) {
             {/* Logos in a circle */}
             {group.map((logo, i) => {
               const angle = (360 / group.length) * i - 90; // Start at top
-              const radius = 45; // Adjust for spacing (in px)
+              const radius = 55; // Adjust for spacing (in px)
               const x = Math.cos((angle * Math.PI) / 180) * radius;
               const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -153,12 +147,9 @@ export default function MorphingPanel({ className = "" }) {
                   top: `calc(50% + ${y}px)`,
                   transform: "translate(-50%, -50%)",
                   }}
-                width={40}
-                height={40}
-                sizes="(max-width: < 240px) 10px,
-                      (max-width: 240px) 40px,
-                      (max-width: 640px) 40px, 
-                      (max-width: 768px) 40px, 40px"
+                width={38}
+                height={38}
+                
               />
               );
             })}

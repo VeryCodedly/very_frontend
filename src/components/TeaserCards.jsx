@@ -79,7 +79,7 @@ export default function TeaserCards() {
               <FontAwesomeIcon icon={card.icon} />
             </div>
 
-            <h2 className="text-white text-xl md:text-2xl font-semibold mb-2 hover:underline">
+            <h2 className="text-white text-xl md:text-2xl font-semibold mb-2 hover:underline active:underline">
               {card.title}
             </h2>
             </Link>

@@ -7,7 +7,7 @@ import MorphingPanel from "./MorphingPanel.jsx";
 
 export default function Hero() {
     return (
-        <section className="w-full max-w-7xl mx-auto flex flex-wrap gap-8 items-center py-12 px-14 lg:py-16 lg:px-16">
+        <section className="w-full max-w-7xl mx-auto flex flex-wrap gap-8 items-center py-12 px-12 lg:py-16 lg:px-16">
         {/* <section className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center py-16 px-14 md:px-14"> */}
           <div className="flex-1 space-y-7 z-20">
           {/* <div className="min-h-[230px] w-[400px] flex relative"> */}
@@ -25,7 +25,7 @@ export default function Hero() {
             />
           </h1>
           </div>
-          <p className="w-full min-w-[350px] max-w-[400px] text-gray-400 text-base sm:text-md">
+          <p className="w-full min-w-[300px] max-w-[400px] text-gray-400 text-base sm:text-md">
             Deep insights on what you need to know. No noise, just clarity.
           </p>
           <div className="flex space-x-5">

@@ -47,7 +47,7 @@ export default function MorphingPanel({ className = "" }) {
           // stop after 10s (1 cycle)
           setTimeout(() => {
             setAutoSpin(false);
-          }, 8000);
+          }, 7000);
         }
       },
       { threshold: 0.1 }

@@ -20,7 +20,7 @@ const cards = [
     icon: faNewspaper,
     accent: "bg-lime-400",
     color: "text-lime-400",
-    href: "/read"
+    href: "/blog"
   },
   {
     id: "learn",

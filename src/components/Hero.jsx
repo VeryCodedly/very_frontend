@@ -27,7 +27,7 @@ export default function Hero() {
             />
           </h1>
           </div>
-          <p className="w-full min-w-[320px] max-w-[400px] text-gray-400 text-base sm:text-md">
+          <p className="w-full max-w-[400px] text-gray-400 text-base sm:text-md">
             Deep insights on what you need to know. No noise, just clarity.
           </p>
           <div className="flex space-x-5">

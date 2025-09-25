@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Community() {
   return (
@@ -30,14 +32,14 @@ export default function Community() {
 
           {/* Join button */}
           <div className="flex justify-center md:justify-start">
-            <a 
+            <Link 
               href="https://discord.gg/d659pybS" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block font-bold border-3 border-gray-500 px-9 py-1 rounded-full text-white text-md hover:bg-white hover:text-black hover:translate-y-0.5 shadow-[0_4px_0_0_#39ff14] hover:shadow-[0_2px_0_0_#0f0] active:translate-y-1 transition-all duration-200"
+              className="inline-block font-semibold border-3 border-gray-500 px-9 py-1 rounded-full text-white text-md hover:bg-white hover:text-black hover:font-bold hover:translate-y-0.5 shadow-[0_4px_0_0_#39ff14] hover:shadow-[0_2px_0_0_#0f0] active:translate-y-1 transition-all duration-200"
             >
               Join Now
-            </a>
+            </Link>
           </div>
 
           <p className="text-gray-500 text-xs mt-4">
@@ -47,10 +49,13 @@ export default function Community() {
         
         {/* Right Visual */}
         <div className="w-full md:w-1/2 flex-1 overflow-hidden">
-          <img 
+          <Image 
             className="w-full h-72 md:h-96 rounded-3xl object-cover" 
             src="images/community-img.svg" 
             alt="Community illustration" 
+            width={600} 
+            height={400} 
+            
           />
         </div>
       </div>

@@ -25,6 +25,7 @@ export default function Header() {
                     loading="eager"
                     width={0}
                     height={0}
+                    priority
                   />
                 </div>
               </Link>
@@ -51,7 +52,7 @@ export default function Header() {
 
       {/* Mobile dropdown */}
       <div
-        className={`absolute top-full w-[96%] transform transition-all duration-500 ease-in-out
+        className={`absolute top-full w-[98%] transform transition-all duration-500 ease-in-out
         ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}
       bg-black/100 backdrop-blur-lg border-2 border-white/20 rounded-4xl flex flex-col items-center py-6.5 space-y-4 md:hidden`}
         >

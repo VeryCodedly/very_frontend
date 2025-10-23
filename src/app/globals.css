@@ -1,20 +1,20 @@
 @import 'tailwindcss';
 
-@theme {
+:root {
     --color-asphalt: #030301;
     --color-graphite: #222222;
-    --color-gray-chateau: #99a1af;
-    --color-off-white:  #F2F2F2;
+    --color-grayChateau: #99a1af;
+    --color-offWhite:  #F2F2F2;
     --color-chartreuse: #9AE600;
-    --color-dark-neon: #00ff00;
+    --color-darkNeon: #00ff00;
     --color-lilac: #b496c6;
     --color-brilac: #f48ec5;
-    --color-ctncndy: #feb2e3;
+    --color-ctnCndy: #feb2e3;
     --color-coral: #fd8444; 
-    --color-brorange: #ff712c; 
+    --color-brOrange: #ff712c; 
 
     --font-geist: Geist Mono, monospace;
-    --font-noto: Noto Sans Mono, monospace;
+    /* --font-noto: Noto Sans Mono, monospace; */
     --font-pops: Poppins, sans-serif;
     --font-robo: Roboto Mono, monospace;
     
@@ -44,17 +44,24 @@
   animation: spin-twice 5s linear forwards; /* run once */
 }
 
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fade-in 0.2s ease-out; }
+
 @layer base {
-  body {
-    @apply bg-black;
+  body, pre {
+    background-color: #000;
     font-family: var(--font-robo);
+    scroll-behavior: smooth;
   }
-  h1 {
+  .hero {
     font-family: var(--font-pops);
     font-weight: 900;
   }
   
-  h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-geist);
     font-weight: 900;
   }

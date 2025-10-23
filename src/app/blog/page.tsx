@@ -20,7 +20,7 @@ export default function BlogHome() {
       <div className="relative h-screen flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
         <Motion.h1
-          className="absolute text-[12rem] sm:text-[16rem] font-extrabold uppercase text-lime-400/5 blur-3xl select-none z-0"
+          className="absolute text-[12rem] sm:text-[16rem] font-extrabold uppercase text-lime-400/5 blur-2xl select-none z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 4 }}
           transition={{ duration: 0.8 }}
@@ -29,7 +29,7 @@ export default function BlogHome() {
         </Motion.h1>
 
         <Motion.h1
-          className="absolute text-[14rem] sm:text-[18rem] font-extrabold uppercase text-white/3 z-10"
+          className="absolute text-[14rem] sm:text-[18rem] font-extrabold uppercase text-white/5 z-10"
           style={{ WebkitTextStroke: "1px rgba(255,255,255,0.2)" }}
         >
           VeryCodedly

@@ -27,7 +27,7 @@ export default function LearnPage() {
 
           {/* Animated color fade-in */}
           <Motion.span
-            className="inline-block"
+            className="px-30 sm:px-0 inline-block"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}

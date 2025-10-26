@@ -61,6 +61,7 @@ export default function BlogHome() {
           className="absolute bottom-1.5 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 text-gray-400"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
+          tabIndex={0}
         >
           <span className="text-md sm:text-sm tracking-widest uppercase">read</span>
           <span className="text-2xl sm:text-xl">↓</span>

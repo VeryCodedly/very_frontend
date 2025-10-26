@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from 'react';
 // import ScrollLink from './ScrollLink';
 import useScrollShadow from '../hooks/useScrollShadow';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faTimes, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
   const isScrolled = useScrollShadow();
@@ -46,6 +46,8 @@ export default function Header() {
                     width={0}
                     height={0}
                     priority
+                    tabindex="0"
+                    aria-label="Site Logo"
                   />
                 </div>
               </Link>
@@ -67,14 +69,18 @@ export default function Header() {
               {/* Mobile menu toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white focus:outline-none"
+            className="md:hidden text-white"
+            aria-haspopup="true"
+            tabindex="0"
+            aria-label="More options"
+            title="More options"
           >
-            <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} className="mr-3.5 hover:text-lime-400 active:text-lime-400" size="lg" />
+            <FontAwesomeIcon icon={menuOpen ? faTimes : faEllipsisV} className="mr-2 hover:text-lime-400 active:text-lime-400" size="lg" />
           </button>
 
       {/* Mobile dropdown */}
       <div
-        className={`fixed top-full w-[98%] flex flex-col items-center transform transition-all duration-500 ease-in-out
+        className={`fixed top-full w-full flex flex-col items-center transform transition-all duration-500 ease-in-out
                 bg-black backdrop-blur-lg border-3 border-zinc-700 rounded-4xl py-6.5 space-y-4 md:hidden 
                 ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}`}
         onClick={() => setMenuOpen(false)}

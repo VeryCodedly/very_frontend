@@ -80,7 +80,7 @@ export default function FloatingMenu() {
         border-3 border-zinc-700 transition-all duration-300
         ${
           expanded
-            ? "w-55 sm:w-70 opacity-100 backdrop-blur-lg"
+            ? "w-60 sm:w-70 opacity-100 backdrop-blur-lg"
             : "opacity-0 w-10 h-20"
         } z-50`}
         >
@@ -93,14 +93,14 @@ export default function FloatingMenu() {
               onMouseLeave={() => setActive(null)}
             >
               <div
-                className={`flex items-center gap-2 p-0.5 sm:p-1.5 rounded-lg cursor-pointer hover:bg-zinc-700/50
+                className={`flex items-center gap-2 p-1 sm:p-1.5 rounded-lg cursor-pointer hover:bg-zinc-700/50
                 transition-all duration-200`}
               >
                 <span className="text-xl">
                   <FontAwesomeIcon icon={cat.icon} size="sm" />
                 </span>
                 {expanded && (
-                  <span className="text-xs sm:text-sm font-medium active:text-lime-400">
+                  <span className="text-sm font-medium active:text-lime-400">
                     {cat.name}
                   </span>
                 )}

@@ -8,7 +8,7 @@ export default function BlogSection() {
           From the <span className="text-pink-400">Blog</span>
         </h2>
         <p className="text-sm sm:text-base text-gray-400 mb-12 max-w-2xl mx-auto">
-            Unfiltered takes on Tech, Code, and Culture.<br /> 
+            Unfiltered takes on Tech, Code, Culture and everything in between.<br /> 
             {/* Thoughtful, clear, and actually useful. */}
         </p>
 
@@ -32,7 +32,9 @@ export default function BlogSection() {
           ].map((post, i) => (
             <div
               key={i}
-              className="bg-[linear-gradient(to_bottom_right,rgba(255,192,203,0.08),rgba(255,20,147,0.06))] rounded-2xl p-6 text-left transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_0_30px_-10px_rgba(255,105,180,0.4)]"
+              className="bg-[linear-gradient(to_bottom_right,rgba(255,192,203,0.08),rgba(255,20,147,0.06))] rounded-2xl
+                         p-6 text-left transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_0_30px_-10px_rgba(255,105,180,0.4)]
+                         active:translate-y-[-5px] active:shadow-[0_0_30px_-10px_rgba(255,105,180,0.4)]"
             >
             <span className="inline-block mb-3 text-xs text-pink-400 bg-pink-400/10 px-2 py-1 rounded">
                 {post.tag}

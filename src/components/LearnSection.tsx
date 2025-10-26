@@ -32,7 +32,9 @@ export default function LearnSection() {
           ].map((lesson, i) => (
             <div
               key={i}
-              className="bg-[linear-gradient(to_bottom_right,rgba(0,255,100,0.09),rgba(0,255,150,0.04))] rounded-2xl p-6 text-left transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_0_30px_-10px_rgba(144,238,144,0.4)]"
+              className="bg-[linear-gradient(to_bottom_right,rgba(0,255,100,0.09),rgba(0,255,150,0.04))] rounded-2xl 
+                        p-6 text-left transition-all duration-300 hover:translate-y-[-5px] hover:shadow-[0_0_30px_-10px_rgba(144,238,144,0.4)]
+                        active:translate-y-[-5px] active:shadow-[0_0_30px_-10px_rgba(144,238,144,0.4)]"
             >
               <span className="inline-block mb-3 text-xs text-lime-400 bg-lime-400/10 px-2 py-1 rounded">
                 {lesson.tag}

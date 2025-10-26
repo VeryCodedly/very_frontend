@@ -15,9 +15,9 @@ export default function BlogHome() {
   const { data: posts, error, isLoading } = useGetPostsQuery(page);
 
   return (
-    <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
+    <section className="relative w-full min-h-scree bg-black text-white overflow-hidden">
       {/* 🪶 HERO SECTION */}
-      <div className="relative h-[100svh] flex flex-col justify-center items-center text-center overflow-hidden">
+      <div className="relative h-[100dvh] sm:h-screen -mt-6 sm:mt-0 flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
         <Motion.h1
           className="absolute text-[12rem] sm:text-[16rem] font-extrabold uppercase text-lime-400/5 blur-2xl select-none z-0"

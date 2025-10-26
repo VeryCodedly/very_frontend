@@ -100,8 +100,14 @@ export default function CourseList() {
 
   if (isError)
     return (
-      <div className="flex justify-center items-center min-h-[60vh] text-red-400">
-        Something went wrong while loading lessons.
+      <div className="text-center py-20">
+        <p className="text-rose-400 text-lg mb-4">Failed to load posts</p>
+        <button
+          onClick={() => window.location.reload()}
+          className="px-6 py-3 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-full text-rose-300 transition-all"
+        >
+          Try Again
+        </button>
       </div>
     );
 

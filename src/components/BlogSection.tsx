@@ -45,7 +45,7 @@ export default function BlogSection() {
               <p className="text-gray-400 mb-4">{post.desc}</p>
               <Link
                 href="/blog"
-                className="text-pink-400 hover:text-pink-300 hover:underline transition-all"
+                className="text-pink-400 font-semibold hover:text-pink-300 hover:underline transition-all"
               >
                 Read more →
               </Link>
@@ -67,8 +67,8 @@ export default function BlogSection() {
         active:text-black shadow-[0_4px_0_0_#ff69b4] hover:shadow-[0_2px_0_0_#fb64b6] active:shadow-[0_2px_0_0_#ff69b4] active:translate-y-1.5 hover:translate-y-0.5  transition-all duration-200"
             // className="font-semibold cursor-pointer border-2 border-pink-400/70 bg-pink-500/90 text-white px-6 py-2 rounded-full hover:bg-pink-400 hover:shadow-[0_0_15px_#ff69b4] hover:text-white transition-all duration-300"
             >
-            <span className="lg:hidden">Blog</span>
-            <span className="hidden lg:inline">Go to Blog</span>
+            <span className="lg:hidden">/Blog</span>
+            <span className="hidden lg:inline">Go to /Blog</span>
         </Link>
         </div>
       </div>

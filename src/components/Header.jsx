@@ -46,7 +46,7 @@ export default function Header() {
                     width={0}
                     height={0}
                     priority
-                    tabIndex="0"
+                    // tabIndex="0"
                     aria-label="Site Logo"
                   />
                 </div>
@@ -57,7 +57,7 @@ export default function Header() {
                 <Link href="/learn" className="px-2 text-white hover:text-lime-400 transition">LEARN</Link>
                 <Link href="https://www.youtube.com/channel/UCNDy9Q0qPHcY-TT2BD7B1kw" target="_blank" className="px-2 text-white hover:text-lime-400 transition">KNOW</Link>
                 <Link href="https://discord.gg/invite/UVWNezaj" className="px-2 text-white hover:text-lime-400 transition" target="_blank" rel="noopener">CONNECT</Link>
-                {/* <p href="/" className="px-2 text-white hover:text-lime-400 transition">Beta 🚧</p> */}
+                <p href="/" className="px-2 text-white hover:text-lime-400 transition">🚧</p>
               </nav>
               <div className="mr-4">
                 <Link href="/contact" className="hidden md:inline-flex cursor-pointer border-2 border-gray-500/100 bg-lime-400 text-black px-3 py-0.5 rounded-full hover:bg-white active:bg-white hover:text-black

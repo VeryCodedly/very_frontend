@@ -112,7 +112,7 @@ export default function CourseList() {
     );
 
   return (
-    <div className="flex flex-col gap-4 sm:gap-6 w-full max-w-4xl mx-auto">
+    <div className="flex flex-col gap-4 sm:gap-4 w-full max-w-3xl mx-auto">
       {courses?.results?.map((course: Course) => (
         <div
           key={course.id}

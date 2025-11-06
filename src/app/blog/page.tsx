@@ -169,7 +169,7 @@ export default function BlogHome() {
   return (
     <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* 🪶 HERO SECTION */}
-      <div className="relative h-screen -mt-12 flex flex-col justify-center items-center text-center overflow-hidden">
+      <div className="relative h-screen -mt-16 flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
         <Motion.h1
           className="absolute text-[16rem] sm:text-[16rem] font-extrabold uppercase text-lime-400/5 blur-2xl select-none z-0"
@@ -213,7 +213,7 @@ export default function BlogHome() {
         {/* scroll cue */}
         <Link href="#posts">
           <Motion.div
-            className="absolute bottom-1.5 sm:bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 text-gray-400"
+            className="absolute bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 text-gray-400"
             animate={{ y: [0, 10, 0] }}
             transition={{ repeat: Infinity, duration: 2 }}
             tabIndex={0}

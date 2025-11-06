@@ -136,6 +136,8 @@ import PostCard from "../blog/components/blog/PostCard";
 import MiniPostCard from "../blog/components/blog/MiniPostCard";
 // import FloatingMenu from "./components/blog/FloatingMenu";
 // import NewsletterCard from "./components/blog/NewsletterCard";
+import { faLongArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Post } from "@/types/post";
 import { useState } from "react";
 import Link from "next/link";
@@ -219,7 +221,7 @@ export default function BlogHome() {
             tabIndex={0}
           >
             <span className="text-md sm:text-sm tracking-widest uppercase">read</span>
-            <span className="text-2xl sm:text-xl">↓</span>
+            <span className="text-md sm:text-lg"><FontAwesomeIcon icon={faLongArrowDown} size="sm" /></span>
           </Motion.div>
         </Link>
       </div>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { faLongArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function LearnSection() {
   return (
@@ -47,7 +49,7 @@ export default function LearnSection() {
                 href="/learn"
                 className="text-lime-400 font-semibold hover:text-lime-300 hover:underline transition-all"
               >
-                Start learning →
+                Start learning <FontAwesomeIcon className="my-auto" icon={faLongArrowRight} size="sm" />
               </Link>
             </div>
           ))}

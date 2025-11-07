@@ -9,7 +9,7 @@ export default function LearnSection() {
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
           Learn with <span className="text-lime-400">VeryCodedly</span>
         </h2>
-        <p className="text-sm sm:text-base px-7 text-gray-400 mb-12 max-w-2xl mx-auto">
+        <p className="text-sm sm:text-base text-gray-400 mb-12 max-w-2xl mx-auto">
             Beginner-friendly coding lessons that help complex ideas click,
             one concept at a time.
         </p>

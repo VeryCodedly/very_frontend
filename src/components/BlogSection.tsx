@@ -10,7 +10,7 @@ export default function BlogSection() {
           From the <span className="text-pink-400">Blog</span>
         </h2>
         <p className="text-sm sm:text-base text-gray-400 mb-12 max-w-2xl mx-auto">
-            Unfiltered takes on Tech, Code, Culture and everything in between.<br /> 
+            Unfiltered takes on Tech, Code, Culture and everything in between.
             {/* Thoughtful, clear, and actually useful. */}
         </p>
 

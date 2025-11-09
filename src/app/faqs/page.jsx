@@ -55,11 +55,11 @@ export default function FAQsPage() {
           >
             <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Can I learn at my own pace?</h3>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
-              Absolutely. All content is self-paced — no deadlines, no pressure. Learn whenever and however you want.
+              Absolutely. All content is self-paced. No deadlines, no pressure. Learn whenever and however you want.
             </p>
           </Motion.div>
 
-          <Motion.div
+          {/* <Motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -68,7 +68,7 @@ export default function FAQsPage() {
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Yes! Complete a course path and earn a shareable certificate to showcase on LinkedIn or your portfolio.
             </p>
-          </Motion.div>
+          </Motion.div> */}
 
           <Motion.div
             initial={{ opacity: 0, y: 20 }}

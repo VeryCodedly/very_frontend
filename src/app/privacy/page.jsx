@@ -183,7 +183,6 @@ export default function PrivacyPage() {
               <li>No behavioral tracking</li>
               <li>No ad profiling</li>
               <li>No data sharing with third parties</li>
-              <li>Most importantly, no ads</li>
             </ul>
           </div>
         </Motion.div>

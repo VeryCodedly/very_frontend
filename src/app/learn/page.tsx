@@ -12,7 +12,7 @@ export default function LearnPage() {
 
   return (
     <div>
-      <section className="relative w-full min-h-screen my-auto bg-black text-white overflow-hidden pt-24 pb-12 px-8 sm:px-6 lg:px-8">
+      <section className="relative w-full min-h-screen my-auto bg-black text-white overflow-hidden pt-24 pb-0 sm:pb-12 px-8 sm:px-6 lg:px-8">
         {/* subtle grid / pattern background */}
         <div className="absolute inset-0 bg-linear-gradient(135deg, #0f111a, #1a1c2c) bg-center bg-cover opacity-20 pointer-events-none"></div>
 

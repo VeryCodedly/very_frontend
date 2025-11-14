@@ -12,17 +12,17 @@ export default function LearnPage() {
   
   return (
     <div>
-    <section className="relative w-full min-h-screen bg-black text-white overflow-hidden pt-24 pb-12 px-8 sm:px-6 lg:px-8">
+    <section className="relative w-full min-h-screen bg-black text-white overflow-hidden pt-22 pb-12 px-8 sm:px-6 lg:px-8">
       {/* subtle grid / pattern background */}
       <div className="absolute inset-0 bg-linear-gradient(135deg, #0f111a, #1a1c2c) bg-center bg-cover opacity-20 pointer-events-none"></div>
 
       {/* content wrapper */}
-      <div className="relative max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
-        <h1 className="hero relative text-[2.8rem] sm:text-5xl md:text-6xl font-bold leading-tight text-center text-white">
+      <div className="relative max-w-6xl mx-auto my-auto flex flex-col items-center text-center gap-8">
+        <h1 className="hero relative text-5xl md:text-6xl font-bold leading-tight text-center text-white">
           {/* Static fallback layer to prevent layout jump */}
           <span className="inline-block hero absolute inset-0 justify-center items-center opacity-0 select-none">
-            Learn <span className="text-lime-400 mx-1">Code</span>,{" "}
-            <span className="text-pink-400 mx-1">Think</span>{" "}Creatively
+            Learn. <span className="text-lime-400 mx-1">Code.</span>{" "}
+            <span className="text-pink-400 mx-1">Create.</span>{" "}
           </span>
 
           {/* Animated color fade-in */}
@@ -32,14 +32,14 @@ export default function LearnPage() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
           >
-            Learn{" "}
+            Learn.{" "}
             <Motion.span
               className="mx-1"
               initial={{ color: "#ffffff" }}
               animate={{ color: "#9AE600" }}
               transition={{ delay: 0.3, duration: 1 }}
             >
-              Code,
+              Code.
             </Motion.span>
             {" "}
             {/* <Motion.span
@@ -58,14 +58,14 @@ export default function LearnPage() {
               animate={{ color: "#fb64b6" }}
               transition={{ delay: 0.6, duration: 1 }}
             >
-              Think
+              Create.
             </Motion.span>
-            <span>&nbsp;Creatively.</span>
+            {/* <span>&nbsp;Creatively.</span> */}
             </span>
           </Motion.span>
         </h1>
 
-        <p className="text-gray-400 text-sm md:text-md sm:text-lg max-w-2xl">
+        <p className="text-gray-400 px-5 sm:px-10 text-sm md:text-md sm:text-lg max-w-2xl">
           Beginner-friendly coding lessons that help complex ideas click, 
           one concept at a time.
           {/* Every concept explained clearly — the VeryCodedly way. */}
@@ -79,7 +79,7 @@ export default function LearnPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <FontAwesomeIcon className="text-7xl sm:text-8xl" icon={faGraduationCap} />
+        <FontAwesomeIcon className="text-6xl sm:text-7xl" icon={faGraduationCap} />
       </Motion.h2>
 
       </div>

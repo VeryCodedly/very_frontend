@@ -94,7 +94,7 @@ export default function LearnPage() {
         >
           <span className="text-white">Courses from <span className="text-lime-400">VeryCodedly</span></span>
         </Motion.h2>
-        <div className="space-y-2.5 w-[90%] sm:w-[90%] lg:w-[80%] mx-auto">
+        <div className="space-y-2.5 w-full sm:w-[90%] lg:w-[80%] mx-auto">
           {/* <div className="absolute inset-0 bg-[url('/images/bg-plain.jpg')] bg-center bg-stretch opacity-50"></div> */}
           {/* <div className=""> */}
           <CourseList />
@@ -131,12 +131,12 @@ export default function LearnPage() {
             <Motion.div
               key={track.name}
               className="bg-zinc-900/80 border border-zinc-800 m-3 sm:m-0 p-4 sm:p-6 rounded-2xl 
-        hover:shadow-[0_0_10px_#222222] backdrop-blur-md transition-all"
+                          hover:shadow-[0_0_10px_#222222] backdrop-blur-md transition-all"
               whileHover={{ y: -5 }}
               tabIndex={0}
             >
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">{track.name}</h3>
-              <p className="text-gray-400 text-base leading-relaxed">{track.desc}</p>
+              <p className="text-gray-400 text-sm leading-relaxed">{track.desc}</p>
             </Motion.div>
           ))}
         </div>

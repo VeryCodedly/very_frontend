@@ -54,7 +54,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           sizes="100vw"
           tabIndex={0}
         />
-        <p className="absolute bottom-4 left-3 right-4 w-fit text-gray-50/50 group-hover:opacity-0 group-active:opacity-0 bg-black/15 backdrop-blur-md rounded-lg p-2 text-xs">
+        <p className="absolute bottom-4 left-3 right-4 w-fit text-gray-50/50 group-hover:opacity-0 group-active:opacity-0 bg-black/15 backdrop-blur-md rounded-lg p-2 text-sm">
           {post.caption || 'Featured Image'}
         </p>
       </Motion.div>
@@ -89,19 +89,19 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           <span className="px-2">
             <span className="flex gap-4">
               <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Twitter">
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
+                <FontAwesomeIcon icon={faTwitter} size="1x" />
               </Link>
               <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on LinkedIn">
-                <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
+                <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
               </Link>
               <Link href={`https://www.facebook.com/sharer/sharer.php?u=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Facebook">
-                <FontAwesomeIcon icon={faFacebook} size="2x" />
+                <FontAwesomeIcon icon={faFacebook} size="1x" />
               </Link>
               <Link href={`https://wa.me/?text=${encodeURIComponent(post.title + " — https://verycodedly.com/blog/" + post.slug)}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on WhatsApp">
-                <FontAwesomeIcon icon={faWhatsapp} size="2x" />
+                <FontAwesomeIcon icon={faWhatsapp} size="1x" />
               </Link>
               <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/blog/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Copy link">
-                <FontAwesomeIcon icon={faCopy} size="2x" />
+                <FontAwesomeIcon icon={faCopy} size="1x" />
               </button>
             </span>
           </span>
@@ -137,7 +137,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   );
                 }
                 case 'paragraph':
-                  return <p key={index} className="text-base text-gray-300/80 leading-relaxed">{block.content || 'No content available.'}</p>;
+                  return <p key={index} className="text-sm sm:text-base text-gray-300/80 leading-relaxed">{block.content || 'No content available.'}</p>;
                 case 'list':
                   return (
                     <ul key={index} className={`${block.style === 'number' ? 'list-decimal' : 'list-disc'} list-inside ml-4 sm:ml-6 space-y-2 text-sm sm:text-base text-gray-300/80`}>
@@ -154,7 +154,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   );
                 case 'callout':
                   return (
-                    <div key={index} className="p-3 sm:p-4 border border-pink-500/30 bg-zinc-800/60 rounded-xl text-gray-200 italic backdrop-blur-sm shadow-lg text-base">
+                    <div key={index} className="p-3 sm:p-4 border border-pink-500/30 bg-zinc-800/60 rounded-xl text-gray-200 italic backdrop-blur-sm shadow-lg text-sm sm:text-base">
                       {block.content || 'No callout content.'}
                     </div>
                   );
@@ -200,7 +200,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-base">No additional images available.</p>
+          <p className="text-gray-400 italic text-sm sm:text-base">No additional images available.</p>
         )}
       </Motion.div>
 
@@ -238,7 +238,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-base">No related links available.</p>
+          <p className="text-gray-400 italic text-sm sm:text-base">No related links available.</p>
         )}
       </Motion.div>
 
@@ -262,7 +262,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-base">No comments yet. Be the first to comment!</p>
+          <p className="text-gray-400 italic text-sm sm:text-base">No comments yet. Be the first to comment!</p>
         )}
       </Motion.div>
 

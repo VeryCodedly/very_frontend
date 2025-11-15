@@ -136,7 +136,7 @@ export default function LearnPage() {
               tabIndex={0}
             >
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">{track.name}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{track.desc}</p>
+              <p className="text-gray-400 text-base leading-relaxed">{track.desc}</p>
             </Motion.div>
           ))}
         </div>
@@ -189,7 +189,7 @@ export default function LearnPage() {
                   <p className="text-sm text-gray-300/80 line-clamp-3 sm:line-clamp-6 mb-3 leading-relaxed">
                     {topic.desc}
                   </p>
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-x-3 text-sm text-lime-400 group-hover:text-white">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between space-x-3 text-base text-lime-400 group-hover:text-white">
                     <span className="text-gray-500">Beginner</span>
                     <div className="font-bold mt-2 sm:mt-0">
                       Start Now <FontAwesomeIcon className="" icon={faArrowRight} size="sm" />

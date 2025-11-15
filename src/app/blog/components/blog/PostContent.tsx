@@ -35,50 +35,6 @@ interface PostContentProps {
 
 export default function PostContent({ post, contentJson }: PostContentProps) {
 
-  // useEffect(() => {
-  //   if (!post) return;
-
-  //   const title = `${post.title} | VeryCodedly`;
-  //   const description = post.excerpt || 'Read the latest insights on coding, AI, and tech.';
-  //   const image = post.image ? `https://verycodedly.com/blog/${post.image}` : 'https://verycodedly.com/preview-img.png';
-  //   const url = `https://verycodedly.com/blog/${post.slug}`;
-
-  //   // Update <title>
-  //   document.title = title;
-
-  //   // Update meta tags
-  //   const setMeta = (name: string, content: string) => {
-  //     let el = document.querySelector(`meta[name="${name}"]`) || document.querySelector(`meta[property="${name}"]`);
-  //     if (!el) {
-  //       el = document.createElement('meta');
-  //       if (name.startsWith('og:')) el.setAttribute('property', name);
-  //       else el.setAttribute('name', name);
-  //       document.head.appendChild(el);
-  //     }
-  //     el.setAttribute('content', content);
-  //   };
-
-  //   setMeta('description', description);
-  //   setMeta('og:title', title);
-  //   setMeta('og:description', description);
-  //   setMeta('og:image', image);
-  //   setMeta('og:url', url);
-  //   setMeta('og:type', 'article');
-  //   setMeta('twitter:card', 'summary_large_image');
-  //   setMeta('twitter:title', title);
-  //   setMeta('twitter:description', description);
-  //   setMeta('twitter:image', image);
-
-  //   // Canonical
-  //   let canonical = document.querySelector('link[rel="canonical"]');
-  //   if (!canonical) {
-  //     canonical = document.createElement('link');
-  //     canonical.setAttribute('rel', 'canonical');
-  //     document.head.appendChild(canonical);
-  //   }
-  //   canonical.setAttribute('href', url);
-  // }, [post]);
-
   return (
     <>
       {/* Featured Image */}
@@ -110,12 +66,12 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 text-xs sm:text-sm text-gray-400">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 text-sm text-gray-400">
           <span className="bg-gray-400/10 text-gray-400 px-2 py-1 rounded-full font-medium gap-1 flex items-center" tabIndex={0}>
             <FontAwesomeIcon icon={faUser} className="text-pink-400" />
             {post.author || 'Anonymous'}
           </span>
-          <span className="inline-flex text-xs items-center gap-1" tabIndex={0}>
+          <span className="inline-flex text-sm items-center gap-1" tabIndex={0}>
             <FontAwesomeIcon icon={faCalendar} />
             {new Date(post.created_at).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -124,28 +80,28 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               hour: '2-digit',
             })}
           </span>
-          <span className="bg-lime-400/10 text-lime-400 px-2 py-1 rounded-full text-xs font-medium" tabIndex={0}>
+          <span className="bg-lime-400/10 text-lime-400 px-2 py-1 rounded-full text-sm font-medium" tabIndex={0}>
             {post.category?.name || 'Uncategorized'}
           </span>
-          <span className="bg-pink-400/10 text-pink-400 px-2 py-1 rounded-full text-xs font-medium" tabIndex={0}>
+          <span className="bg-pink-400/10 text-pink-400 px-2 py-1 rounded-full text-sm font-medium" tabIndex={0}>
             {post.subcategory?.name || 'General'}
           </span>
           <span className="px-2">
             <span className="flex gap-4">
               <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Twitter">
-                <FontAwesomeIcon icon={faTwitter} size="1x" />
+                <FontAwesomeIcon icon={faTwitter} size="2x" />
               </Link>
               <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on LinkedIn">
-                <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
+                <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
               </Link>
               <Link href={`https://www.facebook.com/sharer/sharer.php?u=https://verycodedly.com/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Facebook">
-                <FontAwesomeIcon icon={faFacebook} size="1x" />
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
               </Link>
               <Link href={`https://wa.me/?text=${encodeURIComponent(post.title + " — https://verycodedly.com/blog/" + post.slug)}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on WhatsApp">
-                <FontAwesomeIcon icon={faWhatsapp} size="1x" />
+                <FontAwesomeIcon icon={faWhatsapp} size="2x" />
               </Link>
               <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/blog/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Copy link">
-                <FontAwesomeIcon icon={faCopy} size="1x" />
+                <FontAwesomeIcon icon={faCopy} size="2x" />
               </button>
             </span>
           </span>
@@ -181,7 +137,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   );
                 }
                 case 'paragraph':
-                  return <p key={index} className="text-sm sm:text-base text-gray-300/80 leading-relaxed">{block.content || 'No content available.'}</p>;
+                  return <p key={index} className="text-base text-gray-300/80 leading-relaxed">{block.content || 'No content available.'}</p>;
                 case 'list':
                   return (
                     <ul key={index} className={`${block.style === 'number' ? 'list-decimal' : 'list-disc'} list-inside ml-4 sm:ml-6 space-y-2 text-sm sm:text-base text-gray-300/80`}>
@@ -198,7 +154,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   );
                 case 'callout':
                   return (
-                    <div key={index} className="p-3 sm:p-4 border border-pink-500/30 bg-zinc-800/60 rounded-xl text-gray-200 italic backdrop-blur-sm shadow-lg text-sm sm:text-base">
+                    <div key={index} className="p-3 sm:p-4 border border-pink-500/30 bg-zinc-800/60 rounded-xl text-gray-200 italic backdrop-blur-sm shadow-lg text-base">
                       {block.content || 'No callout content.'}
                     </div>
                   );
@@ -244,7 +200,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-sm sm:text-base">No additional images available.</p>
+          <p className="text-gray-400 italic text-base">No additional images available.</p>
         )}
       </Motion.div>
 
@@ -282,7 +238,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-sm sm:text-base">No related links available.</p>
+          <p className="text-gray-400 italic text-base">No related links available.</p>
         )}
       </Motion.div>
 
@@ -306,7 +262,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             ))}
           </div>
         ) : (
-          <p className="text-gray-400 italic text-sm sm:text-base">No comments yet. Be the first to comment!</p>
+          <p className="text-gray-400 italic text-base">No comments yet. Be the first to comment!</p>
         )}
       </Motion.div>
 

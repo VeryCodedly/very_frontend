@@ -218,7 +218,7 @@ export default function FloatingMenu() {
         onMouseEnter={() => setExpanded(true)}
         className={`fixed overflow-hidden pl-6 top-1/2 left-0 transform -translate-y-1/2 bg-white/5 hover:backdrop-blur-lg
                    shadow-lg rounded-r-3xl border-3 border-zinc-600 transition-all duration-200 ease-out
-                   ${expanded ? "w-70 sm:w-70 h-[80vh] max-h-[650px] sm:max-h-none opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
+                   ${expanded ? "w-70 sm:w-70 h-[75vh] sm:h-[85vh] max-h-[650px] sm:max-h-none opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
       >
         <ul className="flex flex-col gap-1 py-2 text-gray-200 h-full overflow-y-auto sm:overflow-y-visibl -webkit-overflow-scrolling-touch custom-scrollbar">
           {categories.map(cat => {
@@ -234,7 +234,7 @@ export default function FloatingMenu() {
                   setActiveCatId(activeCatId === cat.id ? null : cat.id);
                 }}
               >
-                <div className="flex items-center gap-4 p-2.5 sm:p-1.5 px-4 rounded-lg hover:bg-[rgba(255,192,203,0.1)] active:bg-[rgba(255,192,203,0.1)] transition-all duration-200">
+                <div className="flex items-center gap-4 p-2.5 sm:p-1.5 px-4 rounded-xl hover:bg-[rgba(255,192,203,0.1)] active:bg-[rgba(255,192,203,0.1)] transition-all duration-200">
                   <span className="text-xl text-white">
                     {icon ?
                       <Link href={`/blog/category/${cat.slug}`}
@@ -256,7 +256,7 @@ export default function FloatingMenu() {
                 </div>
 
                 {expanded && activeCatId === cat.id && (
-                  <div className="ml-12 bg-black/3 hover:backdrop-blur-md rounded-lg shadow-lg text-xs sm:text-sm flex flex-col animate-fade-in">
+                  <div className="ml-12 bg-black/3 hover:backdrop-blur-md rounded-xl shadow-lg text-xs sm:text-sm flex flex-col animate-fade-in">
                     {cat?.subcategories?.slice()
                       .sort((a, b) => a.name.length - b.name.length)
                       .map(sub => (

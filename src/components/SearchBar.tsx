@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faNewspaper, faFolderOpen, faFolderBlank, faGraduationCap, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faNewspaper, faFolderOpen, faFolderBlank, faGraduationCap, faBookOpen, faMagnifyingGlassMinus } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 
@@ -13,6 +13,7 @@ export default function SearchBar() {
     const [results, setResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
+    const resultsContainerRef = useRef<HTMLDivElement>(null);
 
     // Close on Esc or click outside
     useEffect(() => {
@@ -74,6 +75,20 @@ export default function SearchBar() {
         }
     };
 
+    useEffect(() => {                            
+    const container = resultsContainerRef.current;
+    if (!container) return;
+
+    const dismissKeyboardOnScroll = () => {
+        if (document.activeElement === inputRef.current) {
+            inputRef.current?.blur();
+        }
+    };
+
+    container.addEventListener("scroll", dismissKeyboardOnScroll, { passive: true });
+    return () => container.removeEventListener("scroll", dismissKeyboardOnScroll);
+}, [isOpen]);
+
     return (
         <>
             {/* Trigger */}
@@ -104,14 +119,14 @@ export default function SearchBar() {
                                     value={query}
                                     onChange={(e) => setQuery(e.target.value)}
                                     placeholder="Search..."
-                                    className="w-full pl-12 pr-12 py-3 bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl text-white placeholder-white/50 text-lg focus:outline-none focus:ring-offset focus:ring-2 focus:ring-offset-1 focus:ring-pink-300/50 transition-all shadow-2xl"
+                                    className="w-full pl-8 pr-16 py-4 bg-white/10 backdrop-blur-xl border border-white/30 rounded-2xl text-white placeholder-white/50 text-lg focus:outline-none focus:ring-offset focus:ring-2 focus:ring-offset-1 focus:ring-pink-300/50 transition-all shadow-2xl"
                                 />
                                 <button
                                     aria-label="Search icon"
                                     onClick={() => { setIsOpen(false); setQuery(""); }}
                                     className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 hover:text-white"
                                 >
-                                    <FontAwesomeIcon icon={faSearch} className="w-5 h-5" />
+                                    <FontAwesomeIcon icon={faMagnifyingGlassMinus} className="w-5 h-5" />
                                 </button>
                             </div>
 
@@ -119,7 +134,8 @@ export default function SearchBar() {
                             {query && (
                                 <div className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
-                                    <div className="overflow-y-auto max-h-160 sm:max-h-90 custom-scrollbar">
+                                    <div ref={resultsContainerRef}
+                                        className="overflow-y-auto max-h-160 sm:max-h-90 custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>
                                         )}

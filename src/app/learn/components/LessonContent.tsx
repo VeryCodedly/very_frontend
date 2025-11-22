@@ -278,7 +278,7 @@ export default function LessonContent({
                 <HeadingTag
                   key={index}
                   id={`heading-${index}`} // for sidebar scroll
-                  className="scroll-mt-24 text-lg sm:text-2xl text-white border-l-4 border-lime-400 pl-3 leading-tight"
+                  className="scroll-mt-24 text-lg sm:text-2xl text-white border-l-4 border-lime-400 pl-3 rounded-sm leading-tight"
                 >
                   {block.content}
                 </HeadingTag>
@@ -303,7 +303,7 @@ export default function LessonContent({
                   {block.items?.map((item, i) => (
                     <li
                       key={i}
-                      className="hover:text-lime-400 transition-colors duration-200 leading-relaxed"
+                      className="hover:text-lime-400 active:text-lime-400 transition-colors duration-200 leading-relaxed"
                     >
                       {item}
                     </li>

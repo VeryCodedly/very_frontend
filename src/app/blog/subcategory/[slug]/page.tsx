@@ -27,7 +27,7 @@ export default function SubcategoryPage() {
   <section className="flex justify-center items-center min-h-screen bg-gradient-to-b from-black to-zinc-900 text-gray-400">
     <div className="text-center">
       <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-lime-400 mx-auto mb-4"></div>
-      Loading post...
+      Loading posts...
     </div>
   </section>;
 
@@ -113,7 +113,7 @@ export default function SubcategoryPage() {
               <span className="sr-only">Go Home</span>
             </Link>
           </Motion.div>
-          <section className="min-h-screen max-w-[85%] mx-auto bg-black text-white pt-4 pb-14">
+          <section className="min-h-screen max-w-[85%] mx-auto bg-black text-white pt-6 pb-14">
             <div className="max-w-6xl mx-auto">
               {/* <nav className="w-fit text-xs mb-10 md:text-xs"> */}
 
@@ -123,16 +123,16 @@ export default function SubcategoryPage() {
               <span className="text-lime-400 capitalize">{slugString}</span> */}
               {/* </nav> */}
 
-              <h1 className="text-3xl sm:text-4xl font-semibold text-center capitalize">
+              <h1 className="text-3xl sm:text-4xl font-semibold text-center uppercase">
                 {name}
               </h1>
 
-              <div className="text-sm sm:text-md lg:text-base w-[94%] my-8 mx-auto">
+              <div className="text-sm sm:text-md lg:text-base w-full my-8 mx-auto">
                 <Motion.p
                   initial={{ x: -80, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="relative text-left ax-w-3xl mx-auto my-auto tracking-wide font-light border-l-4 border-lime-400/80 rounded-lg pl-4 sm:pl-6">
+                  className="relative text-left ax-w-3xl mx-auto my-auto tracking-wide font-light border-l-4 border-lime-400/80 rounded-sm pl-5 sm:pl-6">
                   <span className="whitespace-pre-wrap block italic before:content-['“'] before:text-lime-400 after:content-['”'] after:text-lime-400 text-zinc-400/90">
                     {about}
                   </span>

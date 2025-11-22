@@ -346,7 +346,7 @@ export default function LessonPage() {
         <div
           ref={menuRef}
           className={`fixed pl-4 sm:pl-5 top-1/2 left-0 transform -translate-y-1/2 bg-white/5 hover:backdrop-blur-lg 
-            shadow-lg rounded-r-2xl overflow-hidden border-3 border-zinc-600 transition-all duration-300 
+            shadow-lg rounded-r-3xl overflow-hidden border-3 border-zinc-600 transition-all duration-300 
             ${isMenuOpen ? "w-60 sm:w-70 opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
         >
           <ul className="flex flex-col gap-1 p-2 text-gray-200">

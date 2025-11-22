@@ -87,7 +87,7 @@ export default function SearchBar() {
 
     container.addEventListener("scroll", dismissKeyboardOnScroll, { passive: true });
     return () => container.removeEventListener("scroll", dismissKeyboardOnScroll);
-}, [isOpen]);
+}, [isOpen, resultsContainerRef]);
 
     return (
         <>
@@ -104,8 +104,8 @@ export default function SearchBar() {
             {/* Overlay + Search Panel */}
             {isOpen && (
                 <>
-                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50" />
-                    <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-24 px-4">
+                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-70" />
+                    <div className="fixed top-0 left-0 right-0 z-70 flex justify-center pt-24 px-4">
                         <div
                             ref={inputRef}
                             className="w-full max-w-2xl relative"
@@ -134,7 +134,7 @@ export default function SearchBar() {
                             {query && (
                                 <div className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
-                                    <div ref={resultsContainerRef}
+                                    <div 
                                         className="overflow-y-auto max-h-160 sm:max-h-90 custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>

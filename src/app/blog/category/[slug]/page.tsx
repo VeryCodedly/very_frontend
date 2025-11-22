@@ -62,7 +62,6 @@ export default function CategoryPage() {
       <section className="flex justify-center items-center min-h-screen bg-gradient-to-b from-black to-zinc-900 text-gray-400">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-lime-400 mx-auto mb-4"></div>
-          Loading posts...
         </div>
       </section>
     );

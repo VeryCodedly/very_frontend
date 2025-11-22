@@ -76,28 +76,15 @@ export default function SearchBar() {
 
     useEffect(() => {
   if (isOpen) {
-    // Save current scroll position
-    const scrollY = window.scrollY;
-    
-    // Lock body scroll
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = '0';
-    document.body.style.right = '0';
     document.body.style.overflow = 'hidden';
   } else {
-    // Restore scroll when closing
-    const scrollY = document.body.style.top;
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.left = '';
-    document.body.style.right = '';
     document.body.style.overflow = '';
-    
-    if (scrollY) {
-      window.scrollTo(0, parseInt(scrollY || '0') * -1);
-    }
   }
+
+  // cleanup on unmount 
+  return () => {
+    document.body.style.overflow = '';
+  };
 }, [isOpen]);
 
     return (
@@ -143,11 +130,11 @@ export default function SearchBar() {
 
                             {/* Live Results */}
                             {query && (
-                                <div
+                                <div 
                                 className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
                                     <div 
-                                        className="overflow-y-auto max-h-130 sm:max-h-90 overscroll-contain custom-scrollbar">
+                                        className="overflow-y-auto h-[60vh] ax-h-150 m:max-h-80 custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>
                                         )}

@@ -220,7 +220,7 @@ export default function FloatingMenu() {
                    shadow-lg rounded-r-3xl border-3 border-zinc-600 transition-all duration-200 ease-out
                    ${expanded ? "w-70 sm:w-70 h-[80vh] max-h-[650px] sm:max-h-none opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
       >
-        <ul className="flex flex-col gap-1 py-2 text-gray-200 h-full overflow-y-auto sm:overflow-y-visibl ebkit-overflow-scrolling-touch custom-scrollbar">
+        <ul className="flex flex-col gap-1 py-2 text-gray-200 h-full overflow-y-auto sm:overflow-y-visibl -webkit-overflow-scrolling-touch custom-scrollbar">
           {categories.map(cat => {
             const icon = iconMap[cat.name] || null;
             return (
@@ -249,7 +249,7 @@ export default function FloatingMenu() {
                       : <span className="w-6 h-6 md:w-5 md:h-5" />}
                   </span>
                   {expanded && (
-                    <span className="text-sm md:text-sm text-white font-medium active:text-pink-200 select-none">
+                    <span className="text-md md:text-sm text-white font-medium active:text-pink-200 select-none">
                       {cat.name}
                     </span>
                   )}

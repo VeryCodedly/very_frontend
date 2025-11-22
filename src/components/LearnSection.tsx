@@ -44,7 +44,7 @@ export default function LearnSection() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 {lesson.title}
               </h3>
-              <p className="text-gray-400 mb-4">{lesson.desc}</p>
+              <p className="text-gray-300/80 mb-4">{lesson.desc}</p>
               <Link
                 href="/learn"
                 aria-label={`${lesson.tag} button`}

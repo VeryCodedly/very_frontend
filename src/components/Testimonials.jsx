@@ -345,11 +345,11 @@ const testimonials = [
 export default function Testimonials() {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide every 6 seconds
+  // Auto-slide 6 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 8000);
     return () => clearInterval(timer);
   }, []);
 
@@ -387,9 +387,9 @@ export default function Testimonials() {
             className="rounded-2xl p-6 shadow-xl border border-gray-800 bg-gradient-to-b from-white/10 to-white/0 backdrop-blur-md hover:ring-2 hover:ring-lime-400/30 transition-all duration-300"
           >
             <div className="text-lime-400 text-3xl font-bold mb-4">“</div>
-            <p className="text-gray-400 italic mb-6">“{testimonials[current].quote}”</p>
+            <p className="text-gray-300/80 italic mb-6">“{testimonials[current].quote}”</p>
             <div className="text-lime-400 font-semibold">{testimonials[current].name}</div>
-            <div className="text-gray-500 text-sm">{testimonials[current].role}</div>
+            <div className="text-gray-400 text-sm">{testimonials[current].role}</div>
           </Motion.div>
         </AnimatePresence>
 

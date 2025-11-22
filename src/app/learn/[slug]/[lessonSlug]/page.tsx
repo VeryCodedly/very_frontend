@@ -397,7 +397,7 @@ export default function LessonPage() {
           </div>
 
           {/* Next / Previous Lesson Navigation */}
-          <div className={`flex mt-16 mx-auto max-w-xs px-5 sm:px-0
+          <div className={`flex mt-16 mx-auto max-w-xs px-4 sm:px-0
             ${lesson.previous_lesson && lesson.next_lesson ? 'justify-between' : 'justify-center'}
             `}>
             {lesson.previous_lesson ? (

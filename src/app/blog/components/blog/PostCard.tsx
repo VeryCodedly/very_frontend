@@ -75,7 +75,7 @@ export default function PostCard({ post }: { post: Post }) {
           </h2>
 
           {/* Excerpt */}
-          <p className="text-xs sm:text-sm text-gray-300/80 line-clamp-2 my-1.5 leading-relaxe">
+          <p className="text-xs sm:text-sm text-gray-300 line-clamp-2 my-1.5 leading-relaxe">
             {post.excerpt}
           </p>
 

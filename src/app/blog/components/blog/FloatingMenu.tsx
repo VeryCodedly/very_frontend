@@ -218,7 +218,7 @@ export default function FloatingMenu() {
         onMouseEnter={() => setExpanded(true)}
         className={`fixed overflow-hidden pl-6 top-1/2 left-0 transform -translate-y-1/2 bg-white/5 hover:backdrop-blur-lg
                    shadow-lg rounded-r-3xl border-3 border-zinc-600 transition-all duration-200 ease-out
-                   ${expanded ? "w-70 sm:w-70 h-[80vh] ax-h-[720px] sm:max-h-none opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
+                   ${expanded ? "w-70 sm:w-70 h-[65vh] sm:h-[85vh] max-h-[700px] sm:max-h-none opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
       >
         <ul className="flex flex-col gap-1 py-2 text-gray-200 h-full overflow-y-auto sm:overflow-y-visibl ebkit-overflow-scrolling-touch custom-scrollbar">
           {categories.map(cat => {
@@ -256,7 +256,7 @@ export default function FloatingMenu() {
                 </div>
 
                 {expanded && activeCatId === cat.id && (
-                  <div className="ml-12 bg-black/3 hover:backdrop-blur-md rounded-lg shadow-lg text-xs sm:text-sm flex flex-col gap-3 md:gap-1 animate-fade-in">
+                  <div className="ml-12 bg-black/3 hover:backdrop-blur-md rounded-lg shadow-lg text-xs sm:text-sm flex flex-col animate-fade-in">
                     {cat?.subcategories?.slice()
                       .sort((a, b) => a.name.length - b.name.length)
                       .map(sub => (
@@ -269,7 +269,7 @@ export default function FloatingMenu() {
                             setActiveCatId(null);
                           }}
                           // onMouseDown={(e) => e.stopPropagation()}
-                          className="rounded-md py- hover:bg-[rgba(255,192,203,0.1)] active:bg-[rgba(255,192,203,0.1)]">
+                          className="rounded-md py-1 hover:bg-[rgba(255,192,203,0.1)] active:bg-[rgba(255,192,203,0.1)]">
                           <span className="text-white font-medium active:text-pink-200 text-sm md:text-xs fle items-start justify-cente p-5 transition">
                             {sub.name}
                           </span>

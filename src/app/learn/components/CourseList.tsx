@@ -197,7 +197,7 @@ export default function CourseList() {
                   {isComplete && <FontAwesomeIcon icon={faCheckCircle} className="text-lime-400" />}
                 </h2>
 
-                <p className="text-sm text-gray-300/80 line-clamp-3 sm:line-clamp-4 my-1.5 leading-relaxed">
+                <p className="text-sm text-gray-300 line-clamp-3 sm:line-clamp-4 my-1.5 leading-relaxed">
                   {course.description || 'No description available yet.'}
                 </p>
 

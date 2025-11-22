@@ -44,7 +44,7 @@ export default function BlogSection() {
               <h3 className="text-xl font-semibold text-white mb-2">
                 {post.title}
               </h3>
-              <p className="text-gray-400 mb-4">{post.desc}</p>
+              <p className="text-gray-300/80 mb-4">{post.desc}</p>
               <Link
                 href="/blog"
                 aria-label={`${post.tag} button`}

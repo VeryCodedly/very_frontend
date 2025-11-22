@@ -82,7 +82,7 @@ export default function TeaserCards() {
             </h2>
           </Link>
 
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-300/90 text-base md:text-sm leading-relaxed">
               {card.description}
             </p>
 

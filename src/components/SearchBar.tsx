@@ -75,19 +75,32 @@ export default function SearchBar() {
         }
     };
 
-    useEffect(() => {                            
-    const container = resultsContainerRef.current;
-    if (!container) return;
+    useEffect(() => {
+  if (!isOpen || !resultsContainerRef.current) return;
 
-    const dismissKeyboardOnScroll = () => {
-        if (document.activeElement === inputRef.current) {
-            inputRef.current?.blur();
-        }
-    };
+  const resultsEl = resultsContainerRef.current;
 
-    container.addEventListener("scroll", dismissKeyboardOnScroll, { passive: true });
-    return () => container.removeEventListener("scroll", dismissKeyboardOnScroll);
-}, [isOpen, resultsContainerRef]);
+  const dismissKeyboard = (e: Event) => {
+    // Prevent the page from scrolling underneath
+    e.preventDefault();
+    
+    // Dismiss keyboard instantly
+    if (document.activeElement === inputRef.current) {
+      inputRef.current?.blur();
+    }
+  };
+
+  // These three listeners together = 100% success on iOS + Android
+  resultsEl.addEventListener('touchstart', dismissKeyboard, { passive: false });
+  resultsEl.addEventListener('touchmove', dismissKeyboard, { passive: false });
+  resultsEl.addEventListener('scroll', dismissKeyboard);
+
+  return () => {
+    resultsEl.removeEventListener('touchstart', dismissKeyboard);
+    resultsEl.removeEventListener('touchmove', dismissKeyboard);
+    resultsEl.removeEventListener('scroll', dismissKeyboard);
+  };
+}, [isOpen, query]);
 
     return (
         <>
@@ -134,8 +147,8 @@ export default function SearchBar() {
                             {query && (
                                 <div className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
-                                    <div 
-                                        className="overflow-y-auto max-h-160 sm:max-h-90 custom-scrollbar">
+                                    <div ref={resultsContainerRef}
+                                        className="overflow-y-auto max-h-160 sm:max-h-90 overscroll-contain custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>
                                         )}

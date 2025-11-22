@@ -145,9 +145,10 @@ export default function SearchBar() {
 
                             {/* Live Results */}
                             {query && (
-                                <div className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
+                                <div ref={resultsContainerRef}
+                                className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
-                                    <div ref={resultsContainerRef}
+                                    <div 
                                         className="overflow-y-auto max-h-160 sm:max-h-90 overscroll-contain custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>

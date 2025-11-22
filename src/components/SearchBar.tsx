@@ -13,7 +13,6 @@ export default function SearchBar() {
     const [results, setResults] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
-    const resultsContainerRef = useRef<HTMLDivElement>(null);
 
     // Close on Esc or click outside
     useEffect(() => {
@@ -76,31 +75,30 @@ export default function SearchBar() {
     };
 
     useEffect(() => {
-  if (!isOpen || !resultsContainerRef.current) return;
-
-  const resultsEl = resultsContainerRef.current;
-
-  const dismissKeyboard = (e: Event) => {
-    // Prevent the page from scrolling underneath
-    e.preventDefault();
+  if (isOpen) {
+    // Save current scroll position
+    const scrollY = window.scrollY;
     
-    // Dismiss keyboard instantly
-    if (document.activeElement === inputRef.current) {
-      inputRef.current?.blur();
+    // Lock body scroll
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Restore scroll when closing
+    const scrollY = document.body.style.top;
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    document.body.style.overflow = '';
+    
+    if (scrollY) {
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
     }
-  };
-
-  // These three listeners together = 100% success on iOS + Android
-  resultsEl.addEventListener('touchstart', dismissKeyboard, { passive: false });
-  resultsEl.addEventListener('touchmove', dismissKeyboard, { passive: false });
-  resultsEl.addEventListener('scroll', dismissKeyboard);
-
-  return () => {
-    resultsEl.removeEventListener('touchstart', dismissKeyboard);
-    resultsEl.removeEventListener('touchmove', dismissKeyboard);
-    resultsEl.removeEventListener('scroll', dismissKeyboard);
-  };
-}, [isOpen, query]);
+  }
+}, [isOpen]);
 
     return (
         <>
@@ -145,11 +143,11 @@ export default function SearchBar() {
 
                             {/* Live Results */}
                             {query && (
-                                <div ref={resultsContainerRef}
+                                <div
                                 className="mt-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden
                                 w-[94%] sm:w-full max-w-2xl mx-auto">
                                     <div 
-                                        className="overflow-y-auto max-h-160 sm:max-h-90 overscroll-contain custom-scrollbar">
+                                        className="overflow-y-auto max-h-130 sm:max-h-90 overscroll-contain custom-scrollbar">
                                         {loading && (
                                             <div className="p-3 text-center text-white/70">Searching...</div>
                                         )}

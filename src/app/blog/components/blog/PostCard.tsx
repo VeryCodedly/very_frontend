@@ -80,7 +80,7 @@ export default function PostCard({ post }: { post: Post }) {
           </p>
 
           {/* Meta: Date + Read more */}
-          <div className="flex items-center justify-between text-xs text-gray-500">
+          <div className="flex items-center justify-between text-xs text-gray-400">
             <span className="sm:hidden">{new Date(post.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
             <span className="hidden sm:inline">{new Date(post.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
             <span className="text-lime-400 text-sm font-bold group-hover:text-white group-active:text-white inline-flex items-center gap-2" tabIndex={0}>

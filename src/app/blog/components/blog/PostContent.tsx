@@ -139,7 +139,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   );
                 }
                 case 'paragraph':
-                  return <p key={index} className="text-sm sm:text-base text-gray-300/90 leading-relaxed">{block.content || 'No content available.'}</p>;
+                  return <p key={index} className="text-sm sm:text-base text-gray-300 leading-relaxed">{block.content || 'No content available.'}</p>;
                 case 'list':
                   return (
                     <ul key={index} className={`${block.style === 'number' ? 'list-decimal' : 'list-disc'} list-inside ml-4 sm:ml-6 space-y-2 text-sm sm:text-base text-gray-300/90`}>

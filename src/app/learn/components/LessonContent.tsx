@@ -287,7 +287,7 @@ export default function LessonContent({
 
             case "paragraph":
               return (
-                <p key={index} className="text-base text-gray-300/90 leading-relaxed">
+                <p key={index} className="text-base text-gray-300 leading-relaxed">
                   {block.content}
                 </p>
               );

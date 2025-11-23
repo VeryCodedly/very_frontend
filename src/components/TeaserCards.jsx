@@ -15,7 +15,7 @@ const cards = [
   {
     id: "read",
     title: "Read",
-    description: "Daily articles with technical depth and clarity.",
+    description: "Daily posts with technical depth and clarity.",
     icon: faNewspaper,
     accent: "bg-lime-400",
     color: "text-lime-400",

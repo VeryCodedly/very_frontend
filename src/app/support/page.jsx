@@ -51,7 +51,7 @@ export default function SupportPage() {
                        transition-all duration-300"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Financial support</h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-gray-300/80 text-sm sm:text-base leading-relaxed mb-4">
               One-off or recurring donations fund hosting, tools, and new
               tutorials. Pick whatever works for you.
             </p>
@@ -96,11 +96,11 @@ export default function SupportPage() {
                        transition-all duration-300"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Support without spending</h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-gray-300/80 text-sm sm:text-base leading-relaxed mb-4">
               Share, star, join, and help other learners. These actions make a
               huge difference to discoverability and morale.
             </p>
-            <ul className="text-gray-400 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
+            <ul className="text-gray-300/80 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
               {[
                 "Share an article on Twitter, LinkedIn, or Reddit",
                 "Star the repo on GitHub",
@@ -149,7 +149,7 @@ export default function SupportPage() {
                        transition-all duration-300"
           >
             <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Direct support & feedback</h3>
-            <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+            <p className="text-gray-300/80 text-sm sm:text-base leading-relaxed mb-4">
               Want to help shape the site? Here’s how you can get involved or contact us directly.
             </p>
             <div className="space-y-3">

@@ -34,7 +34,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             {[
               ["About", "/about"],
-              ["Read", "/blog"],
+              ["Read", "/read"],
               ["Learn", "/learn"],
               ["Know", "/know"],
               ["Connect", "/connect"],

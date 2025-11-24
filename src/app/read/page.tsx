@@ -134,8 +134,8 @@ import {
   useGetKeyPlayersPostsQuery, useGetAIPostsQuery, useGetbchCryptoPostsQuery,
   useGetStartupsPostsQuery, useGetprvCompliancePostsQuery, useGetSocialPostQuery,
 } from "@/features/api/apiSlice";
-import PostCard from "../blog/components/blog/PostCard";
-import MiniPostCard from "../blog/components/blog/MiniPostCard";
+import PostCard from "../read/components/blog/PostCard";
+import MiniPostCard from "../read/components/blog/MiniPostCard";
 // import FloatingMenu from "./components/blog/FloatingMenu";
 // import NewsletterCard from "./components/blog/NewsletterCard";
 import { faLongArrowDown } from "@fortawesome/free-solid-svg-icons";
@@ -146,7 +146,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
-export default function BlogHome() {
+export default function ReadHome() {
   const page = useParams();
   const { data: posts, error, isLoading } = useGetPostsQuery(page);
 
@@ -184,7 +184,7 @@ export default function BlogHome() {
       <div className="relative h-screen -mt-16 sm:mt-0 flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
         <Motion.h1
-          className="absolute text-[16rem] sm:text-[16rem] font-extrabold uppercase text-lime-400/5 blur-2xl select-none z-0"
+          className="absolute text-[16rem] sm:text-[16rem] font-extrabold uppercase text-gray-400/5 blur-2xl select-none z-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 4 }}
           transition={{ duration: 0.8 }}

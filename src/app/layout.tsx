@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "VeryCodedly",
-    description: "Tech. Code. Culture. We’re your friendly neighborhood tech hub for all things digital.",
+    description: "Tech. Code. Culture. We’re your go-to tech hub for all things digital, from coding tips to the latest tech trends.",
     images: ["https://verycodedly.com/twitter-image.png"],
   },
 };

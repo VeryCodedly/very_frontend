@@ -229,10 +229,10 @@ export default function FloatingMenu() {
                 className="relative group"
                 onMouseEnter={() => setActiveCatId(cat.id)}
                 onMouseLeave={() => setActiveCatId(null)}
-                // onClick={(e) => {
-                //   e.stopPropagation();
-                //   setActiveCatId(activeCatId === cat.id ? null : cat.id);
-                // }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveCatId(activeCatId === cat.id ? null : cat.id);
+                }}
               >
                 <div className="flex items-center gap-2 sm:gap-4 p-2.5 sm:p-1.5 px-4 rounded-xl hover:bg-white/8 active:bg-white/8 transition-all duration-200">
                   <span className="text-xl text-white">

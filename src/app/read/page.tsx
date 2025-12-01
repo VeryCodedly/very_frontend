@@ -152,33 +152,33 @@ export default function ReadHome() {
   const page = useParams();
   const { data: posts, error, isLoading } = useGetPostsQuery(page);
 
-  const { data: featured = {} as Post } = useGetFeaturedPostQuery();
+  const { data: featured } = useGetFeaturedPostQuery();
   const { data: trending = [] } = useGetTrendingPostsQuery();
   const { data: spotlight = [] } = useGetSpotlightPostsQuery();
   const { data: bigDeal = [] } = useGetBigDealPostsQuery();
 
-  const { data: digitalMoney = {} as Post } = useGetDigitalMoneyPostsQuery();
+  const { data: digitalMoney } = useGetDigitalMoneyPostsQuery();
   const { data: bchCrypto = [] } = useGetbchCryptoPostsQuery();
   const { data: startups = [] } = useGetStartupsPostsQuery();
   const { data: prvCompliance = [] } = useGetprvCompliancePostsQuery();
 
   const { data: AI = [] } = useGetAIPostsQuery();
   const { data: emergingTech = [] } = useGetEmergingTechPostsQuery();
-  const { data: hardware = {} as Post } = useGetHardwarePostsQuery();
+  const { data: hardware } = useGetHardwarePostsQuery();
   const { data: techCulture = [] } = useGetTechCulturePostsQuery();
 
 
-  const { data: social = {} as Post } = useGetSocialPostQuery();
+  const { data: social } = useGetSocialPostQuery();
   const { data: globalLens = [] } = useGetGlobalLensPostsQuery();
   const { data: africaRising = [] } = useGetAfricaRisingPostsQuery();
   const { data: keyPlayers = [] } = useGetKeyPlayersPostsQuery();
 
-  const { data: dataDefense = {} as Post } = useGetDataDefensePostQuery();
+  const { data: dataDefense } = useGetDataDefensePostQuery();
   const { data: secureHabits = [] } = useGetSecureHabitsPostsQuery();
   const { data: stack = [] } = useGetStackPostsQuery();
   const { data: buyGuides = [] } = useGetBuyGuidesPostsQuery();
 
-  const { data: devDigest = {} as Post } = useGetDevDigestPostQuery();
+  const { data: devDigest } = useGetDevDigestPostQuery();
   const { data: theClimb = [] } = useGetTheClimbPostsQuery();
   const { data: rundown = [] } = useGetRundownPostsQuery();
   const { data: industry = [] } = useGetIndustryInsightsPostsQuery();
@@ -316,6 +316,7 @@ export default function ReadHome() {
         )}
 
         {/* 1 HERO: Featured Post */}
+        {featured && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${featured.slug}`}>
               <p className="text-xs pl-3 font-semibold text-right tracking-tight text-pink-400 uppercase mb-2">
@@ -377,6 +378,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+          )}
 
         {/* 2 TRENDING NOW */}
           <section className="py-6 px-3">
@@ -430,6 +432,7 @@ export default function ReadHome() {
           </section>
 
         {/* 5 HARDWARE */}
+        {hardware && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${hardware.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -491,6 +494,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+          )}
 
         {/* <NewsletterCard /> */}
 
@@ -542,6 +546,7 @@ export default function ReadHome() {
             </div>
           </section>
 
+        {devDigest && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${devDigest.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -603,6 +608,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+        )}
 
           <section className="py-6 px-3">
             <Motion.h2
@@ -654,6 +660,7 @@ export default function ReadHome() {
           </section>
 
         {/* 9 DIGITAL MONEY */}
+        {digitalMoney && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${digitalMoney.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -715,6 +722,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+        )}
 
         {/* 10 BLOCKCHAIN & CRYPTO */}
           <section className="py-6 px-3">
@@ -769,6 +777,7 @@ export default function ReadHome() {
           </section>
 
         {/* 5 HARDWARE */}
+        {social && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${social.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -830,6 +839,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+        )}
 
         {/* 6 GLOBAL LENS */}
           <section className="py-6 px-3">
@@ -881,6 +891,7 @@ export default function ReadHome() {
             </div>
           </section>
 
+        {dataDefense && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${dataDefense.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -942,6 +953,7 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
+        )}
 
         {/* 13 SECURE HABITS */}
           <section className="py-6 px-3">

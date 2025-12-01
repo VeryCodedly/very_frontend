@@ -287,7 +287,7 @@ export default function ReadHome() {
         )}
 
         <div className="min-h-[1500px] md:min-h-[2000px]">
-        {posts.length > 0 && (
+        {posts?.length > 0 && (
           <div className="space-y-2.5 w-[90%] lg:w-[75%] mx-auto">
             {posts.results.slice(0, visiblePosts).map((post: Post) => (
               <Motion.div

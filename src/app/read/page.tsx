@@ -287,8 +287,9 @@ export default function ReadHome() {
         )}
 
         <div className="min-h-[1500px] md:min-h-[2000px]">
+        {posts.length > 0 && (
           <div className="space-y-2.5 w-[90%] lg:w-[75%] mx-auto">
-            {posts?.results.slice(0, visiblePosts).map((post: Post) => (
+            {posts.results.slice(0, visiblePosts).map((post: Post) => (
               <Motion.div
                 key={post.id}
                 // className="bg-white/5 border border-zinc-700 rounded-xl backdrop-blur-md p-6 hover:border-lime-200/30 transition-all duration-300"
@@ -303,6 +304,7 @@ export default function ReadHome() {
               </Motion.div>
             ))}
           </div>
+        )}
         {posts && visiblePosts < 9 && (
           <div className="flex justify-center my-10">
             <button
@@ -378,9 +380,10 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
-          )}
+        )}
 
         {/* 2 TRENDING NOW */}
+        {trending.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -396,8 +399,10 @@ export default function ReadHome() {
 
             </div>
           </section>
+        )}
 
         {/* 3 SPOTLIGHT */}
+        {spotlight.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -414,8 +419,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 4 BIG DEAL */}
+        {bigDeal.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -430,6 +437,7 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 5 HARDWARE */}
         {hardware && (
@@ -494,11 +502,12 @@ export default function ReadHome() {
               </Motion.div>
             </Link>
           </section>
-          )}
+        )}
 
         {/* <NewsletterCard /> */}
 
         {/* 11 EMERGING TECH */}
+        {emergingTech.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -513,8 +522,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 10 AI */}
+        {AI.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -529,8 +540,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 12 TECH CULTURE */}
+        {techCulture.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -545,8 +558,9 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
-        {devDigest && (
+        {devDigest.length > 0 && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${devDigest.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -610,6 +624,7 @@ export default function ReadHome() {
           </section>
         )}
 
+        {theClimb.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -626,7 +641,9 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
+        {rundown.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -642,7 +659,9 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
+        {industry.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -658,9 +677,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 9 DIGITAL MONEY */}
-        {digitalMoney && (
+        {digitalMoney.length > 0 && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${digitalMoney.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -725,6 +745,7 @@ export default function ReadHome() {
         )}
 
         {/* 10 BLOCKCHAIN & CRYPTO */}
+        {bchCrypto.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -741,8 +762,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 11 STARTUPS */}
+        {startups.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -758,8 +781,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 12 PRIVACY & COMPLIANCE */}
+        {prvCompliance.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -775,9 +800,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 5 HARDWARE */}
-        {social && (
+        {social.length > 0 && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${social.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -842,6 +868,7 @@ export default function ReadHome() {
         )}
 
         {/* 6 GLOBAL LENS */}
+        {globalLens.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -857,8 +884,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 7 AFRICA RISING */}
+        {africaRising.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -873,8 +902,10 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {/* 8 KEY PLAYERS */}
+        {keyPlayers.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -890,6 +921,7 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
         {dataDefense && (
           <section className="py-6 px-7 mt-6">
@@ -956,6 +988,7 @@ export default function ReadHome() {
         )}
 
         {/* 13 SECURE HABITS */}
+        {secureHabits.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -970,7 +1003,9 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
+        {stack.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -985,7 +1020,9 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
 
+        {buyGuides.length > 0 && (
           <section className="py-6 px-3">
             <Motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -1000,6 +1037,7 @@ export default function ReadHome() {
               ))}
             </div>
           </section>
+        )}
       </div>
       </div>
     </section>

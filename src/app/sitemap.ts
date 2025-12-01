@@ -29,7 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (res.ok) {
       const data = await res.json();
       (data.results || []).forEach((post: Post) => {
-        blogUrls.push({
+        readUrls.push({
           url: `${baseUrl}/read/${post.slug}`,
           lastModified: new Date(post.updated_at || post.created_at || new Date()),
           changeFrequency: "weekly" as const,

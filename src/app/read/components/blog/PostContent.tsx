@@ -51,7 +51,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           height={600}
           rel="preload"
           fetchPriority="high"
-          className="w-full h-[230px] sm:h-[70vh] object-cover rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
+          className="w-full h-[240px] sm:h-[70vh] object-cover rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
           priority
           sizes="100vw"
           tabIndex={0}

@@ -3,8 +3,6 @@ const CACHE_NAME = 'verycodedly-v3';
 const PRECACHE_URLS = [
   '/',
   '/offline.html',
-  '/learn',
-  '/read',
   '/manifest.json',
   '/fonts/geist-mono-v3-latin-900.woff2',
   '/fonts/poppins-v23-latin-900.woff2',
@@ -19,8 +17,15 @@ const PRECACHE_URLS = [
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('Precaching offline page + assets');
-      return cache.addAll(PRECACHE_URLS);
+      return Promise.all(
+        PRECACHE_URLS.map((url) =>
+          fetch(url)
+            .then((resp) => resp.ok && cache.put(url, resp))
+            .catch(() => {
+              console.warn('Failed to precache:', url);
+            })
+        )
+      );
     })
   );
   self.skipWaiting();
@@ -39,34 +44,36 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   const request = e.request;
-  const url = new URL(request.url);
 
-  if (request.method !== 'GET' || url.pathname.startsWith('/api/')) return;
-
-  if (PRECACHE_URLS.includes(url.pathname)) {
-    e.respondWith(caches.match(url.pathname));
+  if (request.method !== 'GET' || request.url.includes('/api/')) {
     return;
   }
 
   if (request.headers.get('accept')?.includes('text/html')) {
     e.respondWith(
       fetch(request)
-        .then((response) => {
-          if (response.status < 400) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
-          }
-          return response;
+        .then((res) => {
+          const copy = res.clone();
+          caches.open(CACHE_NAME).then((c) => c.put(request, copy));
+          return res;
         })
-        .catch(() => {
-          console.log('Offline — serving offline.html');
-          return caches.match('/offline.html');
-        })
+        .catch(() => caches.match('/offline.html'))
     );
     return;
   }
 
   e.respondWith(
-    fetch(request).catch(() => caches.match(request) || caches.match('/offline.html'))
+    caches.match(request).then((cached) => {
+      return (
+        cached ||
+        fetch(request)
+          .then((res) => {
+            const copy = res.clone();
+            caches.open(CACHE_NAME).then((c) => c.put(request, copy));
+            return res;
+          })
+          .catch(() => caches.match('/offline.html'))
+      );
+    })
   );
 });

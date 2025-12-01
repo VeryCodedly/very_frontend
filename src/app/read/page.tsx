@@ -152,33 +152,33 @@ export default function ReadHome() {
   const page = useParams();
   const { data: posts, error, isLoading } = useGetPostsQuery(page);
 
-  const { data: featured } = useGetFeaturedPostQuery();
+  const { data: featured = {} } = useGetFeaturedPostQuery();
   const { data: trending = [] } = useGetTrendingPostsQuery();
   const { data: spotlight = [] } = useGetSpotlightPostsQuery();
   const { data: bigDeal = [] } = useGetBigDealPostsQuery();
 
-  const { data: digitalMoney } = useGetDigitalMoneyPostsQuery();
+  const { data: digitalMoney = {} } = useGetDigitalMoneyPostsQuery();
   const { data: bchCrypto = [] } = useGetbchCryptoPostsQuery();
   const { data: startups = [] } = useGetStartupsPostsQuery();
   const { data: prvCompliance = [] } = useGetprvCompliancePostsQuery();
 
   const { data: AI = [] } = useGetAIPostsQuery();
   const { data: emergingTech = [] } = useGetEmergingTechPostsQuery();
-  const { data: hardware } = useGetHardwarePostsQuery();
+  const { data: hardware = {} } = useGetHardwarePostsQuery();
   const { data: techCulture = [] } = useGetTechCulturePostsQuery();
 
 
-  const { data: social } = useGetSocialPostQuery();
+  const { data: social = {} } = useGetSocialPostQuery();
   const { data: globalLens = [] } = useGetGlobalLensPostsQuery();
   const { data: africaRising = [] } = useGetAfricaRisingPostsQuery();
   const { data: keyPlayers = [] } = useGetKeyPlayersPostsQuery();
 
-  const { data: dataDefense } = useGetDataDefensePostQuery();
+  const { data: dataDefense = {} } = useGetDataDefensePostQuery();
   const { data: secureHabits = [] } = useGetSecureHabitsPostsQuery();
   const { data: stack = [] } = useGetStackPostsQuery();
   const { data: buyGuides = [] } = useGetBuyGuidesPostsQuery();
 
-  const { data: devDigest } = useGetDevDigestPostQuery();
+  const { data: devDigest = {} } = useGetDevDigestPostQuery();
   const { data: theClimb = [] } = useGetTheClimbPostsQuery();
   const { data: rundown = [] } = useGetRundownPostsQuery();
   const { data: industry = [] } = useGetIndustryInsightsPostsQuery();

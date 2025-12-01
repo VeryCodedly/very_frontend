@@ -560,7 +560,7 @@ export default function ReadHome() {
           </section>
         )}
 
-        {devDigest.length > 0 && (
+        {devDigest && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${devDigest.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -680,7 +680,7 @@ export default function ReadHome() {
         )}
 
         {/* 9 DIGITAL MONEY */}
-        {digitalMoney.length > 0 && (
+        {digitalMoney && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${digitalMoney.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
@@ -803,7 +803,7 @@ export default function ReadHome() {
         )}
 
         {/* 5 HARDWARE */}
-        {social.length > 0 && (
+        {social && (
           <section className="py-6 px-7 mt-6">
             <Link href={`/read/${social.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">

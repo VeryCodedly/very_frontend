@@ -20,11 +20,7 @@ const PRECACHE_URLS = [
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(PRECACHE_URLS);
-    }).catch((err) => {
-      console.error('SW precache failed:', err);
-    })
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
   );
   self.skipWaiting();
 });
@@ -32,11 +28,7 @@ self.addEventListener('install', (e) => {
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
-      )
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -46,42 +38,25 @@ self.addEventListener('fetch', (e) => {
   const { request } = e;
   const url = new URL(request.url);
 
-  // Skip non-GET and API
   if (request.method !== 'GET' || url.pathname.startsWith('/api/')) return;
 
-  // Cache-first for precached assets (fonts, images, manifest)
-  if (PRECACHE_URLS.some(path => url.pathname.endsWith(path.split('/').pop()!))) {
-    e.respondWith(
-      caches.match(request).then((cached) => {
-        return cached || fetch(request).then((resp) => {
-          if (resp.ok) {
-            caches.open(CACHE_NAME).then(cache => cache.put(request, resp.clone()));
-          }
-          return resp;
-        });
-      })
-    );
+  if (PRECACHE_URLS.includes(url.pathname)) {
+    e.respondWith(caches.match(url.pathname));
     return;
   }
 
-  // Network-first with fallback (HTML pages)
+  // Network-first & offline fallback
   if (request.headers.get('accept')?.includes('text/html')) {
     e.respondWith(
       fetch(request)
-        .then((response) => {
-          if (response.status < 400) {
-            const clone = response.clone();
-            caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
-          }
-          return response;
+        .then(r => {
+          if (r.status < 400) caches.open(CACHE_NAME).then(c => c.put(request, r.clone()));
+          return r;
         })
-        .catch(() => caches.match('/offline.html')) // ← offline fallback
+        .catch(() => caches.match('/offline.html'))
     );
     return;
   }
 
-  // Everything else: network-first
-  e.respondWith(
-    fetch(request).catch(() => caches.match(request))
-  );
+  e.respondWith(fetch(request).catch(() => caches.match(request)));
 });

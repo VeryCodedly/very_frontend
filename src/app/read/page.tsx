@@ -319,13 +319,15 @@ export default function ReadHome() {
 
         {/* 1 HERO: Featured Post */}
         {featured && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${featured.slug}`}>
               <p className="text-xs pl-3 font-semibold text-right tracking-tight text-pink-400 uppercase mb-2">
                 {featured.category?.name ?? 'Featured'}
               </p>
               <Motion.div
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -441,13 +443,15 @@ export default function ReadHome() {
 
         {/* 5 HARDWARE */}
         {hardware && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${hardware.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
                 {hardware.category?.name ?? 'Hardware'}
               </p>
               <Motion.div
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
+                onDragStart={(e) => e.preventDefault()}
+                onContextMenu={(e) => e.preventDefault()}
+                className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -561,13 +565,15 @@ export default function ReadHome() {
         )}
 
         {devDigest && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${devDigest.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
                 {devDigest.category?.name ?? 'Dev Digest'}
               </p>
               <Motion.div
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -681,13 +687,15 @@ export default function ReadHome() {
 
         {/* 9 DIGITAL MONEY */}
         {digitalMoney && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${digitalMoney.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
                 {digitalMoney.category?.name ?? 'Digital Money'}
               </p>
               <Motion.div
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -804,13 +812,15 @@ export default function ReadHome() {
 
         {/* 5 HARDWARE */}
         {social && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${social.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
                 {social.category?.name ?? 'Hardware'}
               </p>
               <Motion.div
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
@@ -924,12 +934,14 @@ export default function ReadHome() {
         )}
 
         {dataDefense && (
-          <section className="py-6 px-7 mt-6">
+          <section className="py-6 px-5 mt-6">
             <Link href={`/read/${dataDefense.slug}`}>
               <p className="text-xs pr-3 font-semibold tracking-tight text-right text-pink-400 uppercase mb-2">
                 {dataDefense.category?.name ?? 'Data Defense'}
               </p>
               <Motion.div
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

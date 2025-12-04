@@ -144,7 +144,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                   return <p key={index} className="text-sm sm:text-base text-gray-300 leading-relaxed">{block.content || 'No content available.'}</p>;
                 case 'list':
                   return (
-                    <ul key={index} className={`${block.style === 'number' ? 'list-decimal' : 'list-disc'} list-outside ml-4 sm:ml-6 space-y-3 text-sm sm:text-base text-gray-300/90`}>
+                    <ul key={index} className={`${block.style === 'number' ? 'list-decimal' : 'list-disc'} list-outside ml-4 sm:ml-6 space-y-3 text-sm sm:text-base text-gray-300`}>
                       {block.items?.length ? block.items.map((item, i) => <li key={i} className="hover:text-lime-400 active:text-lime-400 transition-colors">{item}</li>) : <li>No items.</li>}
                     </ul>
                   );
@@ -176,7 +176,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8 }}
-                      className="my-12 mx-auto sm:mx-0 relative w-full group overflow-hidden rounded-2xl"
+                      className="my-12 mx-auto relative w-full group overflow-hidden rounded-2xl"
                     >
                       <Image
                         src={block.imageUrl}
@@ -221,10 +221,10 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {post.images.map((img, index) => (
               <div key={img.id || index} className="group relative overflow-hidden rounded-2xl bg-black/50">
-                <Image src={img.image || '/blog-post-image.png'} alt={img.alt || 'Gallery image'} width={400} height={300} className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" tabIndex={0} />
+                <Image src={img.image || 'read-post-image.png'} alt={img.alt || 'Gallery image'} width={400} height={300} className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 group-active:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" tabIndex={0} />
                 {(img.alt || img.caption) && (
-                  <div className="absolute bottom-2 left-2 right-2 w-fit bg-black/15 group-hover:bg-transparent backdrop-blur-md group-hover:!backdrop-blur-none rounded-lg px-2 py-1">
-                    {img.caption && <p className="text-gray-50/80 group-hover:opacity-0 text-xs mb-1">{img.caption}</p>}
+                  <div className="absolute bottom-0 sm:bottom-2 left-2 sm:left-2 right-2 w-fit bg-black/15 group-hover:bg-transparent group-active:bg-transparent backdrop-blur-md group-hover:!backdrop-blur-none group-active:!backdrop-blur-none rounded-lg px-2 py-1">
+                    {img.caption && <p className="text-gray-50/80 group-hover:opacity-0 group-active:opacity-0 text-xs mb-1">{img.caption}</p>}
                   </div>
                 )}
               </div>

@@ -9,8 +9,6 @@ export default function MiniPostCard({ post }: { post: Post }) {
       {post.image && (
         <div className="relative w-[80px] h-[80px] sm:w-[80px] sm:h-[80px] flex-shrink-0">
           <Image
-            onContextMenu={(e) => e.preventDefault()}
-            onDragStart={(e) => e.preventDefault()}
             src={post.image}
             alt={post.alt || "post-image"}
             fill

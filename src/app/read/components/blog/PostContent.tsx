@@ -47,8 +47,6 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         className="relative w-full group mb-6 sm:mb-8 overflow-hidden rounded-2xl select-none"
       >
         <Image
-          onContextMenu={(e) => e.preventDefault()}
-          onDragStart={(e) => e.preventDefault()}
           src={post.image || '/blog-post-image.png'}
           alt={post.alt || 'Featured image'}
           width={1200}
@@ -181,8 +179,6 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                       className="my-12 mx-auto relative w-full max-w-full group overflow-hidden rounded-2xl select-none"
                     >
                       <Image
-                        onContextMenu={(e) => e.preventDefault()}
-                        onDragStart={(e) => e.preventDefault()}
                         src={block.imageUrl}
                         alt={block.imageAlt || 'First Look'}
                         width={800}
@@ -224,8 +220,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {post.images.map((img, index) => (
               <div key={img.id || index} className="group relative overflow-hidden rounded-2xl bg-black/50 select-none">
-                <Image src={img.image || 'read-post-image.png'} alt={img.alt || 'Gallery image'} width={400} height={300} className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 group-active:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" tabIndex={0} 
-                  onContextMenu={(e) => e.preventDefault()} onDragStart={(e) => e.preventDefault()} />
+                <Image src={img.image || 'read-post-image.png'} alt={img.alt || 'Gallery image'} width={400} height={300} className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 group-active:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" tabIndex={0} />
                 {(img.alt || img.caption) && (
                   <div className="absolute bottom-0 sm:bottom-2 left-0 sm:left-2 right-2 w-fit bg-black/15 group-hover:bg-transparent group-active:bg-transparent backdrop-blur-md group-hover:!backdrop-blur-none group-active:!backdrop-blur-none rounded-lg px-2 py-1">
                     {img.caption && <p className="text-gray-50/80 group-hover:opacity-0 group-active:opacity-0 text-xs mb-1">{img.caption}</p>}

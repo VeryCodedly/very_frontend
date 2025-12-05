@@ -325,8 +325,6 @@ export default function ReadHome() {
                 {featured.category?.name ?? 'Featured'}
               </p>
               <Motion.div
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -449,8 +447,6 @@ export default function ReadHome() {
                 {hardware.category?.name ?? 'Hardware'}
               </p>
               <Motion.div
-                onDragStart={(e) => e.preventDefault()}
-                onContextMenu={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -571,8 +567,6 @@ export default function ReadHome() {
                 {devDigest.category?.name ?? 'Dev Digest'}
               </p>
               <Motion.div
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -693,8 +687,6 @@ export default function ReadHome() {
                 {digitalMoney.category?.name ?? 'Digital Money'}
               </p>
               <Motion.div
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -818,8 +810,6 @@ export default function ReadHome() {
                 {social.category?.name ?? 'Hardware'}
               </p>
               <Motion.div
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl select-none"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -940,8 +930,6 @@ export default function ReadHome() {
                 {dataDefense.category?.name ?? 'Data Defense'}
               </p>
               <Motion.div
-                onContextMenu={(e) => e.preventDefault()}
-                onDragStart={(e) => e.preventDefault()}
                 className="relative group cursor-pointer overflow-hidden rounded-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

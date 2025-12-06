@@ -153,7 +153,7 @@ import Link from "next/link";
 import { motion as Motion } from "framer-motion";
 import { Lessons } from "@/types/post";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faLongArrowRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faLongArrowLeft, faLongArrowRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 // Progress key
 const PROGRESS_KEY = (slug: string) => `course_progress_${slug}`;
@@ -266,7 +266,7 @@ export default function CoursePage() {
           className="inline-flex items-center gap-2 text-lime-400 mb-7 hover:text-white active:text-white
                      underline underline-offset-2 transition-all duration-200"
         >
-          <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+          <FontAwesomeIcon icon={faLongArrowLeft} size="lg" />
           <span className="sr-only">Go Home</span>
         </Link>
       </Motion.div>

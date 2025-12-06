@@ -313,7 +313,7 @@ export default function LessonPage() {
   // };
 
   return (
-    <section className="relative w-full min-h-screen bg-black text-white pt-8 sm:pt-12 pb-24 px-6">
+    <section className="relative w-full min-h-screen bg-black text-white pt-8 sm:pt-12 pb-24 px-4">
       <Motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}

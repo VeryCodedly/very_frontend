@@ -298,7 +298,7 @@ export default function LessonPage() {
       <section className="flex flex-col justify-center items-center h-screen bg-black text-gray-400">
         <p>Oops! Couldn’t load this lesson.</p>
         <Link href={`/learn/${slug}`} className="mt-6 text-lime-400 hover:underline">
-          <FontAwesomeIcon icon={faLongArrowLeft} /> Back to course
+          <FontAwesomeIcon icon={faArrowLeft} /> Back to course
         </Link>
       </section>
     );
@@ -334,7 +334,7 @@ export default function LessonPage() {
           className="fixed p-2 left-0 top-1/2 -translate-y-1/2 z-[60] w-6 h-7 sm:w-6 sm:h-7 flex items-center justify-center 
                   rounded-r-xl bg-transparent text-white hover:bg-white/8 active:bg-white/8 
                   backdrop-blur-md border-l-0 transition-all duration-300 focus:outline-none 
-                  focus:ring-2 focus:ring-offset-1 focus:ring-pink-300/70 shadow-[0_0_5px_3px_rgba(55,55,55,0.8)] 
+                  focus:ring-2 focus:ring-offset-1 focus:ring-pink-300/70 shadow-[0_0_5px_3px_rgba(55,55,55,0.4)] 
                   hover:shadow-[0_0_7px_3px_rgba(255,255,255,0.10)] active:shadow-[0_0_7px_3px_rgba(255,255,255,0.10)]"
           aria-label="Toggle menu"
         >

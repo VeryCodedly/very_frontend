@@ -222,7 +222,7 @@ import { motion as Motion } from "framer-motion";
 import { Lessons } from "@/types/post";
 import LessonContent from "../../components/LessonContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLongArrowLeft, faLongArrowRight, faChevronRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faLongArrowRight, faChevronRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 
@@ -320,7 +320,7 @@ export default function LessonPage() {
         transition={{ duration: 0.3 }}
       >
         <Link href={`/learn/${slug}`} className="text-lime-400 hover:text-white active:text-white">
-          <FontAwesomeIcon className="mb-5 sm:mb-4" icon={faLongArrowLeft} size="lg" />
+          <FontAwesomeIcon className="mb-5 sm:mb-4" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Lessons</span>
         </Link>
       </Motion.div>

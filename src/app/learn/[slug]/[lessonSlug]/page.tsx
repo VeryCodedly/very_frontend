@@ -320,7 +320,7 @@ export default function LessonPage() {
         transition={{ duration: 0.3 }}
       >
         <Link href={`/learn/${slug}`} className="text-lime-400 hover:text-white active:text-white">
-          <FontAwesomeIcon className="mb-5 sm:mb-4" icon={faArrowLeft} size="lg" />
+          <FontAwesomeIcon className="ml-4 mb-5 sm:mb-4" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Lessons</span>
         </Link>
       </Motion.div>

@@ -222,7 +222,7 @@ import { motion as Motion } from "framer-motion";
 import { Lessons } from "@/types/post";
 import LessonContent from "../../components/LessonContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft, faLongArrowRight, faChevronRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faLongArrowLeft, faLongArrowRight, faChevronRight, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 

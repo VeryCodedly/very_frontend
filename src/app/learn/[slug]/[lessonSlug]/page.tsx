@@ -319,8 +319,12 @@ export default function LessonPage() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Link href={`/learn/${slug}`} className="text-lime-400 hover:text-white active:text-white">
-          <FontAwesomeIcon className="ml-4 mb-5 sm:mb-4" icon={faArrowLeft} size="lg" />
+        <Link 
+          href={`/learn/${slug}`}
+          aria-label="Back to Lessons"
+          className="inline-flex items-center gap-2 text-lime-400 mb-7 hover:text-white active:text-white
+                     transition-all duration-200">          
+          <FontAwesomeIcon className="ml-2" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Lessons</span>
         </Link>
       </Motion.div>
@@ -333,22 +337,22 @@ export default function LessonPage() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="fixed p-2 left-0 top-1/2 -translate-y-1/2 z-[60] w-6 h-7 sm:w-6 sm:h-7 flex items-center justify-center 
                   rounded-r-xl bg-transparent text-white hover:bg-white/8 active:bg-white/8 
-                  backdrop-blur-md border-l-0 transition-all duration-300 focus:outline-none 
+                  backdrop-blur-md border-l-0 transition-all focus:outline-none 
                   focus:ring-2 focus:ring-offset-1 focus:ring-pink-300/70 shadow-[0_0_5px_3px_rgba(55,55,55,0.4)] 
-                  hover:shadow-[0_0_7px_3px_rgba(255,255,255,0.10)] active:shadow-[0_0_7px_3px_rgba(255,255,255,0.10)]"
+                  hover:shadow-[0_0_7px_3px_rgba(255,255,255,0.8)] active:shadow-[0_0_7px_3px_rgba(255,255,255,0.8)]"
           aria-label="Toggle menu"
         >
-          <FontAwesomeIcon icon={faChevronRight} size="sm" className={`transition-transform duration-300 ${isMenuOpen ? "rotate-90" : ""}`} />
+          <FontAwesomeIcon icon={faChevronRight} size="sm" className={`transition-transform duration-300 ease-in-out ${isMenuOpen ? "rotate-90" : ""}`} />
         </button>
 
         {/* Floating Menu */}
         <div
           ref={menuRef}
           className={`fixed pl-4 sm:pl-5 top-1/2 left-0 transform -translate-y-1/2 bg-black/20 hover:backdrop-blur-lg 
-            shadow-lg rounded-r-3xl overflow-hidden border border-white/20 transition-all duration-300 
+            shadow-lg rounded-r-3xl overflow-hidden border border-white/20 transition-all duration-200 ease-in-out
             ${isMenuOpen ? "w-60 sm:w-70 opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
         >
-          <ul className="flex flex-col gap-1 p-2 text-gray-200">
+          <ul className="flex flex-col gap-1 p-2 pb-3 text-gray-200">
             <h2 className="text-md text-white font-semibold pt-3">Page</h2>
             {Array.isArray((lesson as Lessons)?.content_JSON?.blocks)
               ? ((lesson as Lessons).content_JSON.blocks as Block[])

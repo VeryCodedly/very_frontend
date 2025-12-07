@@ -87,7 +87,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.verycodedly.com/api" />
+        <link rel="preconnect" href="https://api.verycodedly.com" />
 
         <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
 
@@ -97,7 +97,7 @@ export default function RootLayout({
 
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        
+
         {/* <script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
@@ -115,4 +115,9 @@ export default function RootLayout({
   );
 }
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  interactiveWidget: "restores",
+};
 // Tech. Code. Culture. We’re your friendly neighborhood tech hub — decoding the stories, tools, and trends shaping the future of the web.

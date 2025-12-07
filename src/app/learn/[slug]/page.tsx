@@ -262,12 +262,11 @@ export default function CoursePage() {
       >
         <Link
           href="/learn"
-          aria-label="Back to Learn home page"
+          aria-label="Back to Course List"
           className="inline-flex items-center gap-2 text-lime-400 mb-7 hover:text-white active:text-white
-                     underline underline-offset-2 transition-all duration-200"
-        >
-          <FontAwesomeIcon className="ml-2" icon={faArrowLeft} size="lg" />
-          <span className="sr-only">Go Home</span>
+                     transition-all duration-200">
+          <FontAwesomeIcon className="ml-3" icon={faArrowLeft} size="lg" />
+          <span className="sr-only">Back to Course List</span>
         </Link>
       </Motion.div>
 

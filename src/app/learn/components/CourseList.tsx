@@ -192,7 +192,7 @@ export default function CourseList() {
 
               <Link href={`/learn/${course.slug}`} aria-label={`Link for ${course.title}`}>
                 <h2 className="text-base sm:text-xl font-semibold text-gray-100 group-hover:text-lime-400 group-active:text-lime-400 transition leading-tighter flex items-center gap-1">
-                  {course.title}
+                  <span className="line-clamp-2 sm:line-clamp-none">{course.title}</span>
                   {isComplete && <FontAwesomeIcon icon={faCheckCircle} className="text-lime-400" />}
                 </h2>
 

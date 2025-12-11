@@ -78,7 +78,7 @@ export default function Carousel({ posts = [], className = "" }: CarouselProps) 
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 line-clamp-3">
               {current.title}
             </h1>
-            <p className="text-gray-300 text-sm line-clamp-3">
+            <p className="text-gray-300 text-sm line-clamp-4">
               {current.excerpt}
             </p>
           </Motion.div>
@@ -91,7 +91,7 @@ export default function Carousel({ posts = [], className = "" }: CarouselProps) 
           <button
             key={i}
             onClick={() => setIndex(i)}
-            className={`cursor-pointer w-3 h-2 rounded-full transition-all duration-300 ${
+            className={`cursor-pointer w-3 h-2.5 rounded-full transition-all duration-300 ${
               i === index ? 'bg-lime-400 w-8' : 'bg-gray-600'
             }`}
             aria-label={`Go to slide ${i + 1}`}

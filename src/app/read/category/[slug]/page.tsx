@@ -72,7 +72,7 @@ export default function CategoryPage() {
   return (
     <>
       <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
-        <Link href="/read" className="inline-flex items-center pt-8 pl-6 gap-2 text-lime-400 hover:text-white underline underline-offset-2 transition-all duration-200 text-sm sm:text-base">
+        <Link href="/read" className="inline-flex items-center pt-8 pl-6 gap-2 text-lime-400 hover:text-white active:text-white transition-all duration-200 text-sm sm:text-base">
           <FontAwesomeIcon icon={faArrowLeft} size="lg" />
           <span className="sr-only">Go Home</span>
         </Link>

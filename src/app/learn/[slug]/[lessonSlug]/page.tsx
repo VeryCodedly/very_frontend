@@ -323,8 +323,8 @@ export default function LessonPage() {
           href={`/learn/${slug}`}
           aria-label="Back to Lessons"
           className="inline-flex items-center gap-2 text-lime-400 mb-7 hover:text-white active:text-white
-                     transition-all duration-200">          
-          <FontAwesomeIcon className="ml-2" icon={faArrowLeft} size="lg" />
+                     text-sm sm:text-base transition-all duration-200">          
+          <FontAwesomeIcon className="ml-3" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Lessons</span>
         </Link>
       </Motion.div>

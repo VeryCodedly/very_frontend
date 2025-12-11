@@ -78,6 +78,13 @@ export default function SubcategoryPage() {
   return (
     <>
       {posts.length === 0 && (
+        <>
+        <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }} className="max-w-6xl mx-auto mb-6 sm:mb-6">
+                <Link href="/read" className="inline-flex items-center gap-2 mt-8 pl-6 text-lime-400 hover:text-white active:text-white underline underline-offset-2 transition-all duration-200 text-sm sm:text-base">
+                  <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                  <span className="sr-only">Go Home</span>
+                </Link>
+              </Motion.div>
         <div className="empty-state py-18 px-6 text-center bg-transparent backdrop-blur-sm rounded-xl shadow-2xl">
           <div className="max-w-md mx-auto">
 
@@ -89,7 +96,7 @@ export default function SubcategoryPage() {
 
             {/* Message */}
             <p className="text-gray-300 leading-relaxed mb-6">
-              This space is quiet for now, but great things are on the way.
+              This space is quiet for now, but awesome posts are on the way.
               <span className="block mt-2 text-lime-400/80 font-medium">
                 Check back soon to see what’s new.
               </span>
@@ -102,18 +109,21 @@ export default function SubcategoryPage() {
 
           </div>
         </div>
+        </>
       )}
 
       {posts.length > 0 && (
         <>
           <Motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
-            <Link href="/read" className="inline-flex items-center pt-8 pl-6 gap-2 text-lime-400 hover:text-white underline underline-offset-2 transition-all duration-200 text-sm sm:text-base">
-              <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+            <Link href="/read" className="inline-flex items-center gap-2 text-lime-400 pt-8 pl-6 hover:text-white active:text-white
+                text-sm sm:text-base transition-all duration-200">          
+              <FontAwesomeIcon className="" icon={faArrowLeft} size="lg" />
               <span className="sr-only">Go Home</span>
             </Link>
           </Motion.div>
-          <section className="min-h-screen max-w-4xl mx-auto bg-black text-white pt-6 pb-14">
-            <div className="mx-auto">
+          <section className="min-h-screen max-w-[85%] mx-auto bg-black text-white pt-4 pb-14">
+            
+            <div className="ax-w-l mx-auto">
               {/* <nav className="w-fit text-xs mb-10 md:text-xs"> */}
 
               {/* <span className="mx-1 text-gray-400">/</span>
@@ -126,24 +136,20 @@ export default function SubcategoryPage() {
                 {name}
               </h1>
 
-              <div className="my-12 max-w-4xl mx-auto px-6">
-  <Motion.figure
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-    className="relative"
-  >
-    <blockquote className="mx-auto px- text-justify hyphens-aut [text-align-last:center] italic whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-zinc-300/80 font-light">
-      <span className="before:content-['“'] before:text-lime-400 before:text-2xl before:leading-none before:align-bottom after:content-['”'] after:text-lime-400 after:text-2xl after:leading-none after:align-bottom">
-        {about}
-      </span>
-    </blockquote>
-  </Motion.figure>
-    {/* <span className="block w-16 h-[2px] mx-auto my-8 rounded-full"></span> */}
-</div>
+              <div className="text-sm sm:text-md lg:text-base w-full my-12 mx-auto text-center">
+                <Motion.p
+                  initial={{ x: -80, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  className="relative text-justify [text-align-last:center] max-w-4xl mx-auto my-auto tracking-wide font-light px-2 italic whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-zinc-300/80">
+                  <span className=" before:content-['“'] before:text-lime-400 before:text-2xl before:leading-none before:align-bottom after:content-['”'] after:text-lime-400 after:text-2xl after:leading-none after:align-bottom">
+                    {about}
+                  </span>
+                  {/* <span className="block w-16 h-[2px] mx-auto my-8  rounded-full"></span> */}
+                </Motion.p>
+              </div>
 
-              <div className="space-y-2.5 w-full mx-auto px-4 py-10 border-y border-zinc-800 rounded-xl">
+              <div className="space-y-2.5 w-full mx-auto px-4 lg:px-4 py-10 border-y border-zinc-800 rounded-xl">
               <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-3">
                 {posts.map((p, index) =>
                   <Motion.div

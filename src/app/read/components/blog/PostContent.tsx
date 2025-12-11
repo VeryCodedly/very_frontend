@@ -53,12 +53,12 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
           height={600}
           rel="preload"
           fetchPriority="high"
-          className="w-full h-[250px] sm:h-[72vh] object-cover rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
+          className="w-full h-[250px] sm:h-[70vh] lg:h-[72vh] object-cover rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
           priority
           sizes="100vw"
           tabIndex={0}
         />
-        <p className="absolute bottom-0 sm:bottom-3 left-0 sm:left-3 right-4 w-fit text-gray-50/50 group-hover:opacity-0 group-active:opacity-0 bg-black/15 backdrop-blur-md rounded-lg p-2 text-sm">
+        <p className="absolute -bottom-0.5 sm:bottom-3 left-0 sm:left-3 right-4 w-fit text-gray-50/50 group-hover:opacity-0 group-active:opacity-0 bg-black/15 backdrop-blur-md rounded-lg p-2 text-sm">
           {post.caption || 'Featured Image'}
         </p>
       </Motion.div>
@@ -71,11 +71,11 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         className="mb-6 sm:mb-8"
       >
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 text-sm text-gray-400">
-          <span className="bg-gray-400/10 text-gray-400 px-2 py-1 rounded-full font-medium gap-1 flex items-center" tabIndex={0}>
+          <span className="bg-gray-400/10 text-gray-400 px-2 py-1 rounded-full font-medium gap-1 flex items-center">
             <FontAwesomeIcon icon={faUser} className="text-pink-400" />
             {post.author || 'Anonymous'}
           </span>
-          <span className="inline-flex text-sm items-center gap-1" tabIndex={0}>
+          <span className="inline-flex text-sm items-center gap-1">
             <FontAwesomeIcon icon={faCalendar} />
             {new Date(post.created_at).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -84,27 +84,29 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               hour: '2-digit',
             })}
           </span>
-          <span className="bg-lime-400/10 text-lime-400 px-2 py-1 rounded-full text-sm font-medium" tabIndex={0}>
-            {post.category?.name || 'Uncategorized'}
-          </span>
-          <span className="bg-pink-400/10 text-pink-400 px-2 py-1 rounded-full text-sm font-medium" tabIndex={0}>
+          <Link href={`/read/category/${post.category?.slug}`} aria-label="Link to Category page"
+            className="cursor-pointer bg-lime-400/10 text-lime-400 px-2 py-1 rounded-full text-sm font-medium tracking-tight">
+            {post.category?.name || 'General'}
+          </Link>
+          <Link href={`/read/subcategory/${post.subcategory?.slug}`} aria-label="Link to Subcategory page"
+            className="cursor-pointer bg-pink-400/10 text-pink-400 px-2 py-1 rounded-full text-sm font-medium tracking-tight">
             {post.subcategory?.name || 'General'}
-          </span>
-          <span className="px-2">
+          </Link>
+          <span className="px-1">
             <span className="flex gap-4">
-              <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Twitter">
+              <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on Twitter">
                 <FontAwesomeIcon icon={faTwitter} size="1x" />
               </Link>
-              <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on LinkedIn">
+              <Link href={`https://www.linkedin.com/sharing/share-offsite/?url=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on LinkedIn">
                 <FontAwesomeIcon icon={faLinkedinIn} size="1x" />
               </Link>
-              <Link href={`https://www.facebook.com/sharer/sharer.php?u=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on Facebook">
+              <Link href={`https://www.facebook.com/sharer/sharer.php?u=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on Facebook">
                 <FontAwesomeIcon icon={faFacebook} size="1x" />
               </Link>
-              <Link href={`https://wa.me/?text=${encodeURIComponent(post.title + " — https://verycodedly.com/read/" + post.slug)}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50" title="Share on WhatsApp">
+              <Link href={`https://wa.me/?text=${encodeURIComponent(post.title + " — https://verycodedly.com/read/" + post.slug)}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on WhatsApp">
                 <FontAwesomeIcon icon={faWhatsapp} size="1x" />
               </Link>
-              <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/read/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition duration-400 active:text-lime-400 active:scale-60 ease-in-out" title="Copy link">
+              <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/read/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition duration-400 active:text-lime-400 active:scale-60 ease-in-out text-lg" title="Copy link">
                 <FontAwesomeIcon icon={faCopy} size="1x" />
               </button>
             </span>
@@ -222,7 +224,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               <div key={img.id || index} className="group relative overflow-hidden rounded-2xl bg-black/50 select-none">
                 <Image src={img.image || 'read-post-image.png'} alt={img.alt || 'Gallery image'} width={400} height={300} className="w-full h-50 sm:h-58 object-cover group-hover:scale-105 group-active:scale-105 transition-transform duration-500" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" tabIndex={0} />
                 {(img.alt || img.caption) && (
-                  <div className="absolute bottom-0 sm:bottom-2 left-0 sm:left-2 right-2 w-fit bg-black/15 group-hover:bg-transparent group-active:bg-transparent backdrop-blur-md group-hover:!backdrop-blur-none group-active:!backdrop-blur-none rounded-lg px-2 py-1">
+                  <div className="absolute -bottom-0.5 sm:bottom-2 left-0 sm:left-2 right-2 w-fit bg-black/15 group-hover:bg-transparent group-active:bg-transparent backdrop-blur-md group-hover:!backdrop-blur-none group-active:!backdrop-blur-none rounded-lg px-2 py-1">
                     {img.caption && <p className="text-gray-50/80 group-hover:opacity-0 group-active:opacity-0 text-xs mb-1">{img.caption}</p>}
                   </div>
                 )}

@@ -177,12 +177,12 @@ const LessonCard = memo(({ lesson, slug, index }: {
     <Motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.05 }}
+      transition={{ delay: index * 0.03 }}
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className="bg-zinc-900/80 backdrop-blur-sm rounded-2xl p-4 sm:p-5 border border-zinc-700/50
-                 hover:border-lime-400/30 hover:shadow-[0_0_10px_rgba(164,255,130,0.1)]
-                 active:border-lime-400/30 active:shadow-[0_0_10px_rgba(164,255,130,0.1)] transition-all duration-300 group relative"
+                 hover:border-gray-400/30 hover:shadow-[0_0_10px_rgba(164,255,130,0.15)] ease-in-out
+                 active:border-gray-400/30 active:shadow-[0_0_10px_rgba(164,255,130,0.1)] transition-all duration-300 group relative"
     >
       <Link
         href={`/learn/${slug}/${lesson.slug}`}
@@ -197,7 +197,7 @@ const LessonCard = memo(({ lesson, slug, index }: {
           <span className="pr-1 text-sm font-semibold">{lesson.order}.</span>{lesson.title}
         </h3>
         <p
-          className="inline-flex items-center gap-1 text-lime-400 text-sm font-medium
+          className="inline-flex items-center gap-2 text-lime-400 text-sm font-bold
                    group-hover:text-white group-active:text-white hover:underline active:underline transition-all duration-200"
         >
           {isCompleted ? "Review" : "Start"} Lesson
@@ -264,8 +264,8 @@ export default function CoursePage() {
           href="/learn"
           aria-label="Back to Course List"
           className="inline-flex items-center gap-2 text-lime-400 mb-7 hover:text-white active:text-white
-                     transition-all duration-200">
-          <FontAwesomeIcon className="ml-3" icon={faArrowLeft} size="lg" />
+                     text-sm sm:text-base transition-all duration-200">
+          <FontAwesomeIcon className="ml-2" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Course List</span>
         </Link>
       </Motion.div>

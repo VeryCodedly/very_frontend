@@ -112,8 +112,8 @@ export default function SubcategoryPage() {
               <span className="sr-only">Go Home</span>
             </Link>
           </Motion.div>
-          <section className="min-h-screen max-w-[85%] mx-auto bg-black text-white pt-6 pb-14">
-            <div className="max-w-6xl mx-auto">
+          <section className="min-h-screen max-w-4xl mx-auto bg-black text-white pt-6 pb-14">
+            <div className="mx-auto">
               {/* <nav className="w-fit text-xs mb-10 md:text-xs"> */}
 
               {/* <span className="mx-1 text-gray-400">/</span>
@@ -126,21 +126,25 @@ export default function SubcategoryPage() {
                 {name}
               </h1>
 
-              <div className="text-sm sm:text-md lg:text-base w-full my-8 mx-auto">
-                <Motion.p
-                  initial={{ x: -80, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="relative text-left ax-w-3xl mx-auto my-auto tracking-wide font-light border-l-4 border-lime-400/80 rounded-sm pl-4">
-                  <span className="whitespace-pre-wrap block italic before:content-['“'] before:text-lime-400 after:content-['”'] after:text-lime-400 text-zinc-400/90">
-                    {about}
-                  </span>
-                  {/* <span className="block w-16 h-[2px] mx-auto my-8  rounded-full"></span> */}
-                </Motion.p>
-              </div>
+              <div className="my-12 max-w-4xl mx-auto px-6">
+  <Motion.figure
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="relative"
+  >
+    <blockquote className="mx-auto px- text-justify hyphens-aut [text-align-last:center] italic whitespace-pre-wrap text-sm sm:text-base leading-relaxed text-zinc-300/80 font-light">
+      <span className="before:content-['“'] before:text-lime-400 before:text-2xl before:leading-none before:align-bottom after:content-['”'] after:text-lime-400 after:text-2xl after:leading-none after:align-bottom">
+        {about}
+      </span>
+    </blockquote>
+  </Motion.figure>
+    {/* <span className="block w-16 h-[2px] mx-auto my-8 rounded-full"></span> */}
+</div>
 
-              {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6"> */}
-              <div className="space-y-2.5 w-full sm:w-[90%] mx-auto px-4 lg:px-8 py-10 border-y border-zinc-800 rounded-xl">
+              <div className="space-y-2.5 w-full mx-auto px-4 py-10 border-y border-zinc-800 rounded-xl">
+              <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-3">
                 {posts.map((p, index) =>
                   <Motion.div
                     key={index}
@@ -156,6 +160,7 @@ export default function SubcategoryPage() {
                 )}
               </div>
             </div>
+            </div>
 
             {/* SPLIT SECTION */}
             <section className="mt-14">
@@ -163,7 +168,7 @@ export default function SubcategoryPage() {
 
                 {/* LEFT: LATEST IN SUB */}
                 <Motion.div
-                  initial={{ opacity: 0, x: 30 }}
+                  initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}

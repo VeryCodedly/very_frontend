@@ -4,7 +4,7 @@ import { motion as Motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLongArrowRight, faCalendar, faUser, faComment, faHashtag, faImage, faLink, faCopy, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowRight, faCalendar, faUser, faHashtag, faImage, faLink, faCopy, faCommentDots } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faLinkedinIn, faTwitter, faWhatsapp, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import CodeBlock from '@/app/learn/components/CodeBlock';
 import { Post } from '@/types/post';

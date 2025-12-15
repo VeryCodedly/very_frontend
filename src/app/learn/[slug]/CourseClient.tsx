@@ -85,7 +85,7 @@ export default function CourseClient({ course, slug }: CourseClientProps) {
         <Link
           href="/learn"
           aria-label="Back to Course List"
-          className="inline-flex items-center gap-2 text-lime-400 mb-7 ml-2 hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
+          className="inline-flex items-center gap- text-lime-400 mb-7 ml- hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
         >
           <FontAwesomeIcon className="" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Course List</span>

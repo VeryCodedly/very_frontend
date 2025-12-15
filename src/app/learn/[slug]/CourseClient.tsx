@@ -22,7 +22,8 @@ const LessonCard = memo(
     const isCompleted = completed.includes(lesson.slug);
 
     return (
-      <Motion.div
+      <Motion.Link
+        href={`/learn/${courseSlug}/${lesson.slug}`} aria-label={lesson.title}
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.03 }}
@@ -32,7 +33,7 @@ const LessonCard = memo(
                    hover:border-gray-400/30 hover:shadow-[0_0_10px_rgba(164,255,130,0.15)] ease-in-out
                    active:border-gray-400/30 active:shadow-[0_0_10px_rgba(164,255,130,0.1)] transition-all duration-300 group relative"
       >
-        <Link href={`/learn/${courseSlug}/${lesson.slug}`} aria-label={lesson.title}>
+        <div>
           {isCompleted && (
             <FontAwesomeIcon
               icon={faCheckCircle}
@@ -51,8 +52,8 @@ const LessonCard = memo(
               className="group-hover:translate-x-1 group-active:translate-x-1 transition-transform"
             />
           </p>
-        </Link>
-      </Motion.div>
+        </div>
+      </Motion.Link>
     );
   }
 );
@@ -85,7 +86,7 @@ export default function CourseClient({ course, slug }: CourseClientProps) {
         <Link
           href="/learn"
           aria-label="Back to Course List"
-          className="inline-flex items-center gap- text-lime-400 mb-7 ml- hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
+          className="inline-flex items-center gap-2 text-lime-400 mb-7 ml-2 hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
         >
           <FontAwesomeIcon className="" icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Course List</span>

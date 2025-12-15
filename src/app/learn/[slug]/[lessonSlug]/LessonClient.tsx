@@ -75,7 +75,7 @@ export default function LessonClient({ lesson, courseSlug }: LessonClientProps) 
         <Link
           href={`/learn/${courseSlug}`}
           aria-label="Back to Lessons"
-          className="inline-flex items-center gap-2 text-lime-400 mb-8 ml-8 hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
+          className="inline-flex items-center gap-2 text-lime-400 mb-8 ml-4 hover:text-white active:text-white active:scale-60 text-sm sm:text-base transition-all duration-300"
         >
           <FontAwesomeIcon icon={faArrowLeft} size="lg" />
           <span className="sr-only">Back to Lessons</span>

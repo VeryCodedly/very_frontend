@@ -98,7 +98,7 @@
            <p className="text-xs uppercase tracking-widest text-gray-500 mb-3">The Philosophy</p>
            <h2 className="text-2xl font-semibold text-white">Why Learn</h2>
          </div>
-         <div className="md:col-span-2 text-gray-300/80 leading-relaxed space-y-4">
+         <div className="md:col-span-2 text-gray-300/90 leading-relaxed space-y-4">
            <p>
              Some coding resources rush you from syntax to frameworks. VeryCodedly goes the other way —
              understanding first, speed later.

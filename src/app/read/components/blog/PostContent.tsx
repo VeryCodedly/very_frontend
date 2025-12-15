@@ -4,8 +4,8 @@ import { motion as Motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLongArrowRight, faCalendar, faUser, faComment, faHashtag, faImage, faLink, faCopy } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook, faLinkedinIn, faTwitter, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faLongArrowRight, faCalendar, faUser, faComment, faHashtag, faImage, faLink, faCopy, faCommentDots } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faLinkedinIn, faTwitter, faWhatsapp, faDiscord, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import CodeBlock from '@/app/learn/components/CodeBlock';
 import { Post } from '@/types/post';
 // import { useEffect } from 'react';
@@ -75,7 +75,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             <FontAwesomeIcon icon={faUser} className="text-pink-400" />
             {post.author || 'Anonymous'}
           </span>
-          <span className="inline-flex text-sm items-center gap-1">
+          <span className="inline-flex text-sm items-center gap-1 tracking-tighter">
             <FontAwesomeIcon icon={faCalendar} />
             {new Date(post.created_at).toLocaleDateString('en-US', {
               year: 'numeric',
@@ -84,16 +84,18 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               hour: '2-digit',
             })}
           </span>
+          <div className="flex gap-4">
           <Link href={`/read/category/${post.category?.slug}`} aria-label="Link to Category page"
-            className="cursor-pointer bg-lime-400/10 text-lime-400 px-2 py-1 rounded-full text-sm font-medium tracking-tight">
+            className="cursor-pointer bg-lime-400/10 text-lime-400 hover:text-lime-200 active:text-text-lime-200 active:scale-90 transition duration-200 px-3 py-1 rounded-full text-sm font-medium tracking-tighter">
             {post.category?.name || 'General'}
           </Link>
           <Link href={`/read/subcategory/${post.subcategory?.slug}`} aria-label="Link to Subcategory page"
-            className="cursor-pointer bg-pink-400/10 text-pink-400 px-2 py-1 rounded-full text-sm font-medium tracking-tight">
+            className="cursor-pointer bg-pink-400/10 text-pink-400 hover:text-pink-200 active:text-text-pink-200 active:scale-90 transition duration-200 px-3 py-1 rounded-full text-sm font-medium tracking-tighter">
             {post.subcategory?.name || 'General'}
           </Link>
-          <span className="px-1">
-            <span className="flex gap-4">
+          </div>
+          <div className="inline-block px-">
+            <span className="flex gap-3">
               <Link href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=https://verycodedly.com/read/${post.slug}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on Twitter">
                 <FontAwesomeIcon icon={faTwitter} size="1x" />
               </Link>
@@ -106,11 +108,11 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               <Link href={`https://wa.me/?text=${encodeURIComponent(post.title + " — https://verycodedly.com/read/" + post.slug)}`} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition active:text-lime-400 active:scale-50 text-lg" title="Share on WhatsApp">
                 <FontAwesomeIcon icon={faWhatsapp} size="1x" />
               </Link>
-              <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/read/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition duration-400 active:text-lime-400 active:scale-60 ease-in-out text-lg" title="Copy link">
+              <button onClick={() => navigator.clipboard.writeText(`https://verycodedly.com/read/${post.slug}`)} className="text-gray-400 hover:text-lime-400 transition duration-400 active:text-lime-400 active:scale-60 text-lg" title="Copy link">
                 <FontAwesomeIcon icon={faCopy} size="1x" />
               </button>
             </span>
-          </span>
+          </div>
         </div>
 
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-4 sm:mb-6 bg-gradient-to-r from-white via-lime-200 to-white bg-clip-text text-transparent leading-tight">
@@ -278,7 +280,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
       </Motion.div>
 
       {/* Comments */}
-      <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="mb-8 sm:mb-12">
+      {/* <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }} className="mb-8 sm:mb-12">
         <h3 className="text-lg sm:text-xl font-semibold mb-4 text-lime-300 flex items-center gap-2">
           <FontAwesomeIcon icon={faComment} /> Comments {post.comments && post.comments.length > 0 ? `(${post.comments.length})` : ''}
         </h3>
@@ -299,11 +301,76 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         ) : (
           <p className="text-gray-400 italic text-sm sm:text-base">No comments yet. Be the first to comment!</p>
         )}
-      </Motion.div>
+      </Motion.div> */}
+
+      <Motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.6 }}
+  className="mb-8 sm:mb-12"
+>
+  <h3 className="text-lg sm:text-xl font-bold mb-4 text-lime-300 flex items-center gap-3">
+    <FontAwesomeIcon icon={faCommentDots} /> Join the Discussion
+  </h3>
+
+  <p className="italic text-gray-400 text-sm sm:text-base mb-6 leading-relaxed">
+    Enjoyed this? Ask questions, share your take (hot, lukewarm, or undecided), or follow the thread with people in real time.
+    The community’s open — join us.
+  </p>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    {/* Discord - Primary */}
+    <Link
+      href="https://discord.gg/53wVsqEcbE" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group w-fit flex items-center group justify-between p- bg-black/40 rounded-xl transition-all duration-300"
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gray-300/10 rounded-lg flex items-center justify-center">
+          <FontAwesomeIcon icon={faDiscord} className="text-2xl text-gray-400 group-hover:text-indigo-500 group-active:text-red-500" />
+        </div>
+        <div>
+          <p className="font-semibold text-white group-hover:underline group-active::underline">Discord Community</p>
+          <p className="text-sm text-gray-400">Chat, code sharing & more</p>
+        </div>
+      </div>
+      {/* <FontAwesomeIcon 
+        icon={faLongArrowRight} 
+        className="text-lime-400 group-hover:translate-x-1 transition"
+      /> */}
+    </Link>
+
+    {/* YouTube - When videos */}
+    <Link
+      href="https://youtube.com/@verycodedly" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex items-center group justify-between p- bg-black/40 rounded-xl transition-all duration-300"
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gray-300/10 rounded-lg flex items-center justify-center">
+          <FontAwesomeIcon icon={faYoutube} className="text-2xl text-gray-400 group-hover:text-red-500 group-active:text-red-500" />
+        </div>
+        <div>
+          <p className="font-semibold text-white group-hover:underline group-active::underline">YouTube Comments</p>
+          <p className="text-sm text-gray-400">Watch the video version & discuss</p>
+        </div>
+      </div>
+      {/* <FontAwesomeIcon 
+        icon={faLongArrowRight} 
+        className="text-lime-400 group-hover:translate-x-1 transition"
+      /> */}
+    </Link>
+
+    {/* Add more if needed, e.g. dev.to, Bluesky */}
+  </div>
+</Motion.div>
 
       {/* Meta Footer */}
+      <div className="pt-10">
       <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.7 }}
-        className="text-center text-gray-500 text-sm border-t border-b border-zinc-700 rounded-xl py-6 sm:py-8">
+        className="text-center text-gray-500 text-sm border-t border-b border-zinc-700 rounded-xl py-8">
         <p className="flex flex-col justify-center sm:flex-row sm:gap-2">
           <span>
             Published{' '}
@@ -316,7 +383,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
           {post.updated_at && post.updated_at !== post.created_at && (
             <>
-              {/* This bullet only shows on sm+ */}
+              {/* only shows on sm+ */}
               <span className="hidden sm:inline"> • </span>
 
               {/* Updated date — drops to new line on mobile, stays inline on sm+ */}
@@ -333,6 +400,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         </p>
         <p className="mt-4 text-pink-400 capitalize">{post.status || 'Draft'}</p>
       </Motion.div>
+      </div>
     </>
   );
 }

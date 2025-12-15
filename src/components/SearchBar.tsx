@@ -87,7 +87,7 @@ export default function SearchBar() {
 }, [isOpen]);
   
       useEffect(() => {
-          const handleScroll = () => setShowTopBtn(window.scrollY > 350);
+          const handleScroll = () => setShowTopBtn(window.scrollY > 100);
           window.addEventListener("scroll", handleScroll);
           return () => window.removeEventListener("scroll", handleScroll);
       }, []);
@@ -102,14 +102,14 @@ export default function SearchBar() {
                 className="cursor-pointer fixed top-1/2 -translate-y-1/2 right-0 z-50 px-1 py-1 bg-transparent rounded-l-2xl transition-all hover:scale-110
                             shadow-[0_0_5px_3px_rgba(55,55,55,0.4)] outline-none"
             >
-                <FontAwesomeIcon icon={faSearch} className="w-6 h-8 text-gray-300/90 hover:text-white" />
+                <FontAwesomeIcon icon={faSearch} className="w-6 h-6 text-gray-300/90 hover:text-white" size="sm" />
             </button>)}
 
             {/* Overlay + Search Panel */}
             {isOpen && (
                 <>
                     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-70" />
-                    <div className="fixed top-0 left-0 right-0 z-70 flex justify-center pt-24 px-4">
+                    <div className="fixed top-0 left-0 right-0 z-70 flex justify-center pt-20 px-4">
                         <div
                             ref={inputRef}
                             className="w-full max-w-2xl relative"

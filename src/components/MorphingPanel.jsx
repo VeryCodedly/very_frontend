@@ -164,7 +164,7 @@ export default function MorphingPanel({ className = "" }) {
                   }}
                   width={35}
                   height={35}
-                  onContextMenu={(e) => e.preventDefault()}
+                  onContextMenu={(e) => {e.preventDefault(); e.stopPropagation(); return false;}}
                   draggable={false}
                 />
               );

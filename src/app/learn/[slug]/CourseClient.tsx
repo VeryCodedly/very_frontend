@@ -22,7 +22,7 @@ const LessonCard = memo(
     const isCompleted = completed.includes(lesson.slug);
 
     return (
-        <Link href={`/learn/${courseSlug}/${lesson.slug}`} aria-label={lesson.title}>
+      <Link href={`/learn/${courseSlug}/${lesson.slug}`} aria-label={lesson.title}>
       <Motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ const LessonCard = memo(
             />
           </p>
       </Motion.div>
-        </Link>
+      </Link>
     );
   }
 );

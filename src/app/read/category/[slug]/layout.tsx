@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+// import { notFound } from 'next/navigation';
 import { unstable_cache } from 'next/cache';
 import { Category } from '@/types/post';
 
@@ -46,12 +46,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   const { slug } = await props.params;
   const category = await getCachedPost(slug);
 
-  if (!category) {
-    // console.log('STEP 11: Triggering notFound()'); // DEBUG
-    return {
-      title: "Category not found | VeryCodedly",
-      robots: { index: false, follow: false },
-    };
+  if (!category) { 
+    notFound(); 
   }
 
     const title = `${category.name} | VeryCodedly`;

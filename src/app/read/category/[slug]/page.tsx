@@ -52,11 +52,9 @@ export default async function CategoryPage({
   const category = await getCachedPost(slug);
 
   if (!category) {
-    return {
-    title: "Category not found | VeryCodedly",
-    robots: { index: false, follow: false },
-  };
+    notFound();
   }
+  
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const trendingRes = await fetch(`${apiUrl}/subcategories/trending-now/posts/`);

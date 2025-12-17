@@ -48,8 +48,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
 
   if (!category) {
     // console.log('STEP 11: Triggering notFound()'); // DEBUG
-    title: "Category not found | VeryCodedly",
+    return {
+      title: "Category not found | VeryCodedly",
       robots: { index: false, follow: false },
+    };
   }
 
     const title = `${category.name} | VeryCodedly`;

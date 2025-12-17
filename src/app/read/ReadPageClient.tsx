@@ -83,7 +83,7 @@ export default function ReadPageClient({ data }: Props){
   return (
     <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* 🪶 HERO SECTION */}
-      <div className="relative min-h-screen -mt-10 sm:mt-0 flex flex-col justify-center items-center text-center overflow-hidden">
+      <div className="relative min-h-screen -mt-8 sm:mt-0 flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
         <Motion.h1
           className="absolute text-[16rem] sm:text-[16rem] font-extrabold uppercase text-gray-400/5 blur-2xl select-none z-0"
@@ -118,7 +118,7 @@ export default function ReadPageClient({ data }: Props){
               animate={{ color: "#fb64b6" }}
               transition={{ delay: 0.6, duration: 1 }}
             >
-            Culture.
+            Culture.<span className="text-xs">™</span>
             </Motion.span>
           </h1>
           <Motion.p

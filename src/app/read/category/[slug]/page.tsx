@@ -63,5 +63,13 @@ export default async function CategoryPage({
         ? trendingData.results
         : trendingData;
 
-  return <CatClient category={category} trending={trending} />;
+  return (
+    <>
+      <div className="sr-only">
+        <h1>{category.name}</h1>
+        <p>Latest posts in {category.name} on VeryCodedly.</p>
+      </div>
+      <CatClient category={category} trending={trending} />;
+    </>
+  );
 }

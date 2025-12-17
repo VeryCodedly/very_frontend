@@ -27,7 +27,7 @@ export default function ConnectPage() {
             href="https://discord.gg/53wVsqEcbE"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:font-semibold bg-transparent cursor-pointer border-3 border-gray-500/100 px-9 py-1 rounded-full text-white hover:bg-white active:bg-white hover:text-black
+            className="hover:font-semibold bg-transparent cursor-pointer border-3 border-gray-500/100 px-10 py-1 rounded-full text-white hover:bg-white active:bg-white hover:text-black
             active:text-black shadow-[0_4px_0_0_#39ff14] hover:shadow-[0_2px_0_0_#39ff14] active:shadow-[0_2px_0_0_#00ff00] active:translate-y-1.5 hover:translate-y-0.5 transition-all duration-200"
           >
             Discord

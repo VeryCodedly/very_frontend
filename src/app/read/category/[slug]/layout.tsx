@@ -1,63 +1,75 @@
-import type { Metadata } from "next";
-import { unstable_cache } from "next/cache";
-import { Category } from "@/types/post";
+import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import { unstable_cache } from 'next/cache';
+import { Category } from '@/types/post';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 const getCachedCategory = unstable_cache(
   async (slug: string): Promise<Category | null> => {
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-      if (!apiUrl) return null;
+      if (!apiUrl) {
+        console.error('NEXT_PUBLIC_API_URL is not set');
+        return null;
+      }
 
-      const res = await fetch(`${apiUrl}/categories/${slug}`, {
+      const url = `${apiUrl}/categories/${slug}`;
+
+      const res = await fetch(url, {
         next: { revalidate: 60 },
-        headers: { "Content-Type": "application/json" },
+        headers: { 'Content-Type': 'application/json' },
       });
 
       if (!res.ok) return null;
-      return (await res.json()) as Category;
-    } catch {
+
+      const data = await res.json();
+      return data as Category;
+    } catch (error) {
+      console.error('Fetch failed:', error);
       return null;
     }
   },
-  (slug) => ["category", slug],
+
+  (slug: string) => [`category-by-slug-${slug}`],
   { revalidate: 60 }
 );
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const category = await getCachedCategory(params.slug);
+  const { slug } = await params;
+  const category = await getCachedCategory(slug);
 
   if (!category) {
     return {
-      title: "Category not found | VeryCodedly",
+      title: 'Category not found | VeryCodedly',
       robots: { index: false, follow: false },
     };
   }
 
+  const title = `${category.name} | VeryCodedly`;
+  const description = `Read the latest in ${category.name} posts on VeryCodedly.`;
+
   return {
-    title: `${category.name} | VeryCodedly`,
-    description: `Read the latest in ${category.name} posts on VeryCodedly.`,
+    title,
+    description,
     alternates: {
-      canonical: `https://verycodedly.com/read/category/${params.slug}`,
+      canonical: `https://verycodedly.com/read/category/${slug}`,
     },
     openGraph: {
-      title: `${category.name} | VeryCodedly`,
-      description: `All posts in ${category.name}`,
-      url: `https://verycodedly.com/read/category/${params.slug}`,
-      type: "website",
-      images: [
-        { url: "https://verycodedly.com/read/opengraph-image.png" },
-      ],
+      title,
+      description,
+      url: `https://verycodedly.com/read/category/${slug}`,
+      type: 'website',
+      images: [{ url: 'https://verycodedly.com/read/opengraph-image.png' }],
     },
     twitter: {
-      card: "summary_large_image",
-      title: `${category.name} | VeryCodedly`,
-      description: `Latest in ${category.name}`,
-      images: ["https://verycodedly.com/read/twitter-image.png"],
-      creator: "@verycodedly",
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['https://verycodedly.com/read/twitter-image.png'],
+      creator: '@verycodedly',
     },
   };
 }

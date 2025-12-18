@@ -21,29 +21,29 @@ export default function KnowPage() {
           who want to understand what’s happening, not just keep up.
         </p>
 
-        <div className="mt-16 flex flex-col sm:flex-col items-center justify-center gap-6">
+        <div className="mt-24 flex flex-col sm:flex-row items-center justify-center gap-6">
           <Link
             href="https://www.youtube.com/@verycodedly"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:font-semibold cursor-pointer border-3 border-gray-500/100 px-7.5 py-1 rounded-full text-white hover:bg-white active:bg-white hover:text-black
+            className="hover:font-semibold order-2 cursor-pointer border-3 border-gray-500/100 px-7.5 py-1 rounded-full text-white hover:bg-white active:bg-white hover:text-black
             active:text-black shadow-[0_4px_0_0_#DC2626] hover:shadow-[0_2px_0_0_#DC2626] active:shadow-[0_2px_0_0_#DC2626] active:translate-y-1.5 hover:translate-y-0.5 transition-all duration-200">
             Subscribe
           </Link>
 
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-500 order-1">
             New videos we're sure you'd like.
           </span>
         </div>
 
-        <div className="mt-18">
+        {/* <div className="mt-18">
           <Link
             href="/"
             className="text-sm text-gray-400 hover:text-red-500 transition"
           >
             ← Back to VeryCodedly
           </Link>
-        </div>
+        </div> */}
       </section>
     </main>
   );

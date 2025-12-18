@@ -539,7 +539,7 @@ export default function ReadPageClient({ data }: Props){
           </section>
         )}
 
-        <section className="py-12 px-6 bg-black/50 text-center">
+        <section className="py-20 px-6 bg-black/50 text-center">
           <h2 className="text-2xl font-bold mb-6">Join the Conversation</h2>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link

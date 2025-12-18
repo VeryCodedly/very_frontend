@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     "tech blog",
   ],
   openGraph: {
-    title: 'VeryCodedly',
+    title: 'VeryCodedly | Tech. Code. Culture.',
     description: "Tech. Code. Culture. VeryCodedly is your go-to tech hub for hardware deep-dives, free coding courses, unfiltered takes and the latest digital trends. No cookies, no login, no tracking.",
     url: 'https://verycodedly.com',
     siteName: 'VeryCodedly',

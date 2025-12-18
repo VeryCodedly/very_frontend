@@ -2,24 +2,24 @@ import Link from "next/link";
 
 export default function ConnectPage() {
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-hidden">
+    <main className="relative min-h-screen bg-black mb-30 text-white overflow-hidden">
       {/* subtle background accent */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(79,70,229,0.08),_transparent_55%)]" />
 
-      <section className="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
+      <section className="relative z-10 max-w-3xl mx-auto my-auto px-6 py-36 text-center">
         <p className="text-xs uppercase tracking-widest text-gray-500 mb-4">
           Community
         </p>
 
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
-          Join our{" "}
+        <h1 className="text-4xl sm:text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+          VeryCodedly on{" "}
           <span className="text-indigo-500">Discord</span>{" "}
           
         </h1>
 
         <p className="text-base text-gray-300 max-w-2xl px-2 mx-auto leading-relaxed">
           Ask questions, share progress, get feedback, 
-           and learn alongside people who are also figuring things out.
+           and learn with people who are also figuring things out.
         </p>
 
         <div className="mt-24 flex flex-col sm:flex-row items-center justify-center gap-6">

@@ -100,7 +100,7 @@ export default function SupportPage() {
               Share, star, join, and help other learners. These actions make a
               huge difference to discoverability and morale.
             </p>
-            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-outside space-y-2 mb-4">
+            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
               {[
                 "Share an article on Twitter, LinkedIn, or Reddit",
                 "Star the repo on GitHub",

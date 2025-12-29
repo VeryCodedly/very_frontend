@@ -100,7 +100,7 @@ export default function SupportPage() {
               Share, star, join, and help other learners. These actions make a
               huge difference to discoverability and morale.
             </p>
-            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-outside space-y-2 mb-4">
+            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
               {[
                 "Share an article on Twitter, LinkedIn, or Reddit",
                 "Star the repo on GitHub",
@@ -188,7 +188,7 @@ export default function SupportPage() {
                      transition-all duration-300"
         >
           <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Quick FAQ</h3>
-          <div className="space-y-3 text-sm sm:text-base">
+          <div className="space-y-4 text-sm sm:text-base">
             <Motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

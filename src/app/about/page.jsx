@@ -7,7 +7,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <section className="relaive min-h-screen py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-black to-zinc-900/50">
+      <section className="relative min-h-screen py-12 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-black to-zinc-900/50">
         <div className="absolute inset-0 bg-[url('/images/bg-1.svg')] bg-center bg-cover opacity-60"></div>
         <Motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +43,7 @@ export default function AboutPage() {
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-semibold text-white mb-2">Our Values</h3>
-              <ul className="text-gray-300/80 text-sm sm:text-base list-disc list-outside space-y-2">
+              <ul className="text-gray-300/80 text-sm sm:text-base list-disc list-inside space-y-2">
                 <li>No gatekeeping</li>
                 <li>Accessibility & clarity</li>
                 <li>Community over competition - learning isn’t a race</li>

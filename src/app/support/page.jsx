@@ -8,7 +8,7 @@ import { faCoffee, faComment, faEnvelope, faPeopleGroup } from '@fortawesome/fre
 
 export default function SupportPage() {
   return (
-    <section className="relative min-h-screen py-12 sm:py-20 px-6 sm:px-8 bg-gradient-to-b from-black to-zinc-900/50">
+    <section className="relative min-h-screen py-20 px-6 sm:px-8 bg-gradient-to-b from-black to-zinc-900/50">
       <div className="absolute inset-0 bg-[url('/images/bg-1.svg')] bg-center bg-cover opacity-60"></div>
       <Motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -100,7 +100,7 @@ export default function SupportPage() {
               Share, star, join, and help other learners. These actions make a
               huge difference to discoverability and morale.
             </p>
-            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
+            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-outside space-y-2 mb-4">
               {[
                 "Share an article on Twitter, LinkedIn, or Reddit",
                 "Star the repo on GitHub",

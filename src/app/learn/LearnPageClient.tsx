@@ -74,7 +74,7 @@
                </span>
              </Motion.span>
            </h1>
-           <p className="text-gray-400 px-0 text-md md:text-lg max-w-2xl">
+           <p className="text-gray-400 px-2 sm:px-0 text-md md:text-lg max-w-2xl">
              Beginner-friendly coding lessons that help complex ideas click,
              one concept at a time.
              {/* Every concept explained clearly — the VeryCodedly way. */}

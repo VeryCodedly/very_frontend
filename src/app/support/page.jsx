@@ -100,7 +100,7 @@ export default function SupportPage() {
               Share, star, join, and help other learners. These actions make a
               huge difference to discoverability and morale.
             </p>
-            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-inside space-y-2 mb-4">
+            <ul className="text-gray-300/90 text-sm sm:text-base list-disc list-outside space-y-2 mb-4">
               {[
                 "Share an article on Twitter, LinkedIn, or Reddit",
                 "Star the repo on GitHub",
@@ -194,7 +194,7 @@ export default function SupportPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.7 }}
             >
-              <dt className="font-medium text-gray-300">Will support change the content?</dt>
+              <dt className="font-medium text-gray-300 mb-1">Will support change the content?</dt>
               <dd className="text-gray-400">No. The core content remains free and available to everyone.</dd>
             </Motion.div>
             <Motion.div
@@ -202,7 +202,7 @@ export default function SupportPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.8 }}
             >
-              <dt className="font-medium text-gray-300">Is support tax-deductible?</dt>
+              <dt className="font-medium text-gray-300 mb-1">Is support tax-deductible?</dt>
               <dd className="text-gray-400">We’re a community-driven project, not a registered charity yet — so contributions aren’t tax-deductible.
                 But every bit goes directly into keeping our resources free for everyone.</dd>
             </Motion.div>
@@ -211,7 +211,7 @@ export default function SupportPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: 0.9 }}
             >
-              <dt className="font-medium text-gray-300">Can I contribute content?</dt>
+              <dt className="font-medium text-gray-300 mb-1">Can I contribute content?</dt>
               <dd className="text-gray-400">Yes. Mail us or open a PR on our GitHub repo to get started.</dd>
             </Motion.div>
           </div>

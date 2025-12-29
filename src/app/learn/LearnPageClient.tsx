@@ -120,7 +120,7 @@
          >
            <span className="text-white">Courses from <span className="text-lime-400">VeryCodedly</span></span>
          </Motion.h2>
-         <div className="w-[80%] space-y-2.5 -[97%] m:w-[90%] g:w-[80%] mx-auto">
+         <div className="space-y-2.5 w-[98%] sm:w-[90%] lg:w-[80%] mx-auto">
            {/* <div className="absolute inset-0 bg-[url('/images/bg-plain.jpg')] bg-center bg-stretch opacity-50"></div> */}
            {/* <div className=""> */}
            <CourseListClient courses={courses} />

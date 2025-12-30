@@ -63,7 +63,7 @@ export default function SupportPage() {
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Buy me a coffee <FontAwesomeIcon icon={faCoffee} className="inline ml-1 text-lime-300" size="1x" />
+                Buy me a coffee <FontAwesomeIcon icon={faCoffee} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
                 href="https://www.paypal.com/ncp/payment/55H59YCYZ5HSY"
@@ -72,7 +72,7 @@ export default function SupportPage() {
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Paypal Donation <FontAwesomeIcon icon={faPaypal} className="inline ml-1 text-lime-300" size="1x" />
+                Paypal Donation <FontAwesomeIcon icon={faPaypal} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
                 href="https://github.com/sponsors/VeryCodedly"
@@ -81,7 +81,7 @@ export default function SupportPage() {
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Sponsor on GitHub <FontAwesomeIcon icon={faGithub} className="inline ml-1 text-lime-300" size="1x" />
+                Sponsor on GitHub <FontAwesomeIcon icon={faGithub} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
             </div>
           </Motion.div>
@@ -125,7 +125,7 @@ export default function SupportPage() {
                 className="block text-center text-sm sm:text-base px-3 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Share <FontAwesomeIcon icon={faTwitter} className="inline-flex ml-1 text-lime-300" size="1x" />
+                Share <FontAwesomeIcon icon={faTwitter} className="inline-flex ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
                 href="https://github.com/VeryCodedly/site_build"
@@ -134,7 +134,7 @@ export default function SupportPage() {
                 className="block text-center text-sm sm:text-base px-3.5 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Star <FontAwesomeIcon icon={faGithub} className="inline ml-1 text-lime-300" size="1x" />
+                Star <FontAwesomeIcon icon={faGithub} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
             </div>
           </Motion.div>
@@ -158,21 +158,21 @@ export default function SupportPage() {
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Join the community <FontAwesomeIcon icon={faPeopleGroup} className="inline ml-1 text-lime-300" size="1x" />
+                Join the community <FontAwesomeIcon icon={faPeopleGroup} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
                 href="mailto:verycodedly@gmail.com?subject=Support%20VeryCodedly"
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Email us <FontAwesomeIcon icon={faEnvelope} className="inline ml-1 text-lime-300" size="1x" />
+                Email us <FontAwesomeIcon icon={faEnvelope} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
                 href="/contact"
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >
-                Send feedback <FontAwesomeIcon icon={faComment} className="inline ml-1 text-lime-300" size="1x" />
+                Send feedback <FontAwesomeIcon icon={faComment} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
             </div>
           </Motion.div>

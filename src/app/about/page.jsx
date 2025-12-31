@@ -29,7 +29,7 @@ export default function AboutPage() {
             About Us
           </Motion.h2>
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed pb-6">
-            VeryCodedly is a community-driven space for everyone. It’s about making sense of the tools, concepts, and culture that grows around technology.
+            VeryCodedly is a community-driven space for everyone. It’s about making sense of the tools, concepts, and culture that grow around technology.
             Whether you’re learning, building, watching the industry shift, 
             or just trying to keep up, this is a place to slow things down and actually understand what’s happening.
           </p>

@@ -100,8 +100,8 @@
          </div>
          <div className="md:col-span-2 text-sm sm:text-base text-gray-300/90 leading-relaxed space-y-4">
            <p>
-             Some coding resources rush you from syntax to frameworks. VeryCodedly goes the other way
-             - we start with understanding, then build speed.
+             Some coding resources rush you from syntax to frameworks. VeryCodedly goes the other way,
+             we start with understanding, then build speed.
            </p>
            <p>
              These lessons are designed to help ideas stick, not overwhelm. If you’ve ever felt like code
@@ -143,15 +143,15 @@
            {[
              {
                name: "Frontend Starter",
-               desc: "HTML, CSS, JavaScript, React — build the visual layer of the web you interact with.",
+               desc: "HTML, CSS, JavaScript, React - build the visual layer of the web you interact with.",
              },
              {
                name: "Backend Mastery",
-               desc: "APIs, databases, Django — create powerful, robust server-side logic.",
+               desc: "APIs, databases, Django - create powerful, robust server-side logic.",
              },
              {
                name: "AI & Data Science",
-               desc: "Python, Machine Learning, data handling — dive into the future of software.",
+               desc: "Python, Machine Learning, data handling - dive into the future of software.",
              },
            ].map((track) => (
              <Motion.div

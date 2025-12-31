@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import TopButton from "@/components/TopButton";
 import Footer from "@/components/Footer";
 import ScrollRestoration from '@/components/ScrollRestoration';
-import ServiceWorkerRegister from './sw-register';
+// import ServiceWorkerRegister from './sw-register';
 
 config.autoAddCss = false;
 
@@ -107,7 +107,7 @@ export default function RootLayout({
       </head>
       <body className={`${pops.variable} ${robo.variable} ${geist.variable} antialiased`}>
         <Header />
-        <ServiceWorkerRegister />
+        {/* <ServiceWorkerRegister /> */}
         <ScrollRestoration />
         {children}
         <TopButton />

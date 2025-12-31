@@ -119,7 +119,7 @@ export default function SupportPage() {
             </ul>
             <div className="flex gap-8 justify-center">
               <Link
-                href="https://twitter.com/intent/tweet?text=Into%20coding%20+%20tech%20trends?%20Check%20out%20Very%20Codedly%20-%20https://verycodedly.com"
+                href="https://twitter.com/intent/tweet?text=Into%20coding%20+%20tech%20trends?%20Explore%20VeryCodedly%20-%20https://verycodedly.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-center text-sm sm:text-base px-3 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 

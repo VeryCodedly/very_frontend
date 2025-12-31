@@ -56,7 +56,7 @@ export default function ContactPage() {
     }
 
     // ---- mailto ----
-    const subject = encodeURIComponent('Message from VeryCodedly Site');
+    const subject = encodeURIComponent('Message from the VeryCodedly Site');
     const body = encodeURIComponent(
       `Hi!\n\n${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`
     );

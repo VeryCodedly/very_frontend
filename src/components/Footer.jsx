@@ -9,15 +9,15 @@ import { faTwitter, faYoutube, faFacebook, faDiscord, faLinkedin, faTiktok, faIn
 
 
 const socials = [
-  { icon: faYoutube, link: "https://www.youtube.com/@verycodedly", title: "Youtube" },
-  { icon: faDiscord, link: "https://discord.gg/53wVsqEcbE", title: "Discord" },
-  { icon: faTwitter, link: "https://x.com/verycodedly", title: "Twitter" },
-  { icon: faEnvelope, link: "https://verycodedly.substack.com", title: "Substack" },
-  { icon: faDev, link: "https://dev.to/verycodedly", title: "Dev.to" },
-  { icon: faLinkedin, link: "https://linkedin.com/in/verycodedly", title: "LinkedIn" },
-  { icon: faInstagram, link: "https://instagram.com/verycodedly", title: "Instagram" },
-  { icon: faTiktok, link: "https://tiktok.com/@verycodedly", title: "TikTok" },
-  { icon: faFacebook, link: "https://facebook.com/verycodedly", title: "Facebook" },
+  { icon: faYoutube, link: "https://www.youtube.com/@verycodedly", name: "Youtube" },
+  { icon: faDiscord, link: "https://discord.gg/53wVsqEcbE", name: "Discord" },
+  { icon: faTwitter, link: "https://x.com/verycodedly", name: "Twitter" },
+  { icon: faEnvelope, link: "https://verycodedly.substack.com", name: "Substack" },
+  { icon: faDev, link: "https://dev.to/verycodedly", name: "Dev.to" },
+  { icon: faLinkedin, link: "https://linkedin.com/in/verycodedly", name: "LinkedIn" },
+  { icon: faInstagram, link: "https://instagram.com/verycodedly", name: "Instagram" },
+  { icon: faTiktok, link: "https://tiktok.com/@verycodedly", name: "TikTok" },
+  { icon: faFacebook, link: "https://facebook.com/verycodedly", name: "Facebook" },
 ];
 
 export default function Footer() {
@@ -94,18 +94,18 @@ export default function Footer() {
 
         {/* Socials */}
         <div className="flex flex-col items-start">
-          <h3 className="text-white text-lg font-semibold mb- tracking-tight">
+          <h3 className="text-white text-lg font-semibold tracking-tight">
             Connect
           </h3>
           <div className="grid grid-cols-3 gap-y-5 gap-x-4 mt-2 items-start">
-            {socials.map(({ icon, link, title }) => (
+            {socials.map(({ icon, link, name }) => (
               <Link
                 key={link}
                 href={link}
-                title={title}
-                aria-label={`${icon} link`}
+                title={name}
+                aria-label={`${name} link`}
                 target="_blank"
-                className="p-0.5 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 active:hover:scale-110 transition-transform duration-300"
+                className="p-0.5 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 active:scale-110 transition-transform duration-300"
               >
                 <FontAwesomeIcon icon={icon} size="lg" />
               </Link>

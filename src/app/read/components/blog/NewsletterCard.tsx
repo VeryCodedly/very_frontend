@@ -74,7 +74,7 @@ export default function NewsletterCard() {
     const body = encodeURIComponent(
       `Hi,\n\nPlease subscribe me to the VeryCodedly newsletter.\n\nEmail: ${email.trim()}`
     );
-    window.location.href = `mailto:verycodedly@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:connect@verycodedly.com?subject=${subject}&body=${body}`;
 
     // Reset
     setEmail('');

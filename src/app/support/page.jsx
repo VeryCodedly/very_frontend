@@ -161,7 +161,7 @@ export default function SupportPage() {
                 Join the community <FontAwesomeIcon icon={faPeopleGroup} className="inline ml-1 text-lime-400" size="1x" />
               </Link>
               <Link
-                href="mailto:verycodedly@gmail.com?subject=Support%20VeryCodedly"
+                href="mailto:connect@verycodedly.com?subject=Support%20VeryCodedly"
                 className="block w-full text-center text-sm sm:text-base px-4 py-2 rounded-lg border-2 border-gray-700/60 text-white hover:bg-lime-400/20 
                            active:bg-lime-400/20 focus:ring-2 focus:ring-lime-300/50 focus:ring-offset-2 focus:ring-offset-white transition-all duration-300"
               >

@@ -60,7 +60,7 @@ export default function ContactPage() {
     const body = encodeURIComponent(
       `Hi!\n\n${formData.message}\n\nFrom: ${formData.name}\nEmail: ${formData.email}`
     );
-    const mailtoLink = `mailto:verycodedly@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:connect@verycodedly.com?subject=${subject}&body=${body}`;
     window.location.href = mailtoLink;
 
     // Reset

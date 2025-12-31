@@ -32,8 +32,8 @@ export default function NotFound() {
                          bg-black/70 border-3 border-gray-500/100
                          px-7 py-1 rounded-full text-white
                          hover:bg-white hover:text-black
-                         hover:translate-y-0.5
-                         shadow-[0_4px_0_0_#9AE600]
+                         hover:translate-y-0.5 active:bg-white
+                         shadow-[0_4px_0_0_#9AE600] active:text-black
                          hover:shadow-[0_2px_0_0_#9AE600]
                          active:shadow-[0_2px_0_0_#9AE600]
                          active:translate-y-2

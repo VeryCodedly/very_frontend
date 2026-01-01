@@ -80,7 +80,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               {/* Default icon - User */}
               <FontAwesomeIcon
                 icon={faUser}
-                className="text-pink-500/90 text-sm absolute inset-0 transition-all duration-75 ease-out group-hover:rotate-12 group-hover:scale-0 group-hover:opacity-0 group-active:rotate-12 group-active:scale-0 group-active:opacity-0"
+                className="text-pink-400 text-sm absolute inset-0 transition-all duration-75 ease-out group-hover:rotate-12 group-hover:scale-0 group-hover:opacity-0 group-active:rotate-12 group-active:scale-0 group-active:opacity-0"
               />
               {/* Hover icon - Pen */}
               <FontAwesomeIcon

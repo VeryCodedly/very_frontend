@@ -16,7 +16,7 @@ const getCachedPost = unstable_cache(
     if (!res.ok) return null;
     return (await res.json()) as Post;
   },
-  ['posts-by-slug'], // + slug arg → per-post keys
+  ['posts-by-slug', 'slug'], // + slug arg → per-post keys
   { revalidate: 900 }
 );
 
@@ -65,6 +65,7 @@ export default async function BlogPostPage({
 
   return (
     <PostClient
+      key={post.slug}
       post={post}
       related={related.results || []}
       trending={trending.results || []}

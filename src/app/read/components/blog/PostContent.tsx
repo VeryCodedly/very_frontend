@@ -384,7 +384,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Meta Footer */}
       <div className="pt-10">
-        <div className="text-center text-gray-500 text-sm border-t border-b border-zinc-700 rounded-xl py-8">
+        <div className="text-center text-gray-500 text-sm border-t border-b border-zinc-800 rounded-md py-8">
           <p className="flex flex-col justify-center sm:flex-row sm:gap-2">
             <span>
               Published{' '}

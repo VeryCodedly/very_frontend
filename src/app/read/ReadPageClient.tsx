@@ -136,6 +136,7 @@ export default function ReadPageClient({ data }: Props){
           <Motion.div 
             className="absolute bottom-6 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-30 text-gray-400"
             animate={{ y: [0, 10, 0] }}
+            style={{ minHeight: '3rem' }} // reserve vertical space
             transition={{ repeat: Infinity, duration: 2 }}
             tabIndex={0}
           >

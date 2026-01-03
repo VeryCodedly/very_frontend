@@ -9,38 +9,47 @@ export default function ScrollRestoration() {
   useEffect(() => {
     const scrollKey = `scrollPos_${pathname}`;
 
-    // Restore scroll on back/forward
-    const restoreScroll = () => {
-      const saved = sessionStorage.getItem(scrollKey);
-      if (saved) {
-        // Soft delay to wait for layout
-        requestAnimationFrame(() => {
-          window.scrollTo(0, parseInt(saved, 10));
-        });
-      }
-    };
-
-    // Save scroll before unload/navigation
+    // Save current scroll position
     const saveScroll = () => {
       sessionStorage.setItem(scrollKey, window.scrollY.toString());
     };
 
+    // Handle back/forward navigation
+    const handlePopState = () => {
+      requestAnimationFrame(() => {
+        const saved = sessionStorage.getItem(scrollKey);
+        if (saved && parseInt(saved, 10) > 100) {
+          window.scrollTo(0, parseInt(saved, 10));
+        } else {
+          window.scrollTo(0, 0); // Forward or fresh visit → top
+        }
+      });
+    };
+
+    // Save on page unload/refresh/close
     window.addEventListener('beforeunload', saveScroll);
-    window.addEventListener('popstate', () => {
-      saveScroll();
-      restoreScroll();
+
+    // Handle back/forward
+    window.addEventListener('popstate', handlePopState);
+
+    // On initial mount (direct visit or refresh): restore if meaningful scroll saved
+    requestAnimationFrame(() => {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved && parseInt(saved, 10) > 100) {
+        window.scrollTo(0, parseInt(saved, 10));
+      } else {
+        window.scrollTo(0, 0);
+      }
     });
 
-    // Optional: restore on mount in case user refreshes
-    restoreScroll();
-
+    // Cleanup
     return () => {
       window.removeEventListener('beforeunload', saveScroll);
-      window.removeEventListener('popstate', restoreScroll);
+      window.removeEventListener('popstate', handlePopState);
     };
   }, [pathname]);
 
-  return null; // nothing rendered
+  return null;
 }
 
 // 'use client';

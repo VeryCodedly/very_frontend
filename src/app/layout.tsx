@@ -89,8 +89,8 @@ export default function RootLayout({
     <html lang="en" className="custom-scrollbar">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.verycodedly.com" />
+        {/* <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://api.verycodedly.com" /> */}
 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 

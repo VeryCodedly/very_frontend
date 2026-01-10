@@ -21,7 +21,7 @@ export default function Hero() {
               words={["Ready to see what's next in Tech? "]}
               // cursor
               // cursorStyle="|"
-              typeSpeed={40}
+              typeSpeed={50}
             // deleteSpeed={50}
             // delaySpeed={1500}
             />

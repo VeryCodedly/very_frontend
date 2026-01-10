@@ -109,7 +109,7 @@ export default function FloatingMenu({ categories }: { categories: Category[] })
         onMouseEnter={() => setExpanded(true)}
         className={`fixed overflow-hidden pl-6 md:pl-7 top-1/2 left-0 transform -translate-y-1/2 bg-black/30 hover:backdrop-blur-lg
                    shadow-lg rounded-r-3xl border border-l-0 border-white/20 transition-all duration-200 ease-in-out
-                   ${expanded ? "w-72 md:w-68 h-[61%] md:h-[461px] lg:h-[461px] m:h-full ax-h-[86vh] opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
+                   ${expanded ? "w-72 md:w-68 h-[461px] md:h-[461px] lg:h-[461px] m:h-full ax-h-[86vh] opacity-100 backdrop-blur-lg" : "opacity-0 w-8 h-10"} z-50`}
       >
         <ul className="flex flex-col gap-1 py-3 text-gray-200 h-full min-h-0 overflow-y-auto -webkit-overflow-scrolling-touch custom-scrollbar">
           {categories.map(cat => {
@@ -125,7 +125,7 @@ export default function FloatingMenu({ categories }: { categories: Category[] })
                   setActiveCatId(activeCatId === cat.id ? null : cat.id);
                 }}
               >
-                <div className="flex items-center gap-4 p-2.5 md:p-1.5 px-4 rounded-xl hover:bg-white/8 active:bg-white/8 transition-all duration-200">
+                <div className="flex items-center gap-4 md:gap-6 p-2.5 md:p-1.5 px-4 rounded-xl hover:bg-white/8 active:bg-white/8 transition-all duration-200">
                   <span className="text-xl text-pink-200/90 hover:text-pink-300/90 active:text-pink-300/90">
                     {icon ?
                       <Link href={`/read/category/${cat.slug}`}

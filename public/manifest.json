@@ -5,10 +5,10 @@
   "start_url": "/",
   "scope": "/",
   "id": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "any",
+
   "protocol_handlers": [
     {
       "protocol": "web+verycodedly",
@@ -18,7 +18,7 @@
   ],
   "icons": [
     {
-      "src": "/icons/icon-80x80.png",
+      "src": "/icons/icon-72x72.png",
       "sizes": "80x80",
       "type": "image/png"
     },

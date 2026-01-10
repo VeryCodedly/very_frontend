@@ -81,7 +81,7 @@ export default function ReadPageClient({ data }: Props){
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
+    <main className="relative w-full min-h-screen bg-black text-white overflow-hidden">
       {/* 🪶 HERO SECTION */}
       <div className="relative min-h-screen -mt-8 sm:mt-0 flex flex-col justify-center items-center text-center overflow-hidden">
         {/* layered typography */}
@@ -574,7 +574,7 @@ export default function ReadPageClient({ data }: Props){
 
       </div>
       </div>
-    </section>
+    </main>
   );
 }
 

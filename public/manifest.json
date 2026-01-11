@@ -18,14 +18,9 @@
   ],
   "icons": [
     {
-      "src": "/icons/icon-80.png",
-      "sizes": "80x80",
-      "type": "image/png"
-    },
-    {
-      "src": "/icons/icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/icons/icon-main.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ],
   "screenshots": [

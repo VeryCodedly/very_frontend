@@ -52,19 +52,20 @@ self.addEventListener('fetch', (event) => {
 
   // Static assets only
   event.respondWith(
-    caches.match(event.request).then((cached) => {
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+
+      const cached = await cache.match(event.request);
       if (cached) return cached;
 
-      return fetch(event.request).then((response) => {
-        if (!response || !response.ok) return response;
+      const response = await fetch(event.request);
 
-        caches.open(CACHE_NAME).then((cache) =>
-          cache.put(event.request, response.clone())
-        );
+      if (response?.ok) {
+        cache.put(event.request, response.clone());
+      }
 
-        return response;
-      });
-    })
+      return response;
+    })()
   );
 });
 

@@ -90,26 +90,26 @@ const nextConfig: NextConfig = {
     const csp = isDev ? cspDev : cspProd;
     return [
       // Next.js static assets
-      {
-        source: "/_next/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      // {
+      //   source: "/_next/static/(.*)",
+      //   headers: [
+      //     {
+      //       key: "Cache-Control",
+      //       value: "public, max-age=31536000, immutable",
+      //     },
+      //   ],
+      // },
 
       // Fonts & media
-      {
-        source: "/_next/static/media/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
+      // {
+      //   source: "/_next/static/media/(.*)",
+      //   headers: [
+      //     {
+      //       key: "Cache-Control",
+      //       value: "public, max-age=31536000, immutable",
+      //     },
+      //   ],
+      // },
       {
         source: "/(.*)",
         headers: [

@@ -72,7 +72,7 @@ export default function SubClient({
                                     initial={{ opacity: 0, y: 20 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: 0.05 }}
+                                    transition={{ delay: 0.02 }}
                                 //     className="bg-zinc-900/80 rounded-2xl p-2 border border-zinc-800 transition-transform duration-500 transform hover:-translate-y-2 
                                 //                 hover:rotateX-3 hover:rotateY-3 active:-translate-y-2 active:rotateX-3 active:rotateY-3" style={{ transformStyle: "preserve-3d", perspective: "1000px" }}
                                 >

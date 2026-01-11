@@ -5,10 +5,11 @@
   "start_url": "/",
   "scope": "/",
   "id": "/",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#000000",
-  "orientation": "portrait-primary",
+  "orientation": "any",
+  "display_override": ["window-controls-overlay"],
   "protocol_handlers": [
     {
       "protocol": "web+verycodedly",
@@ -20,12 +21,14 @@
     {
       "src": "/icons/icon-80x80.png",
       "sizes": "80x80",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "screenshots": [

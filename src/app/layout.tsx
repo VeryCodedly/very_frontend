@@ -88,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="custom-scrollbar">
       <head>
-        {/* <link rel="manifest" href="/manifest.json" /> */}
+        <link rel="manifest" href="/manifest.json" />
         
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-icon" href="/apple-icon.png" />

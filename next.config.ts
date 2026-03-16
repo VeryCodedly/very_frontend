@@ -145,7 +145,6 @@ const nextConfig: NextConfig = {
       headers: [
         { key: "Content-Security-Policy", value: csp },
         ...securityHeaders,
-        { key: "Cache-Control", value: "s-maxage=600, stale-while-revalidate=60" },
       ],
     },
     ];

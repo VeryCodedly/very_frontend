@@ -76,7 +76,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   // LOW RAM + COOLIFY
-  output: isDev ? undefined : 'standalone',
+  // output: isDev ? undefined : 'standalone',
 
   experimental: {
     scrollRestoration: true,

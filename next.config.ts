@@ -75,7 +75,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: !isDev,
   poweredByHeader: false,
 
-  // LOW RAM + COOLIFY
+  // LOW RAM + COOLIFY (revisit if miration)
   // output: isDev ? undefined : 'standalone',
 
   experimental: {

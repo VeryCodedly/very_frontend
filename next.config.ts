@@ -75,8 +75,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: !isDev,
   poweredByHeader: false,
 
-  // LOW RAM + COOLIFY (revisit if miration)
-  // output: isDev ? undefined : 'standalone',
+  // LOW RAM + COOLIFY (revisit if migration)
+  output: isDev ? undefined : 'standalone',
 
   experimental: {
     scrollRestoration: true,
@@ -118,7 +118,7 @@ const nextConfig: NextConfig = {
     {
       source: "/manifest.json",
       headers: [
-        { key: "Cache-Control", value: "public, s-maxage=600, stale-while-revalidate=60" },
+        { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
       ],
     },
     // 6️⃣ Offline page and images
@@ -139,7 +139,7 @@ const nextConfig: NextConfig = {
       source: "/(.*)",
       headers: [
         { key: "Content-Security-Policy", value: csp },
-        { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=59" },
+        { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
         ...securityHeaders,
       ],
     },

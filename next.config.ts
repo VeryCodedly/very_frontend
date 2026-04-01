@@ -72,10 +72,10 @@ const securityHeaders = [
 
 /*  Next.js Config  */
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: !isDev,
   poweredByHeader: false,
 
-  // LOW RAM + COOLIFY (revisit if migration)
+  // LOW RAM + COOLIFY (revisit if miration)
   // output: isDev ? undefined : 'standalone',
 
   experimental: {

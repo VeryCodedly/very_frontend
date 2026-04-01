@@ -2,9 +2,6 @@
   "name": "very_frontend",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-  "node": "20.x"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -32,8 +29,7 @@
     "react-syntax-highlighter": "^16.1.0",
     "rss": "^1.2.2",
     "sharp": "^0.34.5",
-    "swr": "^2.3.6",
-    "typescript": "^5"
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

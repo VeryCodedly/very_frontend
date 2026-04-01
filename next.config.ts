@@ -76,11 +76,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   // LOW RAM + COOLIFY (revisit if migration)
-  output: isDev ? undefined : 'standalone',
+  // output: isDev ? undefined : 'standalone',
 
   experimental: {
-    cpus: isDev ? undefined : 1,
-    workerThreads: isDev ? undefined : false,
     scrollRestoration: true,
     // helps with memory during webpack build
     webpackMemoryOptimizations: !isDev,

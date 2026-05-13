@@ -233,7 +233,7 @@ export default function ProductPage() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3 }}
-          className="max-w-7xl mx-auto mt-10 ml-6"
+          className="max-w-7xl mx-auto mt-10 ml-3"
         >
           <Link
             href="/merch"
@@ -320,7 +320,7 @@ export default function ProductPage() {
                 <div className="relative flex items-center justify-between py-3 px-8">
                   <div className="flex items-center gap-4">
                       <FontAwesomeIcon icon={faRuler} className={`transition-all duration-300 ${openFit ? 'text-lime-400' : 'text-gray-500'}`} />
-                      <h3 className="text-lg text-white">Sizing</h3>
+                      <h3 className="text-base sm:text-lg text-white">Sizing</h3>
                   </div>
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
@@ -365,7 +365,7 @@ export default function ProductPage() {
                 <div className="relative flex items-center justify-between py-3 px-8">
                   <div className="flex items-center gap-4">
                       <FontAwesomeIcon icon={faCircleCheck} className={`transition-all duration-300 ${openQuality ? 'text-lime-400' : 'text-gray-500'}`} />
-                      <h3 className="text-lg text-white">Quality Guarantee</h3>
+                      <h3 className="text-base sm:text-lg text-white">Quality Guarantee</h3>
                   </div>
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
@@ -414,7 +414,7 @@ export default function ProductPage() {
               <span className="w-1.5 h-8 bg-lime-400 rounded-xs group-hover/bar:bg-pink-400 group-active/bar:bg-pink-400 transition-colors" />
               <h2 className="text-2xl font-bold text-white capitalize">More from {product.category}</h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {relatedProducts.map(rel => (
                 <Link key={rel.id} href={`/merch/${rel.slug}`} className="group">
                   <div className="rounded-xl overflow-hidden bg-zinc-900/30 aspect-square">

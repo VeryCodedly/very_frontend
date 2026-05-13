@@ -41,9 +41,31 @@ export default function Footer() {
           <h3 className="text-lime-400 text-xl font-bold mb-2">
             VeryCodedly{/* <span className="text-xs">™</span> */}
           </h3>
-          <p className="text-sm text-gray-400/70 leading-tight w-[140px]">
+          <p className="text-sm text-gray-400/70 leading-snug w-[140px]">
             For the curious minds shaping the future, you're in good company here.
           </p>
+        </div>
+
+        {/* Socials */}
+        <div className="flex flex-col items-start">
+          <h3 className="text-white text-lg font-semibold tracking-tight">
+            Connect
+          </h3>
+          <div className="grid grid-cols-3 gap-y-3 gap-x-4 mt-1 items-start">
+            {socials.map(({ icon, link, name }) => (
+              <Link
+                key={link}
+                href={link}
+                title={name}
+                aria-label={`${name} link`}
+                target="_blank"
+                loading="lazy"
+                className="p-0.5 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
+              >
+                <FontAwesomeIcon icon={icon} size="lg" />
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* Explore */}
@@ -98,28 +120,6 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-
-        {/* Socials */}
-        <div className="flex flex-col items-start">
-          <h3 className="text-white text-lg font-semibold tracking-tight">
-            Connect
-          </h3>
-          <div className="grid grid-cols-3 gap-y-5 gap-x-4 mt-1 items-start">
-            {socials.map(({ icon, link, name }) => (
-              <Link
-                key={link}
-                href={link}
-                title={name}
-                aria-label={`${name} link`}
-                target="_blank"
-                loading="lazy"
-                className="p-0.5 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
-              >
-                <FontAwesomeIcon icon={icon} size="lg" />
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
 

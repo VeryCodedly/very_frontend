@@ -51,7 +51,7 @@ export default function Footer() {
           <h3 className="text-white text-lg font-semibold tracking-tight">
             Connect
           </h3>
-          <div className="grid grid-cols-3 gap-y-3 gap-x-4 mt-1 items-start">
+          <div className="grid grid-cols-3 gap-y-4 gap-x-5 mt-2 items-start">
             {socials.map(({ icon, link, name }) => (
               <Link
                 key={link}
@@ -60,7 +60,7 @@ export default function Footer() {
                 aria-label={`${name} link`}
                 target="_blank"
                 loading="lazy"
-                className="p-0.5 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
+                className="p-0 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
               >
                 <FontAwesomeIcon icon={icon} size="lg" />
               </Link>
@@ -124,7 +124,7 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-8" />
+      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-12 sm:my-10 md:my-8" />
 
       {/* Logo + Bottom line */}
       <div className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">

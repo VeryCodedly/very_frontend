@@ -138,7 +138,7 @@ export default function StorePage() {
             </Link>
         </motion.div>
 
-      <div className="max-w-5xl mx-auto mb-18 px-0 sm:px-0">
+      <div className="max-w-5xl mx-auto mb-12 sm:mb-16 px-0 sm:px-0">
         <h1 className="mb-4">
           <span className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-lime-200 to-white bg-clip-text text-transparent">
             VeryCodedly Supply

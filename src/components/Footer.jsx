@@ -30,15 +30,15 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-gradient-to-b from-black to-zinc-950 text-gray-400/95 pt-16 sm:pt-20 pb-16 sm:pb-14 px-8 overflow-hidden border-t border-zinc-950">
+    <footer className="relative isolate bg-gradient-to-b from-black to-zinc-950 text-gray-400/95 pt-18 pb-10 px-8 overflow-clip border-t border-zinc-950">
       {/* faint glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_60%)] pointer-events-none"></div>
 
       {/* content grid */}
-      <div className="relative max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 pt-8 gap-14 lg:pl-18">
+      <div className="relative max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-4 pt-8 gap-8 lg:pl-20">
         {/* Brand Column */}
         <div>
-          <h3 className="text-lime-400 text-xl font-bold mb-3">
+          <h3 className="text-lime-400 text-xl font-bold mb-2">
             VeryCodedly{/* <span className="text-xs">™</span> */}
           </h3>
           <p className="text-sm text-gray-400/70 leading-tight w-[140px]">
@@ -48,10 +48,10 @@ export default function Footer() {
 
         {/* Explore */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-3 tracking-tight">
+          <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
             Explore
           </h3>
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-4 sm:space-y-2 text-sm">
             {[
               ["About", "/about"],
               ["Read", "/read"],
@@ -75,10 +75,10 @@ export default function Footer() {
 
         {/* Help */}
         <div>
-          <h3 className="text-white text-lg font-semibold mb-3 tracking-tight">
+          <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
             Help
           </h3>
-          <ul className="space-y-4 text-sm">
+          <ul className="space-y-4 sm:space-y-2 text-sm">
             {[
               ["FAQs", "/faqs"],
               ["Contact", "/contact"],
@@ -105,7 +105,7 @@ export default function Footer() {
           <h3 className="text-white text-lg font-semibold tracking-tight">
             Connect
           </h3>
-          <div className="grid grid-cols-3 gap-y-5 gap-x-4 mt-2 items-start">
+          <div className="grid grid-cols-3 gap-y-5 gap-x-4 mt-1 items-start">
             {socials.map(({ icon, link, name }) => (
               <Link
                 key={link}
@@ -124,10 +124,10 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-8 sm:my-10" />
+      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-8" />
 
       {/* Logo + Bottom line */}
-      <div className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto gap-6">
+      <div className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">
         <Link aria-label="Home button" href="/">
           <Image
             src="/images/favicon-main.svg"

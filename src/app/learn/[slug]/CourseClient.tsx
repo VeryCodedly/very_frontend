@@ -139,9 +139,9 @@ export default function CourseClient({ course, slug }: CourseClientProps) {
             alt={course.alt || 'Featured image'}
             width={1200}
             height={600}
-            className="w-full h-[252px] sm:h-[72vh] lg:h-[74vh] object-cover rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
+            className="w-full h-[252px] sm:h-[72vh] lg:h-[74vh] object-contain rounded-2xl brightness-65 hover:brightness-90 active:brightness-90 transition-all duration-500"
             priority
-            sizes="100vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 92vw, 1200px"
           />
         </div>
 

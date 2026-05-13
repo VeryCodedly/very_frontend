@@ -314,13 +314,13 @@ export default function ProductPage() {
             <div className="relative">
               <motion.button
                 onClick={() => setOpenFit(!openFit)}
-                className="w-full relative overflow-hidden rounded-2xl border border-gray-700/40 bg-white/3 transition-all duration-300 hover:border-gray-500/50 group/btn"
+                className="w-full relative overflow-hidden rounded-2xl border-b border-gray-700/40 bg-white/3 transition-all duration-300 hover:border-gray-500/50 group/btn"
                 whileTap={{ scale: 0.99 }}
               >        
                 <div className="relative flex items-center justify-between py-3 px-8">
                   <div className="flex items-center gap-4">
                       <FontAwesomeIcon icon={faRuler} className={`transition-all duration-300 ${openFit ? 'text-lime-400' : 'text-gray-500'}`} />
-                      <h3 className="text-base sm:text-lg text-white">Sizing</h3>
+                      <h3 className="text-base text-white">Sizing</h3>
                   </div>
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
@@ -339,7 +339,7 @@ export default function ProductPage() {
                     transition={{ duration: 0.3, ease: [0.34, 1.2, 0.64, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-2 bg-white/3 rounded-2xl border border-gray-700/40 px-10 py-4">
+                    <div className="mt-2 bg-white/3 rounded-2xl border-b border-gray-700/40 px-10 py-4">
                       {/* check the size chart in the product images, */}
                       <p className="text-gray-300/90 text-sm leading-relaxed mb-3">
                         Sizing varies by item. For apparel, we recommend ordering your usual size unless noted otherwise.
@@ -359,13 +359,13 @@ export default function ProductPage() {
             <div className="relative">
               <motion.button
                 onClick={() => setOpenQuality(!openQuality)}
-                className="w-full relative overflow-hidden rounded-2xl border border-gray-700/40 bg-white/3 transition-all duration-300 hover:border-gray-500/50 group/btn"
+                className="w-full relative overflow-hidden rounded-2xl border-b border-gray-700/40 bg-white/3 transition-all duration-300 hover:border-gray-500/50 group/btn"
                 whileTap={{ scale: 0.99 }}
               >        
                 <div className="relative flex items-center justify-between py-3 px-8">
                   <div className="flex items-center gap-4">
                       <FontAwesomeIcon icon={faCircleCheck} className={`transition-all duration-300 ${openQuality ? 'text-lime-400' : 'text-gray-500'}`} />
-                      <h3 className="text-base sm:text-lg text-white">Quality Guarantee</h3>
+                      <h3 className="text-base text-white">Quality Guarantee</h3>
                   </div>
                   <div
                     className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
@@ -384,7 +384,7 @@ export default function ProductPage() {
                     transition={{ duration: 0.4, ease: [0.34, 1.2, 0.64, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="mt-2 bg-white/3 rounded-2xl border border-gray-700/40 px-10 py-4">
+                    <div className="mt-2 bg-white/3 rounded-2xl border-b border-gray-700/40 px-10 py-4">
                       
                       <p className="text-gray-300/90 text-sm leading-relaxed mb-3">
                         Quality is guaranteed. If something arrives with a manufacturing defect, let us know within 7 days.
@@ -427,8 +427,8 @@ export default function ProductPage() {
                       className="object-cover transition-transform group-hover:scale-105"
                     />
                   </div>
-                  <p className="text-white text-sm mt-2 line-clamp-1">{rel.fancy_name}</p>
-                  <p className="text-lime-400 text-xs">${rel.price}</p>
+                  <p className="text-white text-sm font-semibold mt-2 line-clamp-1">{rel.fancy_name}</p>
+                  <p className="text-lime-400 text-xs font-semibold">${rel.price}</p>
                 </Link>
               ))}
             </div>

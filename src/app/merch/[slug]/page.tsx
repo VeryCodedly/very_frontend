@@ -213,7 +213,7 @@ export default function ProductPage() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => setIsCartOpen(true)}   // you need a state to control the sidebar
-          className="fixed bottom-4 right-3 z-70 bg-lime-400 text-black p-4 rounded-full shadow-md shadow-lime-400/20 hover:shadow-lg transition-all duration-200"
+          className="fixed bottom-4 right-2 z-70 bg-lime-400 text-black p-4 rounded-full shadow-md shadow-lime-400/20 hover:shadow-lg transition-all duration-200"
         >
           <div className="relative">
             <FontAwesomeIcon icon={faCartShopping} />

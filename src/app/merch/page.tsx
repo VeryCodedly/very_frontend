@@ -47,7 +47,7 @@ export default function StorePage() {
 
   const renderSection = (title: string, tagline: string, items: Product[]) => (
     items.length > 0 && (
-      <section className="max-w-5xl mx-auto mb-20 group/bar px-2 sm:px-0">
+      <section className="max-w-5xl mx-auto mb-20 group/bar px-1 sm:px-0">
         <div className="flex flex-col md:flex-row md:items-start gap-4 mb-10 justify-between">
           <div className="flex items-center gap-3">
             <span className="w-1.5 h-8 bg-lime-400 rounded-xs group-hover/bar:bg-pink-400 group-active/bar:bg-pink-400 transition-colors" />
@@ -63,7 +63,7 @@ export default function StorePage() {
           </div>
           <p className="text-sm text-gray-500 pt-0 sm:pt-1">{tagline}</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {items.map((product, index) => (
             <Link href={`/merch/${product.slug}`} key={product.id}>
               <motion.div
@@ -138,10 +138,10 @@ export default function StorePage() {
             </Link>
         </motion.div>
 
-      <div className="max-w-5xl mx-auto mb-18 px-2 sm:px-0">
+      <div className="max-w-5xl mx-auto mb-18 px-0 sm:px-0">
         <h1 className="mb-4">
           <span className="text-4xl md:text-5xl font-black bg-gradient-to-r from-white via-lime-200 to-white bg-clip-text text-transparent">
-            VeryCodedly Merch
+            VeryCodedly Supply
           </span>
           {/* <span className="text-4xl md:text-5xl">🚧</span> */}
         </h1>

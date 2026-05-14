@@ -16,8 +16,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import CourseListClient from "./components/CourseListClient";
 import { Lessons } from "@/types/post";
-import PageLoader from "@/components/PageLoader";
-import { useEffect, useState } from "react";
 
 type Course = {
   id: number;
@@ -35,13 +33,6 @@ interface Props {
 }
 
 export default function LearnPage({ courses }: Props) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setLoading(false);
-  }, []);
-
-  if (loading) return <PageLoader />;
 
   return (
     <div className="bg-gradient-to-b from-black via-black to-zinc-950/40 text-white">

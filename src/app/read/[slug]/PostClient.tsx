@@ -23,13 +23,13 @@ interface PostClientProps {
 }
 
 export default function PostClient({ post, related, trending }: PostClientProps) {
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        setLoading(false);
-    }, []);
+    // useEffect(() => {
+    //     setLoading(false);
+    // }, []);
 
-    if (loading) return <PageLoader />;
+    // if (loading) return <PageLoader />;
 
     let contentJson: BlogContentJSON | null = null;
     try {

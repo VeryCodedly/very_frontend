@@ -7,8 +7,6 @@ import { faArrowLeft, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 import RelatedPostsSection from '../../components/blog/RelatedPostsSection';
 import MiniPostCard from '../../components/blog/MiniPostCard';
 import { Post, Subcategory } from '@/types/post';
-import { useState, useEffect } from 'react';
-// import PageLoader from '@/components/PageLoader';
 
 
 export default function SubClient({
@@ -21,14 +19,7 @@ export default function SubClient({
     trending: Post[];
 }) {
     const { name, about } = subcategory;
-    // const [loading, setLoading] = useState(true);
-
-    // useEffect(() => {
-    //     setLoading(false);
-    // }, []);
-
-    // if (loading) return <PageLoader />;
-
+    
     if (posts.length === 0) {
         return (
             <main>
@@ -76,8 +67,7 @@ export default function SubClient({
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.02 }}
                         className="py-10 px-4 w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-5 border-y border-zinc-700 rounded-xl"
                     >

@@ -19,12 +19,12 @@ export default function SubClient({
     trending: Post[];
 }) {
     const { name, about } = subcategory;
-    
+
     if (posts.length === 0) {
         return (
             <main>
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }} className="max-w-6xl mx-auto mb-6">
-                    <Link href="/read" className="inline-flex items-center gap-2 mt-8 pl-7 text-lime-400 hover:text-white underline underline-offset-2 text-sm" aria-label="Back to Read button">
+                    <Link href="/read" className="inline-flex items-center gap-2 mt-10 ml-5 text-lime-400 hover:text-white underline underline-offset-2 text-sm" aria-label="Back to Read button">
                         <FontAwesomeIcon icon={faArrowLeft} size="lg" />
                     </Link>
                 </motion.div>
@@ -45,14 +45,14 @@ export default function SubClient({
 
     return (
         <section>
+            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
+                <Link href="/read" className="inline-flex items-center  text-lime-400 mt-10 ml-5 hover:text-white text-sm sm:text-base active:text-white active:scale-60 transition-all duration-300"
+                    aria-label="Back to Read button">
+                    <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+                </Link>
+            </motion.div>
             <section className="min-h-screen max-w-[90%] sm:max-w-[94%] mx-auto bg-black text-white px-2 pb-20">
                 <div className="max-w-5xl mx-auto">
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.3 }}>
-                        <Link href="/read" className="inline-flex items-center  text-lime-400 pt-8 hover:text-white text-sm sm:text-base active:text-white active:scale-60 transition-all duration-300"
-                            aria-label="Back to Read button">
-                            <FontAwesomeIcon icon={faArrowLeft} size="lg" />
-                        </Link>
-                    </motion.div>
                     <div className="max-w-5xl mx-auto">
                         <h1 className="pt-8 text-4xl sm:text-5xl font-black tracking-tight bg-gradient-to-r from-white via-lime-200 to-white bg-clip-text text-transparent uppercase">
                             {name}

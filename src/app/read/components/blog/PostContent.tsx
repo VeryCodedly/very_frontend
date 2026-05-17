@@ -237,8 +237,8 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Gallery */}
       {post.images && post.images.length > 0 && (<div className="mb-8 sm:mb-12">
-        <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-lime-300 flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-lime-300" />
+        <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white flex items-center gap-2">
+          <span className="w-3 h-3 rounded-full bg-lime-400" />
            Gallery
         </h2>
         {post.images && post.images.length > 0 ? (
@@ -265,8 +265,8 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Tags */}
       <div className="mb-8 sm:mb-12">
-        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-lime-300 gap-2 flex items-center">
-            <span className="w-2 h-2 rounded-full bg-lime-300" />
+        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-2 flex items-center">
+            <span className="w-3 h-3 rounded-full bg-lime-400" />
             Tags
         </h3>
         {post.tags && Array.isArray(post.tags) && post.tags.length > 0 ? (
@@ -284,8 +284,8 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Related Links */}
       {post.links && post.links.length > 0 && (<div className="mb-8 sm:mb-12">
-        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-lime-300 gap-2 flex items-center">
-          <span className="w-2 h-2 rounded-full bg-lime-300" />
+        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-2 flex items-center">
+          <span className="w-3 h-3 rounded-full bg-lime-400" />
           Related Links
         </h3>
         {post.links && post.links.length > 0 ? (
@@ -337,8 +337,8 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         // transition={{ duration: 0.6, delay: 0.6 }}
         className="mb-8 sm:mb-12"
       >
-        <h3 className="text-lg sm:text-xl font-bold mb-4 text-lime-300 flex items-center gap-3">
-          <span className="w-2 h-2 rounded-full bg-lime-300" />
+        <h3 className="text-lg sm:text-xl font-bold mb-4 text-white flex items-center gap-3">
+          <span className="w-3 h-3 rounded-full bg-lime-400" />
           Join the Discussion
         </h3>
 

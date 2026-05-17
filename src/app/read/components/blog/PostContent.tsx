@@ -272,7 +272,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
         {post.tags && Array.isArray(post.tags) && post.tags.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag, index) => (
-              <span key={index} className="bg-zinc-900/50 hover:bg-lime-400/10 text-lime-400 hover:text-lime-300 lowercase px-3 py-1 rounded-full text-sm border border-zinc-800/30 transition-all" tabIndex={0}>
+              <span key={index} className="bg-gray-300/10 hover:bg-lime-400/10 text-lime-400 hover:text-lime-300 lowercase px-3 py-1 rounded-full text-sm border border-zinc-800/30 transition-all" tabIndex={0}>
                 {tag}
               </span>
             ))}
@@ -293,7 +293,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             {post.links.map((link) => (
               <Link key={link.label} aria-label={`Link for ${link.target_post}`} href={link.external_url || `/read/${link.target_post?.slug || '#'}`}
                 target={link.external_url ? '_blank' : '_self'} rel={link.external_url ? 'noopener noreferrer' : ''}
-                className="group flex items-center w-fit gap-2 px-4 py-2 bg-zinc-900/50 hover:bg-lime-500/10 active:bg-lime-500/10 border border-zinc-800/30
+                className="group flex items-center w-fit gap-2 px-4 py-2 bg-gray-300/10 hover:bg-lime-500/10 active:bg-lime-500/10 border border-zinc-800/30
                 hover:border-lime-500/20 active:border-lime-500/20 rounded-2xl transition-all text-lime-400 hover:text-lime-200 active:text-lime-200 text-sm sm:text-sm">
                 <span className="font-normal">{link.label || 'Related Link'}</span>
                 {link.type === 'affiliate' && <span className="text-xs bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full">Affiliate</span>}

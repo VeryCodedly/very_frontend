@@ -30,7 +30,7 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="relative bg-gradient-to-b from-black to-zinc-950 text-gray-400/95 pt-22 sm:pt-18 pb-8 px-8 overflow-clip border-t border-zinc-850">
+    <footer className="relative bg-gradient-to-b from-black to-zinc-950 text-gray-400/95 pt-22 sm:pt-18 pb-8 px-8 overflow-clip border-t border-zinc-950">
       {/* faint glow background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05),transparent_60%)] pointer-events-none"></div>
 
@@ -44,7 +44,7 @@ export default function Footer() {
             <h3 className="text-lime-400 text-xl font-bold mb-2 tracking-[-0.1em]">
               VeryCodedly{/* <span className="text-xs">™</span> */}
             </h3>
-            <p className="text-sm text-gray-400/70 leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
+            <p className="text-sm text-gray-400/70 max-w-[120px] leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
               For the curious minds shaping the future, you're in good company here.
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function Footer() {
       </div>
 
       {/* Divider */}
-      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-12 sm:my-8" />
+      <div className="relative w-full h-px g-gradient-to-r from-transparent via-gray-800/50 to-transparent my-14 sm:my-8" />
 
       {/* Logo + Bottom line */}
       <div className="relative flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto">

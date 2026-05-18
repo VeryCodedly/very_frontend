@@ -40,11 +40,11 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="flex justify-center">
           <div className="">
-          <div className="w-full ml-3 sm:ml-0 max-w-[140px]">
+          <div className="w-full ml-2 sm:ml-0 max-w-[120px] sm:max-w-[140px]">
             <h3 className="text-lime-400 text-xl font-bold mb-2 tracking-[-0.1em]">
               VeryCodedly{/* <span className="text-xs">™</span> */}
             </h3>
-            <p className="text-sm text-gray-400/70 max-w-[120px] leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
+            <p className="text-sm text-gray-400/70 leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
               For the curious minds shaping the future, you're in good company here.
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Explore */}
           <div className="flex justify-center">
-          <div className="mr-6 sm:mr-0">
+          <div className="mr-7.5 sm:mr-0">
             <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
               Explore
             </h3>

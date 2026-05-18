@@ -76,7 +76,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
             {post.author || 'Anonymous'}
           </span> */}
         <div className="flex flex-wrap items-center gap-3.5 sm:gap-4 mb-4 text-sm text-gray-400">
-          <span className="bg-gray-400/10 text-gray-400 select-none px-2 py-1 rounded-full font-medium flex items-center gap-2 group">
+          <span className="bg-gray-400/10 text-gray-400 select-none px-2.5 py-1 rounded-full font-medium flex items-center gap-2 group">
             <span className="relative inline-block w-4 h-4">
               {/* Default icon - User */}
               <FontAwesomeIcon
@@ -237,7 +237,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Gallery */}
       {post.images && post.images.length > 0 && (<div className="mb-8 sm:mb-12">
-        <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white flex items-center gap-2">
+        <h2 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-white flex items-center gap-3">
           <span className="w-3 h-3 rounded-full bg-lime-400" />
            Gallery
         </h2>
@@ -265,14 +265,14 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Tags */}
       <div className="mb-8 sm:mb-12">
-        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-2 flex items-center">
+        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-3 flex items-center">
             <span className="w-3 h-3 rounded-full bg-lime-400" />
             Tags
         </h3>
         {post.tags && Array.isArray(post.tags) && post.tags.length > 0 ? (
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag, index) => (
-              <span key={index} className="bg-gray-300/10 hover:bg-lime-400/10 text-lime-400 hover:text-lime-300 lowercase px-3 py-1 rounded-full text-sm border border-zinc-800/30 transition-all" tabIndex={0}>
+              <span key={index} className="bg-gray-300/10 hover:bg-lime-400/10 text-gray-300/90 hover:text-lime-300 lowercase px-3 py-1 rounded-full text-sm border border-zinc-800/30 transition-all" tabIndex={0}>
                 {tag}
               </span>
             ))}
@@ -284,7 +284,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
 
       {/* Related Links */}
       {post.links && post.links.length > 0 && (<div className="mb-8 sm:mb-12">
-        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-2 flex items-center">
+        <h3 className="text-lg sm:text-xl font-semibold mb-4 text-white gap-3 flex items-center">
           <span className="w-3 h-3 rounded-full bg-lime-400" />
           Related Links
         </h3>
@@ -294,7 +294,7 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
               <Link key={link.label} aria-label={`Link for ${link.target_post}`} href={link.external_url || `/read/${link.target_post?.slug || '#'}`}
                 target={link.external_url ? '_blank' : '_self'} rel={link.external_url ? 'noopener noreferrer' : ''}
                 className="group flex items-center w-fit gap-2 px-4 py-2 bg-gray-300/10 hover:bg-lime-500/10 active:bg-lime-500/10 border border-zinc-800/30
-                hover:border-lime-500/20 active:border-lime-500/20 rounded-2xl transition-all text-lime-400 hover:text-lime-200 active:text-lime-200 text-sm sm:text-sm">
+                hover:border-lime-500/20 active:border-lime-500/20 rounded-2xl transition-all text-gray-200 hover:text-lime-300 active:text-lime-300 text-sm sm:text-sm">
                 <span className="font-normal">{link.label || 'Related Link'}</span>
                 {link.type === 'affiliate' && <span className="text-xs bg-pink-500/20 text-pink-400 px-2 py-1 rounded-full">Affiliate</span>}
                 {link.external_url && <FontAwesomeIcon icon={faLongArrowRight} className="group-active:translate-x-1 transition-transform" />}

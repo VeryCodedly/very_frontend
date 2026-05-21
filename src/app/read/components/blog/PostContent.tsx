@@ -12,7 +12,7 @@ import { Post } from '@/types/post';
 // import Head from 'next/head';
 
 export interface BlogBlock {
-  type: 'heading' | 'paragraph' | 'list' | 'link' | 'callout' | 'code' | 'reviewImg';
+  type: 'heading' | 'paragraph' | 'list' | 'link' | 'callout' | 'code' | 'reviewImg' | 'table';
   level?: number;
   content?: string;
   style?: 'bullet' | 'number';
@@ -23,6 +23,9 @@ export interface BlogBlock {
   imageUrl?: string;
   imageAlt?: string;
   imageCaption?: string;
+  table?: string;
+  headers?: string[];
+  rows?: string[][];
 }
 
 interface BlogContentJSON {
@@ -179,6 +182,42 @@ export default function PostContent({ post, contentJson }: PostContentProps) {
                       </Link>
                     </p>
                   );
+                  case "table":
+                return (
+                  <div key={index} className="overflow-x-auto my-10 transition-transform duration-300 hover:scale-[1.01]">
+                    <table className="w-full border-collapse backdrop-blur-md bg-zinc-900/40 border border-white/70 rounded-xl shadow-lg overflow-hidden">
+                      <thead className="bg-zinc-700/30">
+                        <tr>
+                          {block.headers?.map((header, i) => (
+                            <th
+                              key={i}
+                              className="px-4 py-3 text-left text-sm sm:text-base text-white/90 border-b border-white/30"
+                            >
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows?.map((row, ri) => (
+                          <tr
+                            key={ri}
+                            className="hover:bg-white/10 active:bg-white/10 dark:hover:bg-zinc-700/20 transition-colors"
+                          >
+                            {row.map((cell, ci) => (
+                              <td
+                                key={ci}
+                                className="px-4 py-3 text-white/80 text-xs sm:text-base border-b border-white/10"
+                              >
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                );
                 case 'callout':
                   return (
                     <div key={index} className="p-3 sm:p-4 border border-pink-500/30 bg-zinc-800/60 rounded-xl text-gray-200 italic backdrop-blur-sm shadow-lg text-sm sm:text-base">

@@ -39,99 +39,99 @@ export default function Footer() {
         <div className="grid grid-cols-2 sm:grid-cols-4 pt-8 gap-12">
           {/* Brand Column */}
           <div className="flex justify-center">
-          <div className="">
-          <div className="w-full ml-2 sm:ml-0 max-w-[120px] sm:max-w-[140px]">
-            <h3 className="text-lime-400 text-xl font-bold mb-2 tracking-[-0.1em]">
-              VeryCodedly{/* <span className="text-xs">™</span> */}
-            </h3>
-            <p className="text-sm text-gray-400/70 leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
-              For the curious minds shaping the future, you're in good company here.
-            </p>
-          </div>
-          </div>
+            <div className="">
+              <div className="w-full ml-2 sm:ml-0 max-w-[120px] sm:max-w-[140px]">
+                <h3 className="text-lime-400 text-xl font-bold mb-2 tracking-[-0.1em]">
+                  VeryCodedly{/* <span className="text-xs">™</span> */}
+                </h3>
+                <p className="text-sm text-gray-400/70 leading-4.5 tracking-[-0.09em] sm:tracking-[-0.1em]">
+                  For the curious minds shaping the future, you're in good company here.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Socials */}
           <div className="flex justify-center">
             <div className="flex flex-col">
-            <h3 className="text-white text-lg font-semibold tracking-tight">
-              Connect
-            </h3>
-            <div className="grid grid-cols-3 gap-y-4 sm:gap-y-5 gap-x-5 mt-2">
-              {socials.map(({ icon, link, name }) => (
-                <Link
-                  key={link}
-                  href={link}
-                  title={name}
-                  aria-label={`${name} link`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  loading="lazy"
-                  className="w-fit p-0 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
-                >
-                  <FontAwesomeIcon icon={icon} size="lg" />
-                </Link>
-              ))}
+              <h3 className="text-white text-lg font-semibold tracking-tight">
+                Connect
+              </h3>
+              <div className="grid grid-cols-3 gap-y-4 sm:gap-y-5 gap-x-5 mt-2">
+                {socials.map(({ icon, link, name }) => (
+                  <Link
+                    key={link}
+                    href={link}
+                    title={name}
+                    aria-label={`${name} link`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    loading="lazy"
+                    className="w-fit p-0 text-gray-400/80 hover:text-lime-500 active:text-lime-500 hover:scale-110 transition duration-400 active:scale-60"
+                  >
+                    <FontAwesomeIcon icon={icon} size="lg" />
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
           </div>
 
           {/* Explore */}
           <div className="flex justify-center">
-          <div className="mr-7.5 sm:mr-0">
-            <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
-              Explore
-            </h3>
-            <ul className="space-y-4 sm:space-y-2 text-sm">
-              {[
-                ["About", "/about"],
-                ["Read", "/read"],
-                ["Learn", "/learn"],
-                ["Know", "/know"],
-                ["Merch", "/merch"],
-                ["Connect", "/connect"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    aria-label={`${label} page link`}
-                    className="hover:text-lime-400 transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="mr-7.5 sm:mr-0">
+              <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
+                Explore
+              </h3>
+              <ul className="space-y-4 sm:space-y-2 text-sm">
+                {[
+                  ["About", "/about"],
+                  ["Read", "/read"],
+                  ["Learn", "/learn"],
+                  ["Know", "/know"],
+                  ["Merch", "/merch"],
+                  ["Connect", "/connect"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      aria-label={`${label} page link`}
+                      className="hover:text-lime-400 transition-colors duration-200"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Help */}
           <div className="flex justify-center">
-          <div className="">
-            <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
-              Help
-            </h3>
-            <ul className="space-y-4 sm:space-y-2 text-sm">
-              {[
-                ["FAQs", "/faqs"],
-                ["Contact", "/contact"],
-                ["Support", "/support"],
-                ["Privacy", "/privacy"],
-                ["Community", "/community"],
-                ["Terms of Use", "/terms"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    aria-label={`${label} page link`}
-                    className="hover:text-lime-400 transition-colors duration-200"
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="">
+              <h3 className="text-white text-lg font-semibold mb-2 tracking-tight">
+                Help
+              </h3>
+              <ul className="space-y-4 sm:space-y-2 text-sm">
+                {[
+                  ["FAQs", "/faqs"],
+                  ["Contact", "/contact"],
+                  ["Support", "/support"],
+                  ["Privacy", "/privacy"],
+                  ["Community", "/community"],
+                  ["Terms of Use", "/terms"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      aria-label={`${label} page link`}
+                      className="hover:text-lime-400 transition-colors duration-200"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

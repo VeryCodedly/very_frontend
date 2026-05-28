@@ -139,7 +139,7 @@ export default function StorePage({ products, error }: StoreClientProps) {
         <p className="text-gray-400 text-base md:text-lg tracking-tighter">
           For people who read source code, and <br />people who have no idea what that means.
         </p>
-        <div className="flex flex-row flex-wrap gap-3 lg:gap-4 mt-6">
+        <div className="flex flex-row flex-wrap gap-3 mt-6">
           <div className="w-fit flex items-center gap-2 text-xs text-gray-500 bg-zinc-900/30 px-3 py-1.5 rounded-full border border-zinc-800">
             <FontAwesomeIcon icon={faTruck} className="text-lime-600" />
             <span>Ships worldwide</span>

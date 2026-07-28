@@ -194,8 +194,8 @@ export default function RoomClient({ slug }: Props) {
                     </Link>
                 </motion.div>
                 {/* <span className="w-1 h-6 rounded-sm bg-lime-400/40 flex-shrink-0" /> */}
-                <div className="flex items-center mt-2 mr-4.5 md:mr-18">
-                    <p className="bg-pink-400/10 text-pink-400/80 px-3 py-1 rounded-full text-xs tracking-tighter">
+                <div className="flex items-center mt-2 mr-5.5 md:mr-18">
+                    <p className="bg-pink-400/10 text-pink-400/70 px-3 py-1 rounded-full text-xs tracking-tighter">
                         {room.room.title}
                     </p>
                     {/* <p className="text-xs text-gray-500/60 tracking-tight">

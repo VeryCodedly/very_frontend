@@ -21,7 +21,6 @@ export default function RoomClient({ slug }: Props) {
 
     const [room, setRoom] = useState<RoomDetail | null>(null);
     const [messages, setMessages] = useState<Message[]>([]);
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
     const latestUpdate = useRef<string | null>(null);
@@ -59,7 +58,7 @@ export default function RoomClient({ slug }: Props) {
             } catch {
                 setError("Couldn't load room.");
             } finally {
-                setLoading(false);
+                // setLoading(false);
             }
         }
         load();
@@ -169,13 +168,6 @@ export default function RoomClient({ slug }: Props) {
         }
     }, [isNearBottom]);
 
-    if (loading)
-        return (
-            <section className="min-h-screen flex items-center justify-center">
-                Loading...
-            </section>
-        );
-
     if (error || !room)
         return (
             <section className="min-h-screen flex items-center justify-center">
@@ -184,13 +176,13 @@ export default function RoomClient({ slug }: Props) {
         );
 
     return (
-        <section className="relative min-h-screen bg-black text-white">
+        <section className="relative min-h-dvh bg-black text-white">
             <div className="flex justify-between">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="mx-auto mt-8 mb-5 ml-6"
+                    className="mx-auto mt-8 mb-5 ml-5"
                 >
                     <Link
                         href="/connect"
